@@ -1,0 +1,34 @@
+
+load DaoGSL;
+
+i = 0;
+n = 4;
+x = [ 1970D, 1980, 1990, 2000 ];
+y = [   12D,   11,   14,   13 ];
+w = [  0.1D,  0.2,  0.3,  0.4 ];
+
+c0, c1, cov00, cov01, cov11, chisq : double = 0D;
+
+gsl_fit_wlinear (x, 1, w, 1, y, 1, n, &c0, &c1, &cov00, &cov01, &cov11, &chisq);
+
+io.writef ("# best fit: Y = %g + %g X\n", c0, c1);
+io.writef ("# covariance matrix:\n");
+io.writef ("# [ %g, %g\n#   %g, %g]\n", cov00, cov01, cov01, cov11);
+io.writef ("# chisq = %g\n", chisq);
+
+for (i = 0; i < n; ++i)
+io.writef ("data: %g %g %g\n", x[i], y[i], 1/sqrt(w[i]));
+
+io.writef ("\n");
+
+for (i = -30; i < 30; ++i)
+{
+	xf = x[0] + (i/100D) * (x[n-1] - x[0]);
+	yf, yf_err : double = 0D;
+
+	gsl_fit_linear_est (xf, c0, c1, cov00, cov01, cov11, &yf, &yf_err);
+
+	io.writef ("fit: %g %g\n", xf, yf);
+	io.writef ("hi : %g %g\n", xf, yf + yf_err);
+	io.writef ("lo : %g %g\n", xf, yf - yf_err);
+}

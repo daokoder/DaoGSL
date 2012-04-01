@@ -1,0 +1,22 @@
+load DaoGSL;
+
+a_data = 
+[ 0.180D, 0.60, 0.57, 0.96;
+0.41, 0.24, 0.99, 0.58;
+0.14, 0.30, 0.97, 0.66;
+0.51, 0.13, 0.19, 0.85 ];
+
+b_data = [ 1.0D, 2.0, 3.0, 4.0 ];
+x_data = [ 0.0D : 4 ];
+
+m = gsl_matrix_view_array (a_data, 4, 4);
+b = gsl_vector_view_array (b_data, 4);
+x = gsl_vector_view_array (x_data, 4);
+
+s = 0;
+p = gsl_permutation_alloc (4);
+gsl_linalg_LU_decomp (m.matrix, p, & s);
+gsl_linalg_LU_solve (m.matrix, p, b.vector, x.vector);
+
+io.writeln ("x =", x_data);
+gsl_permutation_free (p);

@@ -1,0 +1,86 @@
+
+load DaoGSL;
+
+class VanDerPol : gsl_odeiv_system
+{
+#routine VanDerPol(){}
+	var mu = 10.0D;
+
+	routine function( t : double, y : array<double>, dydt : array<double>, self0 : any );
+	routine jacobian( t : double, y : array<double>, dfdy : array<double>, dydt : array<double>, self0 : any );
+}
+routine VanDerPol::function( t : double, y : array<double>, dydt : array<double>, self0 : any )
+{
+	y.reshape( [1,2] );
+	dydt.reshape( [1,2] );
+	#io.writeln( y, dydt );
+	dydt[0] = y[1];
+	dydt[1] = -y[0] - mu*y[1]*(y[0]*y[0] - 1.0D);
+	#io.writeln( y, dydt );
+	return GSL_SUCCESS;
+	#return GSL_FAILURE;
+}
+routine VanDerPol::jacobian( t : double, y : array<double>, dfdy: array<double>, dydt : array<double>, self0 : any )
+{
+	y.reshape( [1,2] );
+	dydt.reshape( [1,2] );
+	dfdy.reshape( [2,2] );
+	#io.writeln( y, dydt );
+	dydt[] = 0.0D;
+	dfdy[0,0] = 0.0D;
+	dfdy[0,1] = 1.0D;
+	dfdy[1,0] = -2.0D*mu*y[0]*y[1] - 1.0D;
+	dfdy[1,0] = -mu*(y[0]*y[0] - 1.0D);
+	return GSL_SUCCESS;
+	#return GSL_FAILURE;
+}
+
+msys = VanDerPol();
+io.writeln( std.about(msys) )
+msys.mu = 10.0D;
+msys.dimension = 2;
+
+io.writeln( msys.dimension, "=======================================" );
+
+t = 0.0D;
+t1 = 10.0D;
+y = [ 1.0D, 0.0 ];
+
+if(1){
+	s = gsl_odeiv_step_alloc( gsl_odeiv_step_rk8pd, 2 );
+	c = gsl_odeiv_control_y_new( 1E-6, 0.0D );
+	e = gsl_odeiv_evolve_alloc( 2 );
+	h = 1E-6;
+	while (t < t1) {
+		status = gsl_odeiv_evolve_apply (e, c, s, msys, & t, t1, & h, y);
+
+		io.writef ("%.5e %.5e %.5e\n", t, y[0], y[1]);
+		if (status != GSL_SUCCESS) break;
+	}
+
+	gsl_odeiv_evolve_free (e);
+	gsl_odeiv_control_free (c);
+	gsl_odeiv_step_free (s);
+
+}else{
+	s = gsl_odeiv_step_alloc( gsl_odeiv_step_rk4, 2 );
+	h = 1E-2;
+	y_err = [0.0D:2];
+	dydt_in = [0.0D:2];
+	dydt_out = [0.0D:2];
+	msys.function( t, y, dydt_in, msys );
+	while (t < t1) {
+		status = gsl_odeiv_step_apply (s, t, h, y, y_err, dydt_in, dydt_out, msys);
+
+		if (status != GSL_SUCCESS) break;
+
+		dydt_in[0] = dydt_out[0];
+		dydt_in[1] = dydt_out[1];
+
+		t += h;
+
+		io.writef ("%.5e %.5e %.5e\n", t, y[0], y[1]);
+	}
+
+	gsl_odeiv_step_free (s);
+}
