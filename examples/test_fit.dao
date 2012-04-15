@@ -9,7 +9,7 @@ w = [  0.1D,  0.2,  0.3,  0.4 ];
 
 c0, c1, cov00, cov01, cov11, chisq : double = 0D;
 
-gsl_fit_wlinear (x, 1, w, 1, y, 1, n, &c0, &c1, &cov00, &cov01, &cov11, &chisq);
+(i, c0, c1, cov00, cov01, cov11, chisq) = gsl_fit_wlinear (x, 1, w, 1, y, 1, n, c0, c1, cov00, cov01, cov11, chisq);
 
 io.writef ("# best fit: Y = %g + %g X\n", c0, c1);
 io.writef ("# covariance matrix:\n");
@@ -26,7 +26,7 @@ for (i = -30; i < 30; ++i)
 	xf = x[0] + (i/100D) * (x[n-1] - x[0]);
 	yf, yf_err : double = 0D;
 
-	gsl_fit_linear_est (xf, c0, c1, cov00, cov01, cov11, &yf, &yf_err);
+	(k, yf, yf_err) = gsl_fit_linear_est (xf, c0, c1, cov00, cov01, cov11, yf, yf_err);
 
 	io.writef ("fit: %g %g\n", xf, yf);
 	io.writef ("hi : %g %g\n", xf, yf + yf_err);

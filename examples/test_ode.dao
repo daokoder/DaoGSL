@@ -52,7 +52,7 @@ if(1){
 	e = gsl_odeiv_evolve_alloc( 2 );
 	h = 1E-6;
 	while (t < t1) {
-		status = gsl_odeiv_evolve_apply (e, c, s, msys, & t, t1, & h, y);
+		(status, t, h) = gsl_odeiv_evolve_apply (e, c, s, msys, t, t1, h, y);
 
 		io.writef ("%.5e %.5e %.5e\n", t, y[0], y[1]);
 		if (status != GSL_SUCCESS) break;

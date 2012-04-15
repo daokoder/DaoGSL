@@ -10,19 +10,18 @@ DaoRoutine* Dao_Get_Object_Method( DaoCdata *cd, DaoObject **obj, const char *na
   if( DaoRoutine_IsWrapper( meth ) ) return NULL; /*do not call C function*/
   return meth;
 }
-static int DaoPF10777( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, const double* y, double* dydt, DaoValue *params )
+static int DaoPF10932( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, const double* y, double* dydt, DaoValue *params )
 {
   DaoProcess *_proc = DaoVmSpace_AcquireProcess( __daoVmSpace );
-  DaoFactory *_fac = DaoProcess_GetFactory( _proc );
   DaoValue *_res, **_dp;
   DaoCdata *_cd;
   int X = (int) 0;
   if( _ro == NULL ) goto EndCall;
-  DaoFactory_NewDouble( _fac, (double) t );
-  DaoFactory_NewVectorD( _fac, (double*) y, 0 );
-  DaoFactory_NewVectorD( _fac, (double*) dydt, 0 );
-  DaoFactory_CacheValue( _fac, params );
-  _dp = DaoFactory_GetLastValues( _fac, 4 );
+  DaoProcess_NewDouble( _proc, (double) t );
+  DaoProcess_NewVectorD( _proc, (double*) y, 0 );
+  DaoProcess_NewVectorD( _proc, (double*) dydt, 0 );
+  DaoProcess_CacheValue( _proc, params );
+  _dp = DaoProcess_GetLastValues( _proc, 4 );
   _ro = DaoRoutine_Resolve( _ro, (DaoValue*) _ob, _dp, 4 );
   if( _ro == NULL || DaoRoutine_IsWrapper( _ro ) ) goto EndCall;
   if( (*_cs = DaoProcess_Call( _proc, _ro, (DaoValue*)_ob, _dp, 4 )) ) goto EndCall;
@@ -32,20 +31,19 @@ EndCall:
   DaoVmSpace_ReleaseProcess( __daoVmSpace, _proc );
   return X;
 }
-static int DaoPF10778( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, const double* y, double* dfdy, double* dydt, DaoValue *params )
+static int DaoPF10933( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, const double* y, double* dfdy, double* dydt, DaoValue *params )
 {
   DaoProcess *_proc = DaoVmSpace_AcquireProcess( __daoVmSpace );
-  DaoFactory *_fac = DaoProcess_GetFactory( _proc );
   DaoValue *_res, **_dp;
   DaoCdata *_cd;
   int X = (int) 0;
   if( _ro == NULL ) goto EndCall;
-  DaoFactory_NewDouble( _fac, (double) t );
-  DaoFactory_NewVectorD( _fac, (double*) y, 0 );
-  DaoFactory_NewDouble( _fac, (double) *dfdy );
-  DaoFactory_NewVectorD( _fac, (double*) dydt, 0 );
-  DaoFactory_CacheValue( _fac, params );
-  _dp = DaoFactory_GetLastValues( _fac, 5 );
+  DaoProcess_NewDouble( _proc, (double) t );
+  DaoProcess_NewVectorD( _proc, (double*) y, 0 );
+  DaoProcess_NewDouble( _proc, (double) *dfdy );
+  DaoProcess_NewVectorD( _proc, (double*) dydt, 0 );
+  DaoProcess_CacheValue( _proc, params );
+  _dp = DaoProcess_GetLastValues( _proc, 5 );
   _ro = DaoRoutine_Resolve( _ro, (DaoValue*) _ob, _dp, 5 );
   if( _ro == NULL || DaoRoutine_IsWrapper( _ro ) ) goto EndCall;
   if( (*_cs = DaoProcess_Call( _proc, _ro, (DaoValue*)_ob, _dp, 5 )) ) goto EndCall;
@@ -1033,7 +1031,7 @@ static int Dao_gsl_odeiv_system_function( double t, const double* y, double* dyd
   DaoRoutine *_ro = Dao_Get_Object_Method( _cdata, & _obj, "function" );
   int X = (int) 0;
   if( _ro == NULL || _obj == NULL ) return X;
-  return (int)DaoPF10777( & _cs, _ro, _obj, t, y, dydt, (DaoValue*)_cdata );
+  return (int)DaoPF10932( & _cs, _ro, _obj, t, y, dydt, (DaoValue*)_cdata );
 }
 static int Dao_gsl_odeiv_system_jacobian( double t, const double* y, double* dfdy, double* dydt, void* params )
 {
@@ -1045,7 +1043,7 @@ static int Dao_gsl_odeiv_system_jacobian( double t, const double* y, double* dfd
   DaoRoutine *_ro = Dao_Get_Object_Method( _cdata, & _obj, "jacobian" );
   int X = (int) 0;
   if( _ro == NULL || _obj == NULL ) return X;
-  return (int)DaoPF10778( & _cs, _ro, _obj, t, y, dfdy, dydt, (DaoValue*)_cdata );
+  return (int)DaoPF10933( & _cs, _ro, _obj, t, y, dfdy, dydt, (DaoValue*)_cdata );
 }
 Dao_gsl_odeiv_system* Dao_gsl_odeiv_system_New()
 {
