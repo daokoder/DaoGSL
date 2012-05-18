@@ -8386,7 +8386,6 @@ static void dao__gsl_block_long_double_raw_fwrite( DaoProcess *_proc, DaoValue *
   const long double* b = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   int _gsl_block_long_double_raw_fwrite = gsl_block_long_double_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_long_double_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_long_double.h */
@@ -8412,7 +8411,6 @@ static void dao__gsl_block_long_double_raw_fprintf( DaoProcess *_proc, DaoValue 
   const long double* b = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   int _gsl_block_long_double_raw_fprintf = gsl_block_long_double_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_long_double_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_long_double.h */
@@ -8506,7 +8504,6 @@ static void dao__gsl_vector_long_double_const_view_array( DaoProcess *_proc, Dao
   const long double* v = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_vector_long_double_const_view _gsl_vector_long_double_const_view_array = gsl_vector_long_double_const_view_array( v, n );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_long_double_const_view_array, sizeof(_gsl_vector_long_double_const_view), dao_type__gsl_vector_long_double_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_long_double.h */
@@ -8517,7 +8514,6 @@ static void dao__gsl_vector_long_double_const_view_array_with_stride( DaoProcess
   const long double* base = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_vector_long_double_const_view _gsl_vector_long_double_const_view_array_with_stride = gsl_vector_long_double_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_long_double_const_view_array_with_stride, sizeof(_gsl_vector_long_double_const_view), dao_type__gsl_vector_long_double_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_long_double.h */
@@ -8928,7 +8924,6 @@ static void dao__gsl_block_complex_long_double_raw_fwrite( DaoProcess *_proc, Da
   const long double* b = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   int _gsl_block_complex_long_double_raw_fwrite = gsl_block_complex_long_double_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_complex_long_double_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_complex_long_double.h */
@@ -8954,7 +8949,6 @@ static void dao__gsl_block_complex_long_double_raw_fprintf( DaoProcess *_proc, D
   const long double* b = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   int _gsl_block_complex_long_double_raw_fprintf = gsl_block_complex_long_double_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_complex_long_double_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_complex_long_double.h */
@@ -9048,7 +9042,6 @@ static void dao__gsl_vector_complex_long_double_const_view_array( DaoProcess *_p
   const long double* base = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_vector_complex_long_double_const_view _gsl_vector_complex_long_double_const_view_array = gsl_vector_complex_long_double_const_view_array( base, n );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_complex_long_double_const_view_array, sizeof(_gsl_vector_complex_long_double_const_view), dao_type__gsl_vector_complex_long_double_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_complex_long_double.h */
@@ -9059,7 +9052,6 @@ static void dao__gsl_vector_complex_long_double_const_view_array_with_stride( Da
   const long double* base = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_vector_complex_long_double_const_view _gsl_vector_complex_long_double_const_view_array_with_stride = gsl_vector_complex_long_double_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_complex_long_double_const_view_array_with_stride, sizeof(_gsl_vector_complex_long_double_const_view), dao_type__gsl_vector_complex_long_double_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_complex_long_double.h */
@@ -9446,7 +9438,6 @@ static void dao__gsl_block_raw_fwrite( DaoProcess *_proc, DaoValue *_p[], int _n
   const double* b = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   int _gsl_block_raw_fwrite = gsl_block_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_double.h */
@@ -9472,7 +9463,6 @@ static void dao__gsl_block_raw_fprintf( DaoProcess *_proc, DaoValue *_p[], int _
   const double* b = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   int _gsl_block_raw_fprintf = gsl_block_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_double.h */
@@ -9564,7 +9554,6 @@ static void dao__gsl_vector_const_view_array( DaoProcess *_proc, DaoValue *_p[],
   const double* base = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_vector_const_view dao_gsl_vector_const_view_array = gsl_vector_const_view_array( base, n );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_const_view_array, sizeof(_gsl_vector_const_view), dao_type__gsl_vector_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_double.h */
@@ -9575,7 +9564,6 @@ static void dao__gsl_vector_const_view_array_with_stride( DaoProcess *_proc, Dao
   const double* base = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_vector_const_view dao_gsl_vector_const_view_array_with_stride = gsl_vector_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_const_view_array_with_stride, sizeof(_gsl_vector_const_view), dao_type__gsl_vector_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_double.h */
@@ -9986,7 +9974,6 @@ static void dao__gsl_block_complex_raw_fwrite( DaoProcess *_proc, DaoValue *_p[]
   const double* b = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   int _gsl_block_complex_raw_fwrite = gsl_block_complex_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_complex_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_complex_double.h */
@@ -10012,7 +9999,6 @@ static void dao__gsl_block_complex_raw_fprintf( DaoProcess *_proc, DaoValue *_p[
   const double* b = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   int _gsl_block_complex_raw_fprintf = gsl_block_complex_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_complex_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_complex_double.h */
@@ -10106,7 +10092,6 @@ static void dao__gsl_vector_complex_const_view_array( DaoProcess *_proc, DaoValu
   const double* base = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_vector_complex_const_view _gsl_vector_complex_const_view_array = gsl_vector_complex_const_view_array( base, n );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_complex_const_view_array, sizeof(_gsl_vector_complex_const_view), dao_type__gsl_vector_complex_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_complex_double.h */
@@ -10117,7 +10102,6 @@ static void dao__gsl_vector_complex_const_view_array_with_stride( DaoProcess *_p
   const double* base = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_vector_complex_const_view _gsl_vector_complex_const_view_array_with_stride = gsl_vector_complex_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_complex_const_view_array_with_stride, sizeof(_gsl_vector_complex_const_view), dao_type__gsl_vector_complex_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_complex_double.h */
@@ -10504,7 +10488,6 @@ static void dao__gsl_block_float_raw_fwrite( DaoProcess *_proc, DaoValue *_p[], 
   const float* b = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   int _gsl_block_float_raw_fwrite = gsl_block_float_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_float_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_float.h */
@@ -10530,7 +10513,6 @@ static void dao__gsl_block_float_raw_fprintf( DaoProcess *_proc, DaoValue *_p[],
   const float* b = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   int _gsl_block_float_raw_fprintf = gsl_block_float_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_float_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_float.h */
@@ -10622,7 +10604,6 @@ static void dao__gsl_vector_float_const_view_array( DaoProcess *_proc, DaoValue 
   const float* base = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   _gsl_vector_float_const_view dao_gsl_vector_float_const_view_array = gsl_vector_float_const_view_array( base, n );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_float_const_view_array, sizeof(_gsl_vector_float_const_view), dao_type__gsl_vector_float_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_float.h */
@@ -10633,7 +10614,6 @@ static void dao__gsl_vector_float_const_view_array_with_stride( DaoProcess *_pro
   const float* base = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   _gsl_vector_float_const_view dao_gsl_vector_float_const_view_array_with_stride = gsl_vector_float_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_float_const_view_array_with_stride, sizeof(_gsl_vector_float_const_view), dao_type__gsl_vector_float_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_float.h */
@@ -11044,7 +11024,6 @@ static void dao__gsl_block_complex_float_raw_fwrite( DaoProcess *_proc, DaoValue
   const float* b = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   int _gsl_block_complex_float_raw_fwrite = gsl_block_complex_float_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_complex_float_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_complex_float.h */
@@ -11070,7 +11049,6 @@ static void dao__gsl_block_complex_float_raw_fprintf( DaoProcess *_proc, DaoValu
   const float* b = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   int _gsl_block_complex_float_raw_fprintf = gsl_block_complex_float_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_complex_float_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_complex_float.h */
@@ -11164,7 +11142,6 @@ static void dao__gsl_vector_complex_float_const_view_array( DaoProcess *_proc, D
   const float* base = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   _gsl_vector_complex_float_const_view _gsl_vector_complex_float_const_view_array = gsl_vector_complex_float_const_view_array( base, n );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_complex_float_const_view_array, sizeof(_gsl_vector_complex_float_const_view), dao_type__gsl_vector_complex_float_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_complex_float.h */
@@ -11175,7 +11152,6 @@ static void dao__gsl_vector_complex_float_const_view_array_with_stride( DaoProce
   const float* base = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   _gsl_vector_complex_float_const_view _gsl_vector_complex_float_const_view_array_with_stride = gsl_vector_complex_float_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_complex_float_const_view_array_with_stride, sizeof(_gsl_vector_complex_float_const_view), dao_type__gsl_vector_complex_float_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_complex_float.h */
@@ -11562,7 +11538,6 @@ static void dao__gsl_block_ulong_raw_fwrite( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long* b = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[1] );
 
   int _gsl_block_ulong_raw_fwrite = gsl_block_ulong_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_ulong_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_ulong.h */
@@ -11588,7 +11563,6 @@ static void dao__gsl_block_ulong_raw_fprintf( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long* b = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[1] );
 
   int _gsl_block_ulong_raw_fprintf = gsl_block_ulong_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_ulong_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_ulong.h */
@@ -11682,7 +11656,6 @@ static void dao__gsl_vector_ulong_const_view_array( DaoProcess *_proc, DaoValue 
   const unsigned long* v = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   _gsl_vector_ulong_const_view _gsl_vector_ulong_const_view_array = gsl_vector_ulong_const_view_array( v, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_ulong_const_view_array, sizeof(_gsl_vector_ulong_const_view), dao_type__gsl_vector_ulong_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_ulong.h */
@@ -11693,7 +11666,6 @@ static void dao__gsl_vector_ulong_const_view_array_with_stride( DaoProcess *_pro
   const unsigned long* base = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   _gsl_vector_ulong_const_view _gsl_vector_ulong_const_view_array_with_stride = gsl_vector_ulong_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_ulong_const_view_array_with_stride, sizeof(_gsl_vector_ulong_const_view), dao_type__gsl_vector_ulong_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_ulong.h */
@@ -12104,7 +12076,6 @@ static void dao__gsl_block_long_raw_fwrite( DaoProcess *_proc, DaoValue *_p[], i
   const long* b = (const long*) DaoArray_ToSInt( (DaoArray*)_p[1] );
 
   int _gsl_block_long_raw_fwrite = gsl_block_long_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_long_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_long.h */
@@ -12130,7 +12101,6 @@ static void dao__gsl_block_long_raw_fprintf( DaoProcess *_proc, DaoValue *_p[], 
   const long* b = (const long*) DaoArray_ToSInt( (DaoArray*)_p[1] );
 
   int _gsl_block_long_raw_fprintf = gsl_block_long_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_long_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_long.h */
@@ -12222,7 +12192,6 @@ static void dao__gsl_vector_long_const_view_array( DaoProcess *_proc, DaoValue *
   const long* base = (const long*) DaoArray_ToSInt( (DaoArray*)_p[0] );
 
   _gsl_vector_long_const_view dao_gsl_vector_long_const_view_array = gsl_vector_long_const_view_array( base, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_long_const_view_array, sizeof(_gsl_vector_long_const_view), dao_type__gsl_vector_long_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_long.h */
@@ -12233,7 +12202,6 @@ static void dao__gsl_vector_long_const_view_array_with_stride( DaoProcess *_proc
   const long* base = (const long*) DaoArray_ToSInt( (DaoArray*)_p[0] );
 
   _gsl_vector_long_const_view dao_gsl_vector_long_const_view_array_with_stride = gsl_vector_long_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_long_const_view_array_with_stride, sizeof(_gsl_vector_long_const_view), dao_type__gsl_vector_long_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_long.h */
@@ -12644,7 +12612,6 @@ static void dao__gsl_block_uint_raw_fwrite( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned int* b = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[1] );
 
   int _gsl_block_uint_raw_fwrite = gsl_block_uint_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromUInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_uint_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_uint.h */
@@ -12670,7 +12637,6 @@ static void dao__gsl_block_uint_raw_fprintf( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned int* b = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[1] );
 
   int _gsl_block_uint_raw_fprintf = gsl_block_uint_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromUInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_uint_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_uint.h */
@@ -12764,7 +12730,6 @@ static void dao__gsl_vector_uint_const_view_array( DaoProcess *_proc, DaoValue *
   const unsigned int* v = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   _gsl_vector_uint_const_view _gsl_vector_uint_const_view_array = gsl_vector_uint_const_view_array( v, n );
-  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_uint_const_view_array, sizeof(_gsl_vector_uint_const_view), dao_type__gsl_vector_uint_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_uint.h */
@@ -12775,7 +12740,6 @@ static void dao__gsl_vector_uint_const_view_array_with_stride( DaoProcess *_proc
   const unsigned int* base = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   _gsl_vector_uint_const_view _gsl_vector_uint_const_view_array_with_stride = gsl_vector_uint_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_uint_const_view_array_with_stride, sizeof(_gsl_vector_uint_const_view), dao_type__gsl_vector_uint_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_uint.h */
@@ -13186,7 +13150,6 @@ static void dao__gsl_block_int_raw_fwrite( DaoProcess *_proc, DaoValue *_p[], in
   const int* b = (const int*) DaoArray_ToSInt( (DaoArray*)_p[1] );
 
   int _gsl_block_int_raw_fwrite = gsl_block_int_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_int_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_int.h */
@@ -13212,7 +13175,6 @@ static void dao__gsl_block_int_raw_fprintf( DaoProcess *_proc, DaoValue *_p[], i
   const int* b = (const int*) DaoArray_ToSInt( (DaoArray*)_p[1] );
 
   int _gsl_block_int_raw_fprintf = gsl_block_int_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_int_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_int.h */
@@ -13304,7 +13266,6 @@ static void dao__gsl_vector_int_const_view_array( DaoProcess *_proc, DaoValue *_
   const int* base = (const int*) DaoArray_ToSInt( (DaoArray*)_p[0] );
 
   _gsl_vector_int_const_view dao_gsl_vector_int_const_view_array = gsl_vector_int_const_view_array( base, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_int_const_view_array, sizeof(_gsl_vector_int_const_view), dao_type__gsl_vector_int_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_int.h */
@@ -13315,7 +13276,6 @@ static void dao__gsl_vector_int_const_view_array_with_stride( DaoProcess *_proc,
   const int* base = (const int*) DaoArray_ToSInt( (DaoArray*)_p[0] );
 
   _gsl_vector_int_const_view dao_gsl_vector_int_const_view_array_with_stride = gsl_vector_int_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_int_const_view_array_with_stride, sizeof(_gsl_vector_int_const_view), dao_type__gsl_vector_int_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_int.h */
@@ -13726,7 +13686,6 @@ static void dao__gsl_block_ushort_raw_fwrite( DaoProcess *_proc, DaoValue *_p[],
   const unsigned short* b = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[1] );
 
   int _gsl_block_ushort_raw_fwrite = gsl_block_ushort_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromUShort( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_ushort_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_ushort.h */
@@ -13752,7 +13711,6 @@ static void dao__gsl_block_ushort_raw_fprintf( DaoProcess *_proc, DaoValue *_p[]
   const unsigned short* b = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[1] );
 
   int _gsl_block_ushort_raw_fprintf = gsl_block_ushort_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromUShort( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_ushort_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_ushort.h */
@@ -13846,7 +13804,6 @@ static void dao__gsl_vector_ushort_const_view_array( DaoProcess *_proc, DaoValue
   const unsigned short* v = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[0] );
 
   _gsl_vector_ushort_const_view _gsl_vector_ushort_const_view_array = gsl_vector_ushort_const_view_array( v, n );
-  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_ushort_const_view_array, sizeof(_gsl_vector_ushort_const_view), dao_type__gsl_vector_ushort_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_ushort.h */
@@ -13857,7 +13814,6 @@ static void dao__gsl_vector_ushort_const_view_array_with_stride( DaoProcess *_pr
   const unsigned short* base = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[0] );
 
   _gsl_vector_ushort_const_view _gsl_vector_ushort_const_view_array_with_stride = gsl_vector_ushort_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_vector_ushort_const_view_array_with_stride, sizeof(_gsl_vector_ushort_const_view), dao_type__gsl_vector_ushort_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_ushort.h */
@@ -14268,7 +14224,6 @@ static void dao__gsl_block_short_raw_fwrite( DaoProcess *_proc, DaoValue *_p[], 
   const short* b = (const short*) DaoArray_ToSShort( (DaoArray*)_p[1] );
 
   int _gsl_block_short_raw_fwrite = gsl_block_short_raw_fwrite( stream, b, n, stride );
-  DaoArray_FromSShort( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_short_raw_fwrite );
 }
 /* /usr/local/include/gsl/gsl_block_short.h */
@@ -14294,7 +14249,6 @@ static void dao__gsl_block_short_raw_fprintf( DaoProcess *_proc, DaoValue *_p[],
   const short* b = (const short*) DaoArray_ToSShort( (DaoArray*)_p[1] );
 
   int _gsl_block_short_raw_fprintf = gsl_block_short_raw_fprintf( stream, b, n, stride, format );
-  DaoArray_FromSShort( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_block_short_raw_fprintf );
 }
 /* /usr/local/include/gsl/gsl_block_short.h */
@@ -14386,7 +14340,6 @@ static void dao__gsl_vector_short_const_view_array( DaoProcess *_proc, DaoValue 
   const short* base = (const short*) DaoArray_ToSShort( (DaoArray*)_p[0] );
 
   _gsl_vector_short_const_view dao_gsl_vector_short_const_view_array = gsl_vector_short_const_view_array( base, n );
-  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_short_const_view_array, sizeof(_gsl_vector_short_const_view), dao_type__gsl_vector_short_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_short.h */
@@ -14397,7 +14350,6 @@ static void dao__gsl_vector_short_const_view_array_with_stride( DaoProcess *_pro
   const short* base = (const short*) DaoArray_ToSShort( (DaoArray*)_p[0] );
 
   _gsl_vector_short_const_view dao_gsl_vector_short_const_view_array_with_stride = gsl_vector_short_const_view_array_with_stride( base, stride, n );
-  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_vector_short_const_view_array_with_stride, sizeof(_gsl_vector_short_const_view), dao_type__gsl_vector_short_const_view );
 }
 /* /usr/local/include/gsl/gsl_vector_short.h */
@@ -16057,7 +16009,6 @@ static void dao__gsl_matrix_complex_long_double_const_view_array( DaoProcess *_p
   const long double* base = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_matrix_complex_long_double_const_view _gsl_matrix_complex_long_double_const_view_array = gsl_matrix_complex_long_double_const_view_array( base, n1, n2 );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_complex_long_double_const_view_array, sizeof(_gsl_matrix_complex_long_double_const_view), dao_type__gsl_matrix_complex_long_double_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_complex_long_double.h */
@@ -16069,7 +16020,6 @@ static void dao__gsl_matrix_complex_long_double_const_view_array_with_tda( DaoPr
   const long double* base = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_matrix_complex_long_double_const_view _gsl_matrix_complex_long_double_const_view_array_with_tda = gsl_matrix_complex_long_double_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_complex_long_double_const_view_array_with_tda, sizeof(_gsl_matrix_complex_long_double_const_view), dao_type__gsl_matrix_complex_long_double_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_complex_long_double.h */
@@ -16678,7 +16628,6 @@ static void dao__gsl_matrix_complex_const_view_array( DaoProcess *_proc, DaoValu
   const double* base = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_matrix_complex_const_view _gsl_matrix_complex_const_view_array = gsl_matrix_complex_const_view_array( base, n1, n2 );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_complex_const_view_array, sizeof(_gsl_matrix_complex_const_view), dao_type__gsl_matrix_complex_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_complex_double.h */
@@ -16690,7 +16639,6 @@ static void dao__gsl_matrix_complex_const_view_array_with_tda( DaoProcess *_proc
   const double* base = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_matrix_complex_const_view _gsl_matrix_complex_const_view_array_with_tda = gsl_matrix_complex_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_complex_const_view_array_with_tda, sizeof(_gsl_matrix_complex_const_view), dao_type__gsl_matrix_complex_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_complex_double.h */
@@ -17299,7 +17247,6 @@ static void dao__gsl_matrix_complex_float_const_view_array( DaoProcess *_proc, D
   const float* base = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   _gsl_matrix_complex_float_const_view _gsl_matrix_complex_float_const_view_array = gsl_matrix_complex_float_const_view_array( base, n1, n2 );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_complex_float_const_view_array, sizeof(_gsl_matrix_complex_float_const_view), dao_type__gsl_matrix_complex_float_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_complex_float.h */
@@ -17311,7 +17258,6 @@ static void dao__gsl_matrix_complex_float_const_view_array_with_tda( DaoProcess 
   const float* base = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   _gsl_matrix_complex_float_const_view _gsl_matrix_complex_float_const_view_array_with_tda = gsl_matrix_complex_float_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_complex_float_const_view_array_with_tda, sizeof(_gsl_matrix_complex_float_const_view), dao_type__gsl_matrix_complex_float_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_complex_float.h */
@@ -17920,7 +17866,6 @@ static void dao__gsl_matrix_long_double_const_view_array( DaoProcess *_proc, Dao
   const long double* base = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_matrix_long_double_const_view _gsl_matrix_long_double_const_view_array = gsl_matrix_long_double_const_view_array( base, n1, n2 );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_long_double_const_view_array, sizeof(_gsl_matrix_long_double_const_view), dao_type__gsl_matrix_long_double_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_long_double.h */
@@ -17932,7 +17877,6 @@ static void dao__gsl_matrix_long_double_const_view_array_with_tda( DaoProcess *_
   const long double* base = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_matrix_long_double_const_view _gsl_matrix_long_double_const_view_array_with_tda = gsl_matrix_long_double_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_long_double_const_view_array_with_tda, sizeof(_gsl_matrix_long_double_const_view), dao_type__gsl_matrix_long_double_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_long_double.h */
@@ -18607,7 +18551,6 @@ static void dao__gsl_matrix_const_view_array( DaoProcess *_proc, DaoValue *_p[],
   const double* base = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_matrix_const_view dao_gsl_matrix_const_view_array = gsl_matrix_const_view_array( base, n1, n2 );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_const_view_array, sizeof(_gsl_matrix_const_view), dao_type__gsl_matrix_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_double.h */
@@ -18619,7 +18562,6 @@ static void dao__gsl_matrix_const_view_array_with_tda( DaoProcess *_proc, DaoVal
   const double* base = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   _gsl_matrix_const_view dao_gsl_matrix_const_view_array_with_tda = gsl_matrix_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_const_view_array_with_tda, sizeof(_gsl_matrix_const_view), dao_type__gsl_matrix_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_double.h */
@@ -19294,7 +19236,6 @@ static void dao__gsl_matrix_float_const_view_array( DaoProcess *_proc, DaoValue 
   const float* base = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   _gsl_matrix_float_const_view dao_gsl_matrix_float_const_view_array = gsl_matrix_float_const_view_array( base, n1, n2 );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_float_const_view_array, sizeof(_gsl_matrix_float_const_view), dao_type__gsl_matrix_float_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_float.h */
@@ -19306,7 +19247,6 @@ static void dao__gsl_matrix_float_const_view_array_with_tda( DaoProcess *_proc, 
   const float* base = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   _gsl_matrix_float_const_view dao_gsl_matrix_float_const_view_array_with_tda = gsl_matrix_float_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_float_const_view_array_with_tda, sizeof(_gsl_matrix_float_const_view), dao_type__gsl_matrix_float_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_float.h */
@@ -19983,7 +19923,6 @@ static void dao__gsl_matrix_ulong_const_view_array( DaoProcess *_proc, DaoValue 
   const unsigned long* base = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   _gsl_matrix_ulong_const_view _gsl_matrix_ulong_const_view_array = gsl_matrix_ulong_const_view_array( base, n1, n2 );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_ulong_const_view_array, sizeof(_gsl_matrix_ulong_const_view), dao_type__gsl_matrix_ulong_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_ulong.h */
@@ -19995,7 +19934,6 @@ static void dao__gsl_matrix_ulong_const_view_array_with_tda( DaoProcess *_proc, 
   const unsigned long* base = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   _gsl_matrix_ulong_const_view _gsl_matrix_ulong_const_view_array_with_tda = gsl_matrix_ulong_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_ulong_const_view_array_with_tda, sizeof(_gsl_matrix_ulong_const_view), dao_type__gsl_matrix_ulong_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_ulong.h */
@@ -20670,7 +20608,6 @@ static void dao__gsl_matrix_long_const_view_array( DaoProcess *_proc, DaoValue *
   const long* base = (const long*) DaoArray_ToSInt( (DaoArray*)_p[0] );
 
   _gsl_matrix_long_const_view dao_gsl_matrix_long_const_view_array = gsl_matrix_long_const_view_array( base, n1, n2 );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_long_const_view_array, sizeof(_gsl_matrix_long_const_view), dao_type__gsl_matrix_long_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_long.h */
@@ -20682,7 +20619,6 @@ static void dao__gsl_matrix_long_const_view_array_with_tda( DaoProcess *_proc, D
   const long* base = (const long*) DaoArray_ToSInt( (DaoArray*)_p[0] );
 
   _gsl_matrix_long_const_view dao_gsl_matrix_long_const_view_array_with_tda = gsl_matrix_long_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_long_const_view_array_with_tda, sizeof(_gsl_matrix_long_const_view), dao_type__gsl_matrix_long_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_long.h */
@@ -21359,7 +21295,6 @@ static void dao__gsl_matrix_uint_const_view_array( DaoProcess *_proc, DaoValue *
   const unsigned int* base = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   _gsl_matrix_uint_const_view _gsl_matrix_uint_const_view_array = gsl_matrix_uint_const_view_array( base, n1, n2 );
-  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_uint_const_view_array, sizeof(_gsl_matrix_uint_const_view), dao_type__gsl_matrix_uint_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_uint.h */
@@ -21371,7 +21306,6 @@ static void dao__gsl_matrix_uint_const_view_array_with_tda( DaoProcess *_proc, D
   const unsigned int* base = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   _gsl_matrix_uint_const_view _gsl_matrix_uint_const_view_array_with_tda = gsl_matrix_uint_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_uint_const_view_array_with_tda, sizeof(_gsl_matrix_uint_const_view), dao_type__gsl_matrix_uint_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_uint.h */
@@ -22046,7 +21980,6 @@ static void dao__gsl_matrix_int_const_view_array( DaoProcess *_proc, DaoValue *_
   const int* base = (const int*) DaoArray_ToSInt( (DaoArray*)_p[0] );
 
   _gsl_matrix_int_const_view dao_gsl_matrix_int_const_view_array = gsl_matrix_int_const_view_array( base, n1, n2 );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_int_const_view_array, sizeof(_gsl_matrix_int_const_view), dao_type__gsl_matrix_int_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_int.h */
@@ -22058,7 +21991,6 @@ static void dao__gsl_matrix_int_const_view_array_with_tda( DaoProcess *_proc, Da
   const int* base = (const int*) DaoArray_ToSInt( (DaoArray*)_p[0] );
 
   _gsl_matrix_int_const_view dao_gsl_matrix_int_const_view_array_with_tda = gsl_matrix_int_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_int_const_view_array_with_tda, sizeof(_gsl_matrix_int_const_view), dao_type__gsl_matrix_int_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_int.h */
@@ -22735,7 +22667,6 @@ static void dao__gsl_matrix_ushort_const_view_array( DaoProcess *_proc, DaoValue
   const unsigned short* base = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[0] );
 
   _gsl_matrix_ushort_const_view _gsl_matrix_ushort_const_view_array = gsl_matrix_ushort_const_view_array( base, n1, n2 );
-  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_ushort_const_view_array, sizeof(_gsl_matrix_ushort_const_view), dao_type__gsl_matrix_ushort_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_ushort.h */
@@ -22747,7 +22678,6 @@ static void dao__gsl_matrix_ushort_const_view_array_with_tda( DaoProcess *_proc,
   const unsigned short* base = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[0] );
 
   _gsl_matrix_ushort_const_view _gsl_matrix_ushort_const_view_array_with_tda = gsl_matrix_ushort_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_matrix_ushort_const_view_array_with_tda, sizeof(_gsl_matrix_ushort_const_view), dao_type__gsl_matrix_ushort_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_ushort.h */
@@ -23422,7 +23352,6 @@ static void dao__gsl_matrix_short_const_view_array( DaoProcess *_proc, DaoValue 
   const short* base = (const short*) DaoArray_ToSShort( (DaoArray*)_p[0] );
 
   _gsl_matrix_short_const_view dao_gsl_matrix_short_const_view_array = gsl_matrix_short_const_view_array( base, n1, n2 );
-  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_short_const_view_array, sizeof(_gsl_matrix_short_const_view), dao_type__gsl_matrix_short_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_short.h */
@@ -23434,7 +23363,6 @@ static void dao__gsl_matrix_short_const_view_array_with_tda( DaoProcess *_proc, 
   const short* base = (const short*) DaoArray_ToSShort( (DaoArray*)_p[0] );
 
   _gsl_matrix_short_const_view dao_gsl_matrix_short_const_view_array_with_tda = gsl_matrix_short_const_view_array_with_tda( base, n1, n2, tda );
-  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&dao_gsl_matrix_short_const_view_array_with_tda, sizeof(_gsl_matrix_short_const_view), dao_type__gsl_matrix_short_const_view );
 }
 /* /usr/local/include/gsl/gsl_matrix_short.h */
@@ -25205,8 +25133,6 @@ static void dao__cblas_sdsdot( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[2] );
 
   float _cblas_sdsdot = cblas_sdsdot( N, alpha, X, incX, Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[2] );
-  DaoArray_FromFloat( (DaoArray*)_p[4] );
   DaoProcess_PutFloat( _proc, (float) _cblas_sdsdot );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25219,8 +25145,6 @@ static void dao__cblas_dsdot( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   double _cblas_dsdot = cblas_dsdot( N, X, incX, Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
-  DaoArray_FromFloat( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _cblas_dsdot );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25233,8 +25157,6 @@ static void dao__cblas_sdot( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   float _cblas_sdot = cblas_sdot( N, X, incX, Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
-  DaoArray_FromFloat( (DaoArray*)_p[3] );
   DaoProcess_PutFloat( _proc, (float) _cblas_sdot );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25247,8 +25169,6 @@ static void dao__cblas_ddot( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   double _cblas_ddot = cblas_ddot( N, X, incX, Y, incY );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
-  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _cblas_ddot );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25307,7 +25227,6 @@ static void dao__cblas_snrm2( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   float _cblas_snrm2 = cblas_snrm2( N, X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutFloat( _proc, (float) _cblas_snrm2 );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25318,7 +25237,6 @@ static void dao__cblas_sasum( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   float _cblas_sasum = cblas_sasum( N, X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutFloat( _proc, (float) _cblas_sasum );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25329,7 +25247,6 @@ static void dao__cblas_dnrm2( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   double _cblas_dnrm2 = cblas_dnrm2( N, X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutDouble( _proc, (double) _cblas_dnrm2 );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25340,7 +25257,6 @@ static void dao__cblas_dasum( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   double _cblas_dasum = cblas_dasum( N, X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutDouble( _proc, (double) _cblas_dasum );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25391,7 +25307,6 @@ static void dao__cblas_isamax( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   size_t _cblas_isamax = cblas_isamax( N, X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _cblas_isamax );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25402,7 +25317,6 @@ static void dao__cblas_idamax( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   size_t _cblas_idamax = cblas_idamax( N, X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _cblas_idamax );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25449,7 +25363,6 @@ static void dao__cblas_scopy( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   cblas_scopy( N, X, incX, &Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutFloat( _proc, (float) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25463,7 +25376,6 @@ static void dao__cblas_saxpy( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[2] );
 
   cblas_saxpy( N, alpha, X, incX, &Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutFloat( _proc, (float) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25490,7 +25402,6 @@ static void dao__cblas_dcopy( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   cblas_dcopy( N, X, incX, &Y, incY );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutDouble( _proc, (double) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25504,7 +25415,6 @@ static void dao__cblas_daxpy( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   cblas_daxpy( N, alpha, X, incX, &Y, incY );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25633,7 +25543,6 @@ static void dao__cblas_srotm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* P = (const float*) DaoArray_ToFloat( (DaoArray*)_p[5] );
 
   cblas_srotm( N, &X, incX, &Y, incY, P );
-  DaoArray_FromFloat( (DaoArray*)_p[5] );
   DaoProcess_NewFloat( _proc, (float)X );
   DaoProcess_NewFloat( _proc, (float)Y );
   DaoProcess_PutTuple( _proc, -2 );
@@ -25696,7 +25605,6 @@ static void dao__cblas_drotm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* P = (const double*) DaoArray_ToDouble( (DaoArray*)_p[5] );
 
   cblas_drotm( N, &X, incX, &Y, incY, P );
-  DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoProcess_NewDouble( _proc, (double)X );
   DaoProcess_NewDouble( _proc, (double)Y );
   DaoProcess_PutTuple( _proc, -2 );
@@ -25780,8 +25688,6 @@ static void dao__cblas_sgemv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[5] );
 
   cblas_sgemv( order, TransA, M, N, alpha, A, lda, X, incX, beta, &Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[5] );
-  DaoArray_FromFloat( (DaoArray*)_p[7] );
   DaoProcess_PutFloat( _proc, (float) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25803,8 +25709,6 @@ static void dao__cblas_sgbmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[7] );
 
   cblas_sgbmv( order, TransA, M, N, KL, KU, alpha, A, lda, X, incX, beta, &Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[7] );
-  DaoArray_FromFloat( (DaoArray*)_p[9] );
   DaoProcess_PutFloat( _proc, (float) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25821,7 +25725,6 @@ static void dao__cblas_strmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[5] );
 
   cblas_strmv( order, Uplo, TransA, Diag, N, A, lda, &X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[5] );
   DaoProcess_PutFloat( _proc, (float) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25839,7 +25742,6 @@ static void dao__cblas_stbmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[6] );
 
   cblas_stbmv( order, Uplo, TransA, Diag, N, K, A, lda, &X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
   DaoProcess_PutFloat( _proc, (float) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25855,7 +25757,6 @@ static void dao__cblas_stpmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* Ap = (const float*) DaoArray_ToFloat( (DaoArray*)_p[5] );
 
   cblas_stpmv( order, Uplo, TransA, Diag, N, Ap, &X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[5] );
   DaoProcess_PutFloat( _proc, (float) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25872,7 +25773,6 @@ static void dao__cblas_strsv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[5] );
 
   cblas_strsv( order, Uplo, TransA, Diag, N, A, lda, &X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[5] );
   DaoProcess_PutFloat( _proc, (float) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25890,7 +25790,6 @@ static void dao__cblas_stbsv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[6] );
 
   cblas_stbsv( order, Uplo, TransA, Diag, N, K, A, lda, &X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
   DaoProcess_PutFloat( _proc, (float) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25906,7 +25805,6 @@ static void dao__cblas_stpsv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* Ap = (const float*) DaoArray_ToFloat( (DaoArray*)_p[5] );
 
   cblas_stpsv( order, Uplo, TransA, Diag, N, Ap, &X, incX );
-  DaoArray_FromFloat( (DaoArray*)_p[5] );
   DaoProcess_PutFloat( _proc, (float) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25926,8 +25824,6 @@ static void dao__cblas_dgemv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[5] );
 
   cblas_dgemv( order, TransA, M, N, alpha, A, lda, X, incX, beta, &Y, incY );
-  DaoArray_FromDouble( (DaoArray*)_p[5] );
-  DaoArray_FromDouble( (DaoArray*)_p[7] );
   DaoProcess_PutDouble( _proc, (double) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25949,8 +25845,6 @@ static void dao__cblas_dgbmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[7] );
 
   cblas_dgbmv( order, TransA, M, N, KL, KU, alpha, A, lda, X, incX, beta, &Y, incY );
-  DaoArray_FromDouble( (DaoArray*)_p[7] );
-  DaoArray_FromDouble( (DaoArray*)_p[9] );
   DaoProcess_PutDouble( _proc, (double) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25967,7 +25861,6 @@ static void dao__cblas_dtrmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[5] );
 
   cblas_dtrmv( order, Uplo, TransA, Diag, N, A, lda, &X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoProcess_PutDouble( _proc, (double) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -25985,7 +25878,6 @@ static void dao__cblas_dtbmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[6] );
 
   cblas_dtbmv( order, Uplo, TransA, Diag, N, K, A, lda, &X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutDouble( _proc, (double) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26001,7 +25893,6 @@ static void dao__cblas_dtpmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* Ap = (const double*) DaoArray_ToDouble( (DaoArray*)_p[5] );
 
   cblas_dtpmv( order, Uplo, TransA, Diag, N, Ap, &X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoProcess_PutDouble( _proc, (double) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26018,7 +25909,6 @@ static void dao__cblas_dtrsv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[5] );
 
   cblas_dtrsv( order, Uplo, TransA, Diag, N, A, lda, &X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoProcess_PutDouble( _proc, (double) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26036,7 +25926,6 @@ static void dao__cblas_dtbsv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[6] );
 
   cblas_dtbsv( order, Uplo, TransA, Diag, N, K, A, lda, &X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutDouble( _proc, (double) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26052,7 +25941,6 @@ static void dao__cblas_dtpsv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* Ap = (const double*) DaoArray_ToDouble( (DaoArray*)_p[5] );
 
   cblas_dtpsv( order, Uplo, TransA, Diag, N, Ap, &X, incX );
-  DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoProcess_PutDouble( _proc, (double) X );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26327,8 +26215,6 @@ static void dao__cblas_ssymv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[4] );
 
   cblas_ssymv( order, Uplo, N, alpha, A, lda, X, incX, beta, &Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[4] );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
   DaoProcess_PutFloat( _proc, (float) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26348,8 +26234,6 @@ static void dao__cblas_ssbmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[5] );
 
   cblas_ssbmv( order, Uplo, N, K, alpha, A, lda, X, incX, beta, &Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[5] );
-  DaoArray_FromFloat( (DaoArray*)_p[7] );
   DaoProcess_PutFloat( _proc, (float) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26367,8 +26251,6 @@ static void dao__cblas_sspmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* Ap = (const float*) DaoArray_ToFloat( (DaoArray*)_p[4] );
 
   cblas_sspmv( order, Uplo, N, alpha, Ap, X, incX, beta, &Y, incY );
-  DaoArray_FromFloat( (DaoArray*)_p[4] );
-  DaoArray_FromFloat( (DaoArray*)_p[5] );
   DaoProcess_PutFloat( _proc, (float) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26386,8 +26268,6 @@ static void dao__cblas_sger( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[4] );
 
   cblas_sger( order, M, N, alpha, X, incX, Y, incY, &A, lda );
-  DaoArray_FromFloat( (DaoArray*)_p[4] );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
   DaoProcess_PutFloat( _proc, (float) A );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26403,7 +26283,6 @@ static void dao__cblas_ssyr( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[4] );
 
   cblas_ssyr( order, Uplo, N, alpha, X, incX, &A, lda );
-  DaoArray_FromFloat( (DaoArray*)_p[4] );
   DaoProcess_PutFloat( _proc, (float) A );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26418,7 +26297,6 @@ static void dao__cblas_sspr( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[4] );
 
   cblas_sspr( order, Uplo, N, alpha, X, incX, &Ap );
-  DaoArray_FromFloat( (DaoArray*)_p[4] );
   DaoProcess_PutFloat( _proc, (float) Ap );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26436,8 +26314,6 @@ static void dao__cblas_ssyr2( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[4] );
 
   cblas_ssyr2( order, Uplo, N, alpha, X, incX, Y, incY, &A, lda );
-  DaoArray_FromFloat( (DaoArray*)_p[4] );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
   DaoProcess_PutFloat( _proc, (float) A );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26454,8 +26330,6 @@ static void dao__cblas_sspr2( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* X = (const float*) DaoArray_ToFloat( (DaoArray*)_p[4] );
 
   cblas_sspr2( order, Uplo, N, alpha, X, incX, Y, incY, &A );
-  DaoArray_FromFloat( (DaoArray*)_p[4] );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
   DaoProcess_PutFloat( _proc, (float) A );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26474,8 +26348,6 @@ static void dao__cblas_dsymv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[4] );
 
   cblas_dsymv( order, Uplo, N, alpha, A, lda, X, incX, beta, &Y, incY );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutDouble( _proc, (double) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26495,8 +26367,6 @@ static void dao__cblas_dsbmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[5] );
 
   cblas_dsbmv( order, Uplo, N, K, alpha, A, lda, X, incX, beta, &Y, incY );
-  DaoArray_FromDouble( (DaoArray*)_p[5] );
-  DaoArray_FromDouble( (DaoArray*)_p[7] );
   DaoProcess_PutDouble( _proc, (double) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26514,8 +26384,6 @@ static void dao__cblas_dspmv( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* Ap = (const double*) DaoArray_ToDouble( (DaoArray*)_p[4] );
 
   cblas_dspmv( order, Uplo, N, alpha, Ap, X, incX, beta, &Y, incY );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
-  DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoProcess_PutDouble( _proc, (double) Y );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26533,8 +26401,6 @@ static void dao__cblas_dger( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[4] );
 
   cblas_dger( order, M, N, alpha, X, incX, Y, incY, &A, lda );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutDouble( _proc, (double) A );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26550,7 +26416,6 @@ static void dao__cblas_dsyr( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[4] );
 
   cblas_dsyr( order, Uplo, N, alpha, X, incX, &A, lda );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoProcess_PutDouble( _proc, (double) A );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26565,7 +26430,6 @@ static void dao__cblas_dspr( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[4] );
 
   cblas_dspr( order, Uplo, N, alpha, X, incX, &Ap );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoProcess_PutDouble( _proc, (double) Ap );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26583,8 +26447,6 @@ static void dao__cblas_dsyr2( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[4] );
 
   cblas_dsyr2( order, Uplo, N, alpha, X, incX, Y, incY, &A, lda );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutDouble( _proc, (double) A );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26601,8 +26463,6 @@ static void dao__cblas_dspr2( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* X = (const double*) DaoArray_ToDouble( (DaoArray*)_p[4] );
 
   cblas_dspr2( order, Uplo, N, alpha, X, incX, Y, incY, &A );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutDouble( _proc, (double) A );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26906,8 +26766,6 @@ static void dao__cblas_sgemm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[7] );
 
   cblas_sgemm( Order, TransA, TransB, M, N, K, alpha, A, lda, B, ldb, beta, &C, ldc );
-  DaoArray_FromFloat( (DaoArray*)_p[7] );
-  DaoArray_FromFloat( (DaoArray*)_p[9] );
   DaoProcess_PutFloat( _proc, (float) C );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26928,8 +26786,6 @@ static void dao__cblas_ssymm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[6] );
 
   cblas_ssymm( Order, Side, Uplo, M, N, alpha, A, lda, B, ldb, beta, &C, ldc );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
-  DaoArray_FromFloat( (DaoArray*)_p[8] );
   DaoProcess_PutFloat( _proc, (float) C );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26948,7 +26804,6 @@ static void dao__cblas_ssyrk( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[6] );
 
   cblas_ssyrk( Order, Uplo, Trans, N, K, alpha, A, lda, beta, &C, ldc );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
   DaoProcess_PutFloat( _proc, (float) C );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26969,8 +26824,6 @@ static void dao__cblas_ssyr2k( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[6] );
 
   cblas_ssyr2k( Order, Uplo, Trans, N, K, alpha, A, lda, B, ldb, beta, &C, ldc );
-  DaoArray_FromFloat( (DaoArray*)_p[6] );
-  DaoArray_FromFloat( (DaoArray*)_p[8] );
   DaoProcess_PutFloat( _proc, (float) C );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -26990,7 +26843,6 @@ static void dao__cblas_strmm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[8] );
 
   cblas_strmm( Order, Side, Uplo, TransA, Diag, M, N, alpha, A, lda, &B, ldb );
-  DaoArray_FromFloat( (DaoArray*)_p[8] );
   DaoProcess_PutFloat( _proc, (float) B );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -27010,7 +26862,6 @@ static void dao__cblas_strsm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const float* A = (const float*) DaoArray_ToFloat( (DaoArray*)_p[8] );
 
   cblas_strsm( Order, Side, Uplo, TransA, Diag, M, N, alpha, A, lda, &B, ldb );
-  DaoArray_FromFloat( (DaoArray*)_p[8] );
   DaoProcess_PutFloat( _proc, (float) B );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -27032,8 +26883,6 @@ static void dao__cblas_dgemm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[7] );
 
   cblas_dgemm( Order, TransA, TransB, M, N, K, alpha, A, lda, B, ldb, beta, &C, ldc );
-  DaoArray_FromDouble( (DaoArray*)_p[7] );
-  DaoArray_FromDouble( (DaoArray*)_p[9] );
   DaoProcess_PutDouble( _proc, (double) C );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -27054,8 +26903,6 @@ static void dao__cblas_dsymm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[6] );
 
   cblas_dsymm( Order, Side, Uplo, M, N, alpha, A, lda, B, ldb, beta, &C, ldc );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
-  DaoArray_FromDouble( (DaoArray*)_p[8] );
   DaoProcess_PutDouble( _proc, (double) C );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -27074,7 +26921,6 @@ static void dao__cblas_dsyrk( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[6] );
 
   cblas_dsyrk( Order, Uplo, Trans, N, K, alpha, A, lda, beta, &C, ldc );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutDouble( _proc, (double) C );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -27095,8 +26941,6 @@ static void dao__cblas_dsyr2k( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[6] );
 
   cblas_dsyr2k( Order, Uplo, Trans, N, K, alpha, A, lda, B, ldb, beta, &C, ldc );
-  DaoArray_FromDouble( (DaoArray*)_p[6] );
-  DaoArray_FromDouble( (DaoArray*)_p[8] );
   DaoProcess_PutDouble( _proc, (double) C );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -27116,7 +26960,6 @@ static void dao__cblas_dtrmm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[8] );
 
   cblas_dtrmm( Order, Side, Uplo, TransA, Diag, M, N, alpha, A, lda, &B, ldb );
-  DaoArray_FromDouble( (DaoArray*)_p[8] );
   DaoProcess_PutDouble( _proc, (double) B );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -27136,7 +26979,6 @@ static void dao__cblas_dtrsm( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* A = (const double*) DaoArray_ToDouble( (DaoArray*)_p[8] );
 
   cblas_dtrsm( Order, Side, Uplo, TransA, Diag, M, N, alpha, A, lda, &B, ldb );
-  DaoArray_FromDouble( (DaoArray*)_p[8] );
   DaoProcess_PutDouble( _proc, (double) B );
 }
 /* /usr/local/include/gsl/gsl_cblas.h */
@@ -27827,6 +27669,7 @@ static void dao__gsl_blas_srotm( DaoProcess *_proc, DaoValue *_p[], int _n )
   float* P = (float*) DaoArray_ToFloat( (DaoArray*)_p[2] );
 
   int _gsl_blas_srotm = gsl_blas_srotm( X, Y, P );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_blas_srotm );
 }
 /* /usr/local/include/gsl/gsl_blas.h */
@@ -27879,6 +27722,7 @@ static void dao__gsl_blas_drotm( DaoProcess *_proc, DaoValue *_p[], int _n )
   double* P = (double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_blas_drotm = gsl_blas_drotm( X, Y, P );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_blas_drotm );
 }
 /* /usr/local/include/gsl/gsl_blas.h */
@@ -30758,6 +30602,7 @@ static void dao__gsl_dft_complex_forward( DaoProcess *_proc, DaoValue *_p[], int
   double* result = (double*) DaoArray_ToDouble( (DaoArray*)_p[3] );
 
   int _gsl_dft_complex_forward = gsl_dft_complex_forward( data, stride, n, result );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_dft_complex_forward );
 }
@@ -30770,6 +30615,7 @@ static void dao__gsl_dft_complex_backward( DaoProcess *_proc, DaoValue *_p[], in
   double* result = (double*) DaoArray_ToDouble( (DaoArray*)_p[3] );
 
   int _gsl_dft_complex_backward = gsl_dft_complex_backward( data, stride, n, result );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_dft_complex_backward );
 }
@@ -30782,6 +30628,7 @@ static void dao__gsl_dft_complex_inverse( DaoProcess *_proc, DaoValue *_p[], int
   double* result = (double*) DaoArray_ToDouble( (DaoArray*)_p[3] );
 
   int _gsl_dft_complex_inverse = gsl_dft_complex_inverse( data, stride, n, result );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_dft_complex_inverse );
 }
@@ -30795,6 +30642,7 @@ static void dao__gsl_dft_complex_transform( DaoProcess *_proc, DaoValue *_p[], i
   const gsl_fft_direction sign = (const gsl_fft_direction) DaoValue_TryGetInteger( _p[4] );
 
   int _gsl_dft_complex_transform = gsl_dft_complex_transform( data, stride, n, result, sign );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_dft_complex_transform );
 }
@@ -30807,6 +30655,7 @@ static void dao__gsl_dft_complex_float_forward( DaoProcess *_proc, DaoValue *_p[
   float* result = (float*) DaoArray_ToFloat( (DaoArray*)_p[3] );
 
   int _gsl_dft_complex_float_forward = gsl_dft_complex_float_forward( data, stride, n, result );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoArray_FromFloat( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_dft_complex_float_forward );
 }
@@ -30819,6 +30668,7 @@ static void dao__gsl_dft_complex_float_backward( DaoProcess *_proc, DaoValue *_p
   float* result = (float*) DaoArray_ToFloat( (DaoArray*)_p[3] );
 
   int _gsl_dft_complex_float_backward = gsl_dft_complex_float_backward( data, stride, n, result );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoArray_FromFloat( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_dft_complex_float_backward );
 }
@@ -30831,6 +30681,7 @@ static void dao__gsl_dft_complex_float_inverse( DaoProcess *_proc, DaoValue *_p[
   float* result = (float*) DaoArray_ToFloat( (DaoArray*)_p[3] );
 
   int _gsl_dft_complex_float_inverse = gsl_dft_complex_float_inverse( data, stride, n, result );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoArray_FromFloat( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_dft_complex_float_inverse );
 }
@@ -30844,6 +30695,7 @@ static void dao__gsl_dft_complex_float_transform( DaoProcess *_proc, DaoValue *_
   const gsl_fft_direction sign = (const gsl_fft_direction) DaoValue_TryGetInteger( _p[4] );
 
   int _gsl_dft_complex_float_transform = gsl_dft_complex_float_transform( data, stride, n, result, sign );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoArray_FromFloat( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_dft_complex_float_transform );
 }
@@ -31963,6 +31815,7 @@ static void dao__gsl_fft_real_unpack( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   int _gsl_fft_real_unpack = gsl_fft_real_unpack( real_coefficient, complex_coefficient, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_fft_real_unpack );
 }
@@ -32062,6 +31915,7 @@ static void dao__gsl_fft_halfcomplex_unpack( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   int _gsl_fft_halfcomplex_unpack = gsl_fft_halfcomplex_unpack( halfcomplex_coefficient, complex_coefficient, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_fft_halfcomplex_unpack );
 }
@@ -32074,6 +31928,7 @@ static void dao__gsl_fft_halfcomplex_radix2_unpack( DaoProcess *_proc, DaoValue 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   int _gsl_fft_halfcomplex_radix2_unpack = gsl_fft_halfcomplex_radix2_unpack( halfcomplex_coefficient, complex_coefficient, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_fft_halfcomplex_radix2_unpack );
 }
@@ -32140,6 +31995,7 @@ static void dao__gsl_fft_real_float_unpack( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   int _gsl_fft_real_float_unpack = gsl_fft_real_float_unpack( real_float_coefficient, complex_coefficient, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_fft_real_float_unpack );
 }
@@ -32239,6 +32095,7 @@ static void dao__gsl_fft_halfcomplex_float_unpack( DaoProcess *_proc, DaoValue *
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   int _gsl_fft_halfcomplex_float_unpack = gsl_fft_halfcomplex_float_unpack( halfcomplex_coefficient, complex_coefficient, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_fft_halfcomplex_float_unpack );
 }
@@ -32251,6 +32108,7 @@ static void dao__gsl_fft_halfcomplex_float_radix2_unpack( DaoProcess *_proc, Dao
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   int _gsl_fft_halfcomplex_float_radix2_unpack = gsl_fft_halfcomplex_float_radix2_unpack( halfcomplex_coefficient, complex_coefficient, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_fft_halfcomplex_float_radix2_unpack );
 }
@@ -32270,8 +32128,6 @@ static void dao__gsl_fit_linear( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* x = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int _gsl_fit_linear = gsl_fit_linear( x, xstride, y, ystride, n, &c0, &c1, &cov00, &cov01, &cov11, &sumsq );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_fit_linear );
   DaoProcess_NewDouble( _proc, (double)c0 );
   DaoProcess_NewDouble( _proc, (double)c1 );
@@ -32299,9 +32155,6 @@ static void dao__gsl_fit_wlinear( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* x = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int dao_gsl_fit_wlinear = gsl_fit_wlinear( x, xstride, w, wstride, y, ystride, n, &c0, &c1, &cov00, &cov01, &cov11, &chisq );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoProcess_NewInteger( _proc, (daoint) dao_gsl_fit_wlinear );
   DaoProcess_NewDouble( _proc, (double)c0 );
   DaoProcess_NewDouble( _proc, (double)c1 );
@@ -32342,8 +32195,6 @@ static void dao__gsl_fit_mul( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* x = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int _gsl_fit_mul = gsl_fit_mul( x, xstride, y, ystride, n, &c1, &cov11, &sumsq );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_fit_mul );
   DaoProcess_NewDouble( _proc, (double)c1 );
   DaoProcess_NewDouble( _proc, (double)cov11 );
@@ -32365,9 +32216,6 @@ static void dao__gsl_fit_wmul( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* x = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int dao_gsl_fit_wmul = gsl_fit_wmul( x, xstride, w, wstride, y, ystride, n, &c1, &cov11, &sumsq );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
-  DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoProcess_NewInteger( _proc, (daoint) dao_gsl_fit_wmul );
   DaoProcess_NewDouble( _proc, (double)c1 );
   DaoProcess_NewDouble( _proc, (double)cov11 );
@@ -32729,6 +32577,7 @@ static void dao__gsl_histogram_set_ranges( DaoProcess *_proc, DaoValue *_p[], in
   unsigned long size = (unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   int _gsl_histogram_set_ranges = gsl_histogram_set_ranges( h, range, size );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_histogram_set_ranges );
 }
 /* /usr/local/include/gsl/gsl_histogram.h */
@@ -33151,6 +33000,8 @@ static void dao__gsl_histogram2d_set_ranges( DaoProcess *_proc, DaoValue *_p[], 
   unsigned long ysize = (unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   int _gsl_histogram2d_set_ranges = gsl_histogram2d_set_ranges( h, xrange, xsize, yrange, ysize );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_histogram2d_set_ranges );
 }
 /* /usr/local/include/gsl/gsl_histogram2d.h */
@@ -33405,7 +33256,6 @@ static void dao__gsl_ieee_printf_float( DaoProcess *_proc, DaoValue *_p[], int _
   const float* x = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   gsl_ieee_printf_float( x );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
 }
 /* /usr/local/include/gsl/gsl_ieee_utils.h */
 static void dao__gsl_ieee_printf_double( DaoProcess *_proc, DaoValue *_p[], int _n )
@@ -33413,7 +33263,6 @@ static void dao__gsl_ieee_printf_double( DaoProcess *_proc, DaoValue *_p[], int 
   const double* x = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   gsl_ieee_printf_double( x );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
 }
 /* /usr/local/include/gsl/gsl_ieee_utils.h */
 static void dao__gsl_ieee_fprintf_float( DaoProcess *_proc, DaoValue *_p[], int _n )
@@ -33422,7 +33271,6 @@ static void dao__gsl_ieee_fprintf_float( DaoProcess *_proc, DaoValue *_p[], int 
   const float* x = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   gsl_ieee_fprintf_float( stream, x );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
 }
 /* /usr/local/include/gsl/gsl_ieee_utils.h */
 static void dao__gsl_ieee_fprintf_double( DaoProcess *_proc, DaoValue *_p[], int _n )
@@ -33431,7 +33279,6 @@ static void dao__gsl_ieee_fprintf_double( DaoProcess *_proc, DaoValue *_p[], int
   const double* x = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   gsl_ieee_fprintf_double( stream, x );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
 }
 /* /usr/local/include/gsl/gsl_ieee_utils.h */
 static void dao__gsl_ieee_float_to_rep( DaoProcess *_proc, DaoValue *_p[], int _n )
@@ -33440,7 +33287,6 @@ static void dao__gsl_ieee_float_to_rep( DaoProcess *_proc, DaoValue *_p[], int _
   const float* x = (const float*) DaoArray_ToFloat( (DaoArray*)_p[0] );
 
   gsl_ieee_float_to_rep( x, r );
-  DaoArray_FromFloat( (DaoArray*)_p[0] );
 }
 /* /usr/local/include/gsl/gsl_ieee_utils.h */
 static void dao__gsl_ieee_double_to_rep( DaoProcess *_proc, DaoValue *_p[], int _n )
@@ -33449,7 +33295,6 @@ static void dao__gsl_ieee_double_to_rep( DaoProcess *_proc, DaoValue *_p[], int 
   const double* x = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   gsl_ieee_double_to_rep( x, r );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
 }
 /* /usr/local/include/gsl/gsl_ieee_utils.h */
 static void dao__gsl_ieee_env_setup( DaoProcess *_proc, DaoValue *_p[], int _n )
@@ -33705,6 +33550,9 @@ static void dao__gsl_integration_qk( DaoProcess *_proc, DaoValue *_p[], int _n )
   double resasc = (double) DaoValue_TryGetDouble( _p[12] );
 
   gsl_integration_qk( n, xgk, wg, wgk, fv1, fv2, f, a, b, &result, &abserr, &resabs, &resasc );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoProcess_NewDouble( _proc, (double)result );
@@ -34039,6 +33887,8 @@ static void dao__gsl_interp_init( DaoProcess *_proc, DaoValue *_p[], int _n )
   unsigned long size = (unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   int _gsl_interp_init = gsl_interp_init( obj, xa, ya, size );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_interp_init );
 }
 /* /usr/local/include/gsl/gsl_interp.h */
@@ -34076,6 +33926,8 @@ static void dao__gsl_interp_eval_e( DaoProcess *_proc, DaoValue *_p[], int _n )
   double y = (double) DaoValue_TryGetDouble( _p[5] );
 
   int _gsl_interp_eval_e = gsl_interp_eval_e( obj, xa, ya, x, a, &y );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_interp_eval_e );
   DaoProcess_NewDouble( _proc, (double)y );
   DaoProcess_PutTuple( _proc, -2 );
@@ -34090,6 +33942,8 @@ static void dao__gsl_interp_eval( DaoProcess *_proc, DaoValue *_p[], int _n )
   gsl_interp_accel* a = (gsl_interp_accel*) DaoValue_TryCastCdata( _p[4], dao_type_gsl_interp_accel );
 
   double _gsl_interp_eval = gsl_interp_eval( obj, xa, ya, x, a );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_interp_eval );
 }
 /* /usr/local/include/gsl/gsl_interp.h */
@@ -34103,6 +33957,8 @@ static void dao__gsl_interp_eval_deriv_e( DaoProcess *_proc, DaoValue *_p[], int
   double d = (double) DaoValue_TryGetDouble( _p[5] );
 
   int _gsl_interp_eval_deriv_e = gsl_interp_eval_deriv_e( obj, xa, ya, x, a, &d );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_interp_eval_deriv_e );
   DaoProcess_NewDouble( _proc, (double)d );
   DaoProcess_PutTuple( _proc, -2 );
@@ -34117,6 +33973,8 @@ static void dao__gsl_interp_eval_deriv( DaoProcess *_proc, DaoValue *_p[], int _
   gsl_interp_accel* a = (gsl_interp_accel*) DaoValue_TryCastCdata( _p[4], dao_type_gsl_interp_accel );
 
   double _gsl_interp_eval_deriv = gsl_interp_eval_deriv( obj, xa, ya, x, a );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_interp_eval_deriv );
 }
 /* /usr/local/include/gsl/gsl_interp.h */
@@ -34130,6 +33988,8 @@ static void dao__gsl_interp_eval_deriv2_e( DaoProcess *_proc, DaoValue *_p[], in
   double d2 = (double) DaoValue_TryGetDouble( _p[5] );
 
   int _gsl_interp_eval_deriv2_e = gsl_interp_eval_deriv2_e( obj, xa, ya, x, a, &d2 );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_interp_eval_deriv2_e );
   DaoProcess_NewDouble( _proc, (double)d2 );
   DaoProcess_PutTuple( _proc, -2 );
@@ -34144,6 +34004,8 @@ static void dao__gsl_interp_eval_deriv2( DaoProcess *_proc, DaoValue *_p[], int 
   gsl_interp_accel* a = (gsl_interp_accel*) DaoValue_TryCastCdata( _p[4], dao_type_gsl_interp_accel );
 
   double _gsl_interp_eval_deriv2 = gsl_interp_eval_deriv2( obj, xa, ya, x, a );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_interp_eval_deriv2 );
 }
 /* /usr/local/include/gsl/gsl_interp.h */
@@ -34158,6 +34020,8 @@ static void dao__gsl_interp_eval_integ_e( DaoProcess *_proc, DaoValue *_p[], int
   double result = (double) DaoValue_TryGetDouble( _p[6] );
 
   int _gsl_interp_eval_integ_e = gsl_interp_eval_integ_e( obj, xa, ya, a, b, acc, &result );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_interp_eval_integ_e );
   DaoProcess_NewDouble( _proc, (double)result );
   DaoProcess_PutTuple( _proc, -2 );
@@ -34173,6 +34037,8 @@ static void dao__gsl_interp_eval_integ( DaoProcess *_proc, DaoValue *_p[], int _
   gsl_interp_accel* acc = (gsl_interp_accel*) DaoValue_TryCastCdata( _p[5], dao_type_gsl_interp_accel );
 
   double _gsl_interp_eval_integ = gsl_interp_eval_integ( obj, xa, ya, a, b, acc );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_interp_eval_integ );
 }
 /* /usr/local/include/gsl/gsl_interp.h */
@@ -34191,6 +34057,7 @@ static void dao__gsl_interp_bsearch( DaoProcess *_proc, DaoValue *_p[], int _n )
   unsigned long index_hi = (unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   size_t _gsl_interp_bsearch = gsl_interp_bsearch( x_array, x, index_lo, index_hi );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_interp_bsearch );
 }
 /* /usr/local/include/gsl/gsl_interp.h */
@@ -34202,6 +34069,7 @@ static void dao__gsl_interp_accel_find( DaoProcess *_proc, DaoValue *_p[], int _
   double x = (double) DaoValue_TryGetDouble( _p[3] );
 
   size_t _gsl_interp_accel_find = gsl_interp_accel_find( a, x_array, size, x );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_interp_accel_find );
 }
 /* /usr/local/include/gsl/gsl_linalg.h */
@@ -35656,6 +35524,8 @@ static void dao__gsl_monte_plain_integrate( DaoProcess *_proc, DaoValue *_p[], i
   double abserr = (double) DaoValue_TryGetDouble( _p[8] );
 
   int _gsl_monte_plain_integrate = gsl_monte_plain_integrate( f, xl, xu, dim, calls, r, state, &result, &abserr );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_monte_plain_integrate );
   DaoProcess_NewDouble( _proc, (double)result );
   DaoProcess_NewDouble( _proc, (double)abserr );
@@ -35698,6 +35568,8 @@ static void dao__gsl_monte_miser_integrate( DaoProcess *_proc, DaoValue *_p[], i
   double abserr = (double) DaoValue_TryGetDouble( _p[8] );
 
   int _gsl_monte_miser_integrate = gsl_monte_miser_integrate( f, xl, xh, dim, calls, r, state, &result, &abserr );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_monte_miser_integrate );
   DaoProcess_NewDouble( _proc, (double)result );
   DaoProcess_NewDouble( _proc, (double)abserr );
@@ -36714,6 +36586,7 @@ static void dao__gsl_odeiv_step_apply( DaoProcess *_proc, DaoValue *_p[], int _n
   int _gsl_odeiv_step_apply = gsl_odeiv_step_apply( s, t, h, y, yerr, dydt_in, dydt_out, dydt );
   DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoArray_FromDouble( (DaoArray*)_p[4] );
+  DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_odeiv_step_apply );
 }
@@ -36755,6 +36628,9 @@ static void dao__gsl_odeiv_control_hadjust( DaoProcess *_proc, DaoValue *_p[], i
   double h = (double) DaoValue_TryGetDouble( _p[5] );
 
   int _gsl_odeiv_control_hadjust = gsl_odeiv_control_hadjust( c, s, y, yerr, dydt, &h );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
+  DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_odeiv_control_hadjust );
   DaoProcess_NewDouble( _proc, (double)h );
   DaoProcess_PutTuple( _proc, -2 );
@@ -36807,6 +36683,7 @@ static void dao__gsl_odeiv_control_scaled_new( DaoProcess *_proc, DaoValue *_p[]
   unsigned long dim = (unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   gsl_odeiv_control* _gsl_odeiv_control_scaled_new = gsl_odeiv_control_scaled_new( eps_abs, eps_rel, a_y, a_dydt, scale_abs, dim );
+  DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoProcess_WrapCdata( _proc, (void*) _gsl_odeiv_control_scaled_new, dao_type_gsl_odeiv_control );
 }
 /* /usr/local/include/gsl/gsl_odeiv.h */
@@ -36906,6 +36783,7 @@ static void dao__gsl_odeiv2_step_apply( DaoProcess *_proc, DaoValue *_p[], int _
   int _gsl_odeiv2_step_apply = gsl_odeiv2_step_apply( s, t, h, y, yerr, dydt_in, dydt_out, dydt );
   DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoArray_FromDouble( (DaoArray*)_p[4] );
+  DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoArray_FromDouble( (DaoArray*)_p[6] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_odeiv2_step_apply );
 }
@@ -36956,6 +36834,9 @@ static void dao__gsl_odeiv2_control_hadjust( DaoProcess *_proc, DaoValue *_p[], 
   double h = (double) DaoValue_TryGetDouble( _p[5] );
 
   int _gsl_odeiv2_control_hadjust = gsl_odeiv2_control_hadjust( c, s, y, yerr, dydt, &h );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
+  DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_odeiv2_control_hadjust );
   DaoProcess_NewDouble( _proc, (double)h );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37032,6 +36913,7 @@ static void dao__gsl_odeiv2_control_scaled_new( DaoProcess *_proc, DaoValue *_p[
   unsigned long dim = (unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   struct gsl_odeiv2_control_struct* _gsl_odeiv2_control_scaled_new = gsl_odeiv2_control_scaled_new( eps_abs, eps_rel, a_y, a_dydt, scale_abs, dim );
+  DaoArray_FromDouble( (DaoArray*)_p[4] );
   DaoProcess_WrapCdata( _proc, (void*) _gsl_odeiv2_control_scaled_new, dao_type_gsl_odeiv2_control_struct );
 }
 /* /usr/local/include/gsl/gsl_odeiv2.h */
@@ -37139,6 +37021,7 @@ static void dao__gsl_odeiv2_driver_alloc_scaled_new( DaoProcess *_proc, DaoValue
   double* scale_abs = (double*) DaoArray_ToDouble( (DaoArray*)_p[7] );
 
   struct gsl_odeiv2_driver_struct* _gsl_odeiv2_driver_alloc_scaled_new = gsl_odeiv2_driver_alloc_scaled_new( sys, T, hstart, epsabs, epsrel, a_y, a_dydt, scale_abs );
+  DaoArray_FromDouble( (DaoArray*)_p[7] );
   DaoProcess_WrapCdata( _proc, (void*) _gsl_odeiv2_driver_alloc_scaled_new, dao_type_gsl_odeiv2_driver_struct );
 }
 /* /usr/local/include/gsl/gsl_odeiv2.h */
@@ -37235,7 +37118,6 @@ static void dao__gsl_permute_complex_long_double( DaoProcess *_proc, DaoValue *_
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_complex_long_double = gsl_permute_complex_long_double( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_complex_long_double );
   DaoProcess_NewDouble( _proc, (double)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37249,7 +37131,6 @@ static void dao__gsl_permute_complex_long_double_inverse( DaoProcess *_proc, Dao
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_complex_long_double_inverse = gsl_permute_complex_long_double_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_complex_long_double_inverse );
   DaoProcess_NewDouble( _proc, (double)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37263,7 +37144,6 @@ static void dao__gsl_permute_complex( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_complex = gsl_permute_complex( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_complex );
   DaoProcess_NewDouble( _proc, (double)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37277,7 +37157,6 @@ static void dao__gsl_permute_complex_inverse( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_complex_inverse = gsl_permute_complex_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_complex_inverse );
   DaoProcess_NewDouble( _proc, (double)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37291,7 +37170,6 @@ static void dao__gsl_permute_complex_float( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_complex_float = gsl_permute_complex_float( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_complex_float );
   DaoProcess_NewFloat( _proc, (float)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37305,7 +37183,6 @@ static void dao__gsl_permute_complex_float_inverse( DaoProcess *_proc, DaoValue 
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_complex_float_inverse = gsl_permute_complex_float_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_complex_float_inverse );
   DaoProcess_NewFloat( _proc, (float)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37319,7 +37196,6 @@ static void dao__gsl_permute_long_double( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_long_double = gsl_permute_long_double( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_long_double );
   DaoProcess_NewDouble( _proc, (double)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37333,7 +37209,6 @@ static void dao__gsl_permute_long_double_inverse( DaoProcess *_proc, DaoValue *_
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_long_double_inverse = gsl_permute_long_double_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_long_double_inverse );
   DaoProcess_NewDouble( _proc, (double)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37347,7 +37222,6 @@ static void dao__gsl_permute( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute = gsl_permute( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute );
   DaoProcess_NewDouble( _proc, (double)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37361,7 +37235,6 @@ static void dao__gsl_permute_inverse( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_inverse = gsl_permute_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_inverse );
   DaoProcess_NewDouble( _proc, (double)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37375,7 +37248,6 @@ static void dao__gsl_permute_float( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_float = gsl_permute_float( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_float );
   DaoProcess_NewFloat( _proc, (float)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37389,7 +37261,6 @@ static void dao__gsl_permute_float_inverse( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_float_inverse = gsl_permute_float_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_float_inverse );
   DaoProcess_NewFloat( _proc, (float)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37403,7 +37274,6 @@ static void dao__gsl_permute_ulong( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_ulong = gsl_permute_ulong( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_ulong );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37417,7 +37287,6 @@ static void dao__gsl_permute_ulong_inverse( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_ulong_inverse = gsl_permute_ulong_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_ulong_inverse );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37431,7 +37300,6 @@ static void dao__gsl_permute_long( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_long = gsl_permute_long( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_long );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37445,7 +37313,6 @@ static void dao__gsl_permute_long_inverse( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_long_inverse = gsl_permute_long_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_long_inverse );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37459,7 +37326,6 @@ static void dao__gsl_permute_uint( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_uint = gsl_permute_uint( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_uint );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37473,7 +37339,6 @@ static void dao__gsl_permute_uint_inverse( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_uint_inverse = gsl_permute_uint_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_uint_inverse );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37487,7 +37352,6 @@ static void dao__gsl_permute_int( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_int = gsl_permute_int( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_int );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37501,7 +37365,6 @@ static void dao__gsl_permute_int_inverse( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_int_inverse = gsl_permute_int_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_int_inverse );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37515,7 +37378,6 @@ static void dao__gsl_permute_ushort( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_ushort = gsl_permute_ushort( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_ushort );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37529,7 +37391,6 @@ static void dao__gsl_permute_ushort_inverse( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_ushort_inverse = gsl_permute_ushort_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_ushort_inverse );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37543,7 +37404,6 @@ static void dao__gsl_permute_short( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_short = gsl_permute_short( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_short );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37557,7 +37417,6 @@ static void dao__gsl_permute_short_inverse( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_short_inverse = gsl_permute_short_inverse( p, &data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_permute_short_inverse );
   DaoProcess_NewInteger( _proc, (daoint)data );
   DaoProcess_PutTuple( _proc, -2 );
@@ -37571,7 +37430,6 @@ static void dao__gsl_permute_uchar( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_uchar = gsl_permute_uchar( p, data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_permute_uchar );
 }
 /* /usr/local/include/gsl/gsl_permute_uchar.h */
@@ -37583,7 +37441,6 @@ static void dao__gsl_permute_uchar_inverse( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_uchar_inverse = gsl_permute_uchar_inverse( p, data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_permute_uchar_inverse );
 }
 /* /usr/local/include/gsl/gsl_permute_char.h */
@@ -37595,7 +37452,6 @@ static void dao__gsl_permute_char( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_char = gsl_permute_char( p, data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_permute_char );
 }
 /* /usr/local/include/gsl/gsl_permute_char.h */
@@ -37607,7 +37463,6 @@ static void dao__gsl_permute_char_inverse( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long* p = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[0] );
 
   int _gsl_permute_char_inverse = gsl_permute_char_inverse( p, data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_permute_char_inverse );
 }
 /* /usr/local/include/gsl/gsl_permute_vector_complex_long_double.h */
@@ -37870,6 +37725,7 @@ static void dao__gsl_poly_eval( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double x = (const double) DaoValue_TryGetDouble( _p[2] );
 
   double _gsl_poly_eval = gsl_poly_eval( c, len, x );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_poly_eval );
 }
 /* /usr/local/include/gsl/gsl_poly.h */
@@ -37880,6 +37736,7 @@ static void dao__gsl_poly_complex_eval( DaoProcess *_proc, DaoValue *_p[], int _
   gsl_complex* z = (gsl_complex*) DaoValue_TryCastCdata( _p[2], dao_type_gsl_complex );
 
   gsl_complex _gsl_poly_complex_eval = gsl_poly_complex_eval( c, len, *z );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_CopyCdata( _proc, (void*)&_gsl_poly_complex_eval, sizeof(gsl_complex), dao_type_gsl_complex );
 }
 /* /usr/local/include/gsl/gsl_poly.h */
@@ -37892,6 +37749,7 @@ static void dao__gsl_poly_eval_derivs( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long lenres = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   int _gsl_poly_eval_derivs = gsl_poly_eval_derivs( c, lenc, x, res, lenres );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_poly_eval_derivs );
 }
@@ -37905,6 +37763,8 @@ static void dao__gsl_poly_dd_init( DaoProcess *_proc, DaoValue *_p[], int _n )
 
   int _gsl_poly_dd_init = gsl_poly_dd_init( dd, x, y, size );
   DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_poly_dd_init );
 }
 /* /usr/local/include/gsl/gsl_poly.h */
@@ -37916,6 +37776,8 @@ static void dao__gsl_poly_dd_eval( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double x = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_poly_dd_eval = gsl_poly_dd_eval( dd, xa, size, x );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutDouble( _proc, (double) _gsl_poly_dd_eval );
 }
 /* /usr/local/include/gsl/gsl_poly.h */
@@ -37930,6 +37792,8 @@ static void dao__gsl_poly_dd_taylor( DaoProcess *_proc, DaoValue *_p[], int _n )
 
   int _gsl_poly_dd_taylor = gsl_poly_dd_taylor( c, xp, dd, x, size, w );
   DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoArray_FromDouble( (DaoArray*)_p[5] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_poly_dd_taylor );
 }
@@ -38014,7 +37878,6 @@ static void dao__gsl_poly_complex_solve( DaoProcess *_proc, DaoValue *_p[], int 
   const double* a = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int _gsl_poly_complex_solve = gsl_poly_complex_solve( a, n, w, &z );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_poly_complex_solve );
   DaoProcess_NewDouble( _proc, (double)z );
   DaoProcess_PutTuple( _proc, -2 );
@@ -38254,6 +38117,7 @@ static void dao__gsl_ran_dirichlet( DaoProcess *_proc, DaoValue *_p[], int _n )
   double* theta = (double*) DaoArray_ToDouble( (DaoArray*)_p[3] );
 
   gsl_ran_dirichlet( r, K, alpha, theta );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoArray_FromDouble( (DaoArray*)_p[3] );
 }
 /* /usr/local/include/gsl/gsl_randist.h */
@@ -38264,6 +38128,8 @@ static void dao__gsl_ran_dirichlet_pdf( DaoProcess *_proc, DaoValue *_p[], int _
   double* theta = (double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   double _gsl_ran_dirichlet_pdf = gsl_ran_dirichlet_pdf( K, alpha, theta );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_ran_dirichlet_pdf );
 }
 /* /usr/local/include/gsl/gsl_randist.h */
@@ -38274,6 +38140,8 @@ static void dao__gsl_ran_dirichlet_lnpdf( DaoProcess *_proc, DaoValue *_p[], int
   double* theta = (double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   double _gsl_ran_dirichlet_lnpdf = gsl_ran_dirichlet_lnpdf( K, alpha, theta );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_ran_dirichlet_lnpdf );
 }
 /* /usr/local/include/gsl/gsl_randist.h */
@@ -38672,6 +38540,7 @@ static void dao__gsl_ran_multinomial( DaoProcess *_proc, DaoValue *_p[], int _n 
   unsigned int* n = (unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[4] );
 
   gsl_ran_multinomial( r, K, N, p, n );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoArray_FromUInt( (DaoArray*)_p[4] );
 }
 /* /usr/local/include/gsl/gsl_randist.h */
@@ -38682,6 +38551,8 @@ static void dao__gsl_ran_multinomial_pdf( DaoProcess *_proc, DaoValue *_p[], int
   unsigned int* n = (unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   double _gsl_ran_multinomial_pdf = gsl_ran_multinomial_pdf( K, p, n );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_ran_multinomial_pdf );
 }
 /* /usr/local/include/gsl/gsl_randist.h */
@@ -38692,6 +38563,8 @@ static void dao__gsl_ran_multinomial_lnpdf( DaoProcess *_proc, DaoValue *_p[], i
   unsigned int* n = (unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   double _gsl_ran_multinomial_lnpdf = gsl_ran_multinomial_lnpdf( K, p, n );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_ran_multinomial_lnpdf );
 }
 /* /usr/local/include/gsl/gsl_randist.h */
@@ -38988,7 +38861,6 @@ static void dao__gsl_ran_discrete_preproc( DaoProcess *_proc, DaoValue *_p[], in
   const double* P = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   gsl_ran_discrete_t* _gsl_ran_discrete_preproc = gsl_ran_discrete_preproc( K, P );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_WrapCdata( _proc, (void*) _gsl_ran_discrete_preproc, dao_type_gsl_ran_discrete_t );
 }
 /* /usr/local/include/gsl/gsl_randist.h */
@@ -43962,7 +43834,6 @@ static void dao__gsl_sort_long_double_index( DaoProcess *_proc, DaoValue *_p[], 
   const long double* data = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   gsl_sort_long_double_index( &p, data, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_long_double.h */
@@ -43975,7 +43846,6 @@ static void dao__gsl_sort_long_double_smallest( DaoProcess *_proc, DaoValue *_p[
   const long double* src = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_sort_long_double_smallest = gsl_sort_long_double_smallest( &dest, k, src, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_long_double_smallest );
   DaoProcess_NewDouble( _proc, (double)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -43990,7 +43860,6 @@ static void dao__gsl_sort_long_double_smallest_index( DaoProcess *_proc, DaoValu
   const long double* src = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_sort_long_double_smallest_index = gsl_sort_long_double_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_long_double_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44005,7 +43874,6 @@ static void dao__gsl_sort_long_double_largest( DaoProcess *_proc, DaoValue *_p[]
   const long double* src = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_sort_long_double_largest = gsl_sort_long_double_largest( &dest, k, src, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_long_double_largest );
   DaoProcess_NewDouble( _proc, (double)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44020,7 +43888,6 @@ static void dao__gsl_sort_long_double_largest_index( DaoProcess *_proc, DaoValue
   const long double* src = (const long double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_sort_long_double_largest_index = gsl_sort_long_double_largest_index( &p, k, src, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_long_double_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44044,7 +43911,6 @@ static void dao__gsl_sort_index( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* data = (const double*) DaoArray_ToDouble( (DaoArray*)_p[1] );
 
   gsl_sort_index( &p, data, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_double.h */
@@ -44057,7 +43923,6 @@ static void dao__gsl_sort_smallest( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* src = (const double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_sort_smallest = gsl_sort_smallest( &dest, k, src, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_smallest );
   DaoProcess_NewDouble( _proc, (double)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44072,7 +43937,6 @@ static void dao__gsl_sort_smallest_index( DaoProcess *_proc, DaoValue *_p[], int
   const double* src = (const double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_sort_smallest_index = gsl_sort_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44087,7 +43951,6 @@ static void dao__gsl_sort_largest( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double* src = (const double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_sort_largest = gsl_sort_largest( &dest, k, src, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_largest );
   DaoProcess_NewDouble( _proc, (double)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44102,7 +43965,6 @@ static void dao__gsl_sort_largest_index( DaoProcess *_proc, DaoValue *_p[], int 
   const double* src = (const double*) DaoArray_ToDouble( (DaoArray*)_p[2] );
 
   int _gsl_sort_largest_index = gsl_sort_largest_index( &p, k, src, stride, n );
-  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44126,7 +43988,6 @@ static void dao__gsl_sort_float_index( DaoProcess *_proc, DaoValue *_p[], int _n
   const float* data = (const float*) DaoArray_ToFloat( (DaoArray*)_p[1] );
 
   gsl_sort_float_index( &p, data, stride, n );
-  DaoArray_FromFloat( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_float.h */
@@ -44139,7 +44000,6 @@ static void dao__gsl_sort_float_smallest( DaoProcess *_proc, DaoValue *_p[], int
   const float* src = (const float*) DaoArray_ToFloat( (DaoArray*)_p[2] );
 
   int _gsl_sort_float_smallest = gsl_sort_float_smallest( &dest, k, src, stride, n );
-  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_float_smallest );
   DaoProcess_NewFloat( _proc, (float)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44154,7 +44014,6 @@ static void dao__gsl_sort_float_smallest_index( DaoProcess *_proc, DaoValue *_p[
   const float* src = (const float*) DaoArray_ToFloat( (DaoArray*)_p[2] );
 
   int _gsl_sort_float_smallest_index = gsl_sort_float_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_float_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44169,7 +44028,6 @@ static void dao__gsl_sort_float_largest( DaoProcess *_proc, DaoValue *_p[], int 
   const float* src = (const float*) DaoArray_ToFloat( (DaoArray*)_p[2] );
 
   int _gsl_sort_float_largest = gsl_sort_float_largest( &dest, k, src, stride, n );
-  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_float_largest );
   DaoProcess_NewFloat( _proc, (float)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44184,7 +44042,6 @@ static void dao__gsl_sort_float_largest_index( DaoProcess *_proc, DaoValue *_p[]
   const float* src = (const float*) DaoArray_ToFloat( (DaoArray*)_p[2] );
 
   int _gsl_sort_float_largest_index = gsl_sort_float_largest_index( &p, k, src, stride, n );
-  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_float_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44208,7 +44065,6 @@ static void dao__gsl_sort_ulong_index( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long* data = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[1] );
 
   gsl_sort_ulong_index( &p, data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_ulong.h */
@@ -44221,7 +44077,6 @@ static void dao__gsl_sort_ulong_smallest( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long* src = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_ulong_smallest = gsl_sort_ulong_smallest( &dest, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_ulong_smallest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44236,7 +44091,6 @@ static void dao__gsl_sort_ulong_smallest_index( DaoProcess *_proc, DaoValue *_p[
   const unsigned long* src = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_ulong_smallest_index = gsl_sort_ulong_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_ulong_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44251,7 +44105,6 @@ static void dao__gsl_sort_ulong_largest( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long* src = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_ulong_largest = gsl_sort_ulong_largest( &dest, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_ulong_largest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44266,7 +44119,6 @@ static void dao__gsl_sort_ulong_largest_index( DaoProcess *_proc, DaoValue *_p[]
   const unsigned long* src = (const unsigned long*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_ulong_largest_index = gsl_sort_ulong_largest_index( &p, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_ulong_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44290,7 +44142,6 @@ static void dao__gsl_sort_long_index( DaoProcess *_proc, DaoValue *_p[], int _n 
   const long* data = (const long*) DaoArray_ToSInt( (DaoArray*)_p[1] );
 
   gsl_sort_long_index( &p, data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_long.h */
@@ -44303,7 +44154,6 @@ static void dao__gsl_sort_long_smallest( DaoProcess *_proc, DaoValue *_p[], int 
   const long* src = (const long*) DaoArray_ToSInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_long_smallest = gsl_sort_long_smallest( &dest, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_long_smallest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44318,7 +44168,6 @@ static void dao__gsl_sort_long_smallest_index( DaoProcess *_proc, DaoValue *_p[]
   const long* src = (const long*) DaoArray_ToSInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_long_smallest_index = gsl_sort_long_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_long_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44333,7 +44182,6 @@ static void dao__gsl_sort_long_largest( DaoProcess *_proc, DaoValue *_p[], int _
   const long* src = (const long*) DaoArray_ToSInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_long_largest = gsl_sort_long_largest( &dest, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_long_largest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44348,7 +44196,6 @@ static void dao__gsl_sort_long_largest_index( DaoProcess *_proc, DaoValue *_p[],
   const long* src = (const long*) DaoArray_ToSInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_long_largest_index = gsl_sort_long_largest_index( &p, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_long_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44372,7 +44219,6 @@ static void dao__gsl_sort_uint_index( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned int* data = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[1] );
 
   gsl_sort_uint_index( &p, data, stride, n );
-  DaoArray_FromUInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_uint.h */
@@ -44385,7 +44231,6 @@ static void dao__gsl_sort_uint_smallest( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned int* src = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_uint_smallest = gsl_sort_uint_smallest( &dest, k, src, stride, n );
-  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_uint_smallest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44400,7 +44245,6 @@ static void dao__gsl_sort_uint_smallest_index( DaoProcess *_proc, DaoValue *_p[]
   const unsigned int* src = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_uint_smallest_index = gsl_sort_uint_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_uint_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44415,7 +44259,6 @@ static void dao__gsl_sort_uint_largest( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned int* src = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_uint_largest = gsl_sort_uint_largest( &dest, k, src, stride, n );
-  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_uint_largest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44430,7 +44273,6 @@ static void dao__gsl_sort_uint_largest_index( DaoProcess *_proc, DaoValue *_p[],
   const unsigned int* src = (const unsigned int*) DaoArray_ToUInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_uint_largest_index = gsl_sort_uint_largest_index( &p, k, src, stride, n );
-  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_uint_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44454,7 +44296,6 @@ static void dao__gsl_sort_int_index( DaoProcess *_proc, DaoValue *_p[], int _n )
   const int* data = (const int*) DaoArray_ToSInt( (DaoArray*)_p[1] );
 
   gsl_sort_int_index( &p, data, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_int.h */
@@ -44467,7 +44308,6 @@ static void dao__gsl_sort_int_smallest( DaoProcess *_proc, DaoValue *_p[], int _
   const int* src = (const int*) DaoArray_ToSInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_int_smallest = gsl_sort_int_smallest( &dest, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_int_smallest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44482,7 +44322,6 @@ static void dao__gsl_sort_int_smallest_index( DaoProcess *_proc, DaoValue *_p[],
   const int* src = (const int*) DaoArray_ToSInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_int_smallest_index = gsl_sort_int_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_int_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44497,7 +44336,6 @@ static void dao__gsl_sort_int_largest( DaoProcess *_proc, DaoValue *_p[], int _n
   const int* src = (const int*) DaoArray_ToSInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_int_largest = gsl_sort_int_largest( &dest, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_int_largest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44512,7 +44350,6 @@ static void dao__gsl_sort_int_largest_index( DaoProcess *_proc, DaoValue *_p[], 
   const int* src = (const int*) DaoArray_ToSInt( (DaoArray*)_p[2] );
 
   int _gsl_sort_int_largest_index = gsl_sort_int_largest_index( &p, k, src, stride, n );
-  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_int_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44536,7 +44373,6 @@ static void dao__gsl_sort_ushort_index( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned short* data = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[1] );
 
   gsl_sort_ushort_index( &p, data, stride, n );
-  DaoArray_FromUShort( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_ushort.h */
@@ -44549,7 +44385,6 @@ static void dao__gsl_sort_ushort_smallest( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned short* src = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[2] );
 
   int _gsl_sort_ushort_smallest = gsl_sort_ushort_smallest( &dest, k, src, stride, n );
-  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_ushort_smallest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44564,7 +44399,6 @@ static void dao__gsl_sort_ushort_smallest_index( DaoProcess *_proc, DaoValue *_p
   const unsigned short* src = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[2] );
 
   int _gsl_sort_ushort_smallest_index = gsl_sort_ushort_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_ushort_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44579,7 +44413,6 @@ static void dao__gsl_sort_ushort_largest( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned short* src = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[2] );
 
   int _gsl_sort_ushort_largest = gsl_sort_ushort_largest( &dest, k, src, stride, n );
-  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_ushort_largest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44594,7 +44427,6 @@ static void dao__gsl_sort_ushort_largest_index( DaoProcess *_proc, DaoValue *_p[
   const unsigned short* src = (const unsigned short*) DaoArray_ToUShort( (DaoArray*)_p[2] );
 
   int _gsl_sort_ushort_largest_index = gsl_sort_ushort_largest_index( &p, k, src, stride, n );
-  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_ushort_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44618,7 +44450,6 @@ static void dao__gsl_sort_short_index( DaoProcess *_proc, DaoValue *_p[], int _n
   const short* data = (const short*) DaoArray_ToSShort( (DaoArray*)_p[1] );
 
   gsl_sort_short_index( &p, data, stride, n );
-  DaoArray_FromSShort( (DaoArray*)_p[1] );
   DaoProcess_PutInteger( _proc, (daoint) p );
 }
 /* /usr/local/include/gsl/gsl_sort_short.h */
@@ -44631,7 +44462,6 @@ static void dao__gsl_sort_short_smallest( DaoProcess *_proc, DaoValue *_p[], int
   const short* src = (const short*) DaoArray_ToSShort( (DaoArray*)_p[2] );
 
   int _gsl_sort_short_smallest = gsl_sort_short_smallest( &dest, k, src, stride, n );
-  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_short_smallest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44646,7 +44476,6 @@ static void dao__gsl_sort_short_smallest_index( DaoProcess *_proc, DaoValue *_p[
   const short* src = (const short*) DaoArray_ToSShort( (DaoArray*)_p[2] );
 
   int _gsl_sort_short_smallest_index = gsl_sort_short_smallest_index( &p, k, src, stride, n );
-  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_short_smallest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44661,7 +44490,6 @@ static void dao__gsl_sort_short_largest( DaoProcess *_proc, DaoValue *_p[], int 
   const short* src = (const short*) DaoArray_ToSShort( (DaoArray*)_p[2] );
 
   int _gsl_sort_short_largest = gsl_sort_short_largest( &dest, k, src, stride, n );
-  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_short_largest );
   DaoProcess_NewInteger( _proc, (daoint)dest );
   DaoProcess_PutTuple( _proc, -2 );
@@ -44676,7 +44504,6 @@ static void dao__gsl_sort_short_largest_index( DaoProcess *_proc, DaoValue *_p[]
   const short* src = (const short*) DaoArray_ToSShort( (DaoArray*)_p[2] );
 
   int _gsl_sort_short_largest_index = gsl_sort_short_largest_index( &p, k, src, stride, n );
-  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sort_short_largest_index );
   DaoProcess_NewInteger( _proc, (daoint)p );
   DaoProcess_PutTuple( _proc, -2 );
@@ -45539,6 +45366,8 @@ static void dao__gsl_spline_init( DaoProcess *_proc, DaoValue *_p[], int _n )
   unsigned long size = (unsigned long) DaoValue_TryGetInteger( _p[3] );
 
   int _gsl_spline_init = gsl_spline_init( spline, xa, ya, size );
+  DaoArray_FromDouble( (DaoArray*)_p[1] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_spline_init );
 }
 /* /usr/local/include/gsl/gsl_spline.h */
@@ -45666,6 +45495,7 @@ static void dao__gsl_stats_long_double_mean( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_mean = gsl_stats_long_double_mean( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45676,6 +45506,7 @@ static void dao__gsl_stats_long_double_variance( DaoProcess *_proc, DaoValue *_p
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_variance = gsl_stats_long_double_variance( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45686,6 +45517,7 @@ static void dao__gsl_stats_long_double_sd( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_sd = gsl_stats_long_double_sd( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45697,6 +45529,7 @@ static void dao__gsl_stats_long_double_variance_with_fixed_mean( DaoProcess *_pr
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_double_variance_with_fixed_mean = gsl_stats_long_double_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45708,6 +45541,7 @@ static void dao__gsl_stats_long_double_sd_with_fixed_mean( DaoProcess *_proc, Da
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_double_sd_with_fixed_mean = gsl_stats_long_double_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45718,6 +45552,7 @@ static void dao__gsl_stats_long_double_tss( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_tss = gsl_stats_long_double_tss( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45729,6 +45564,7 @@ static void dao__gsl_stats_long_double_tss_m( DaoProcess *_proc, DaoValue *_p[],
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_double_tss_m = gsl_stats_long_double_tss_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45739,6 +45575,7 @@ static void dao__gsl_stats_long_double_absdev( DaoProcess *_proc, DaoValue *_p[]
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_absdev = gsl_stats_long_double_absdev( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45749,6 +45586,7 @@ static void dao__gsl_stats_long_double_skew( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_skew = gsl_stats_long_double_skew( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45759,6 +45597,7 @@ static void dao__gsl_stats_long_double_kurtosis( DaoProcess *_proc, DaoValue *_p
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_kurtosis = gsl_stats_long_double_kurtosis( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45769,6 +45608,7 @@ static void dao__gsl_stats_long_double_lag1_autocorrelation( DaoProcess *_proc, 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_lag1_autocorrelation = gsl_stats_long_double_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45781,6 +45621,8 @@ static void dao__gsl_stats_long_double_covariance( DaoProcess *_proc, DaoValue *
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_covariance = gsl_stats_long_double_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45793,6 +45635,8 @@ static void dao__gsl_stats_long_double_correlation( DaoProcess *_proc, DaoValue 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_correlation = gsl_stats_long_double_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45804,6 +45648,7 @@ static void dao__gsl_stats_long_double_variance_m( DaoProcess *_proc, DaoValue *
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_double_variance_m = gsl_stats_long_double_variance_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45815,6 +45660,7 @@ static void dao__gsl_stats_long_double_sd_m( DaoProcess *_proc, DaoValue *_p[], 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_double_sd_m = gsl_stats_long_double_sd_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45826,6 +45672,7 @@ static void dao__gsl_stats_long_double_absdev_m( DaoProcess *_proc, DaoValue *_p
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_double_absdev_m = gsl_stats_long_double_absdev_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45838,6 +45685,7 @@ static void dao__gsl_stats_long_double_skew_m_sd( DaoProcess *_proc, DaoValue *_
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_long_double_skew_m_sd = gsl_stats_long_double_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45850,6 +45698,7 @@ static void dao__gsl_stats_long_double_kurtosis_m_sd( DaoProcess *_proc, DaoValu
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_long_double_kurtosis_m_sd = gsl_stats_long_double_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45861,6 +45710,7 @@ static void dao__gsl_stats_long_double_lag1_autocorrelation_m( DaoProcess *_proc
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_double_lag1_autocorrelation_m = gsl_stats_long_double_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45875,6 +45725,8 @@ static void dao__gsl_stats_long_double_covariance_m( DaoProcess *_proc, DaoValue
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_long_double_covariance_m = gsl_stats_long_double_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45887,6 +45739,8 @@ static void dao__gsl_stats_long_double_wmean( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_wmean = gsl_stats_long_double_wmean( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wmean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45899,6 +45753,8 @@ static void dao__gsl_stats_long_double_wvariance( DaoProcess *_proc, DaoValue *_
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_wvariance = gsl_stats_long_double_wvariance( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45911,6 +45767,8 @@ static void dao__gsl_stats_long_double_wsd( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_wsd = gsl_stats_long_double_wsd( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wsd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45924,6 +45782,8 @@ static void dao__gsl_stats_long_double_wvariance_with_fixed_mean( DaoProcess *_p
   const double mean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_long_double_wvariance_with_fixed_mean = gsl_stats_long_double_wvariance_with_fixed_mean( w, wstride, data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wvariance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45937,6 +45797,8 @@ static void dao__gsl_stats_long_double_wsd_with_fixed_mean( DaoProcess *_proc, D
   const double mean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_long_double_wsd_with_fixed_mean = gsl_stats_long_double_wsd_with_fixed_mean( w, wstride, data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wsd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45949,6 +45811,8 @@ static void dao__gsl_stats_long_double_wtss( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_wtss = gsl_stats_long_double_wtss( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wtss );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45962,6 +45826,8 @@ static void dao__gsl_stats_long_double_wtss_m( DaoProcess *_proc, DaoValue *_p[]
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_long_double_wtss_m = gsl_stats_long_double_wtss_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wtss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45974,6 +45840,8 @@ static void dao__gsl_stats_long_double_wabsdev( DaoProcess *_proc, DaoValue *_p[
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_wabsdev = gsl_stats_long_double_wabsdev( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wabsdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45986,6 +45854,8 @@ static void dao__gsl_stats_long_double_wskew( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_wskew = gsl_stats_long_double_wskew( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wskew );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -45998,6 +45868,8 @@ static void dao__gsl_stats_long_double_wkurtosis( DaoProcess *_proc, DaoValue *_
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_double_wkurtosis = gsl_stats_long_double_wkurtosis( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wkurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46011,6 +45883,8 @@ static void dao__gsl_stats_long_double_wvariance_m( DaoProcess *_proc, DaoValue 
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_long_double_wvariance_m = gsl_stats_long_double_wvariance_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wvariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46024,6 +45898,8 @@ static void dao__gsl_stats_long_double_wsd_m( DaoProcess *_proc, DaoValue *_p[],
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_long_double_wsd_m = gsl_stats_long_double_wsd_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wsd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46037,6 +45913,8 @@ static void dao__gsl_stats_long_double_wabsdev_m( DaoProcess *_proc, DaoValue *_
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_long_double_wabsdev_m = gsl_stats_long_double_wabsdev_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wabsdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46051,6 +45929,8 @@ static void dao__gsl_stats_long_double_wskew_m_sd( DaoProcess *_proc, DaoValue *
   const double wsd = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_long_double_wskew_m_sd = gsl_stats_long_double_wskew_m_sd( w, wstride, data, stride, n, wmean, wsd );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wskew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46065,6 +45945,8 @@ static void dao__gsl_stats_long_double_wkurtosis_m_sd( DaoProcess *_proc, DaoVal
   const double wsd = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_long_double_wkurtosis_m_sd = gsl_stats_long_double_wkurtosis_m_sd( w, wstride, data, stride, n, wmean, wsd );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_wkurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46078,6 +45960,8 @@ static void dao__gsl_stats_long_double_pvariance( DaoProcess *_proc, DaoValue *_
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_long_double_pvariance = gsl_stats_long_double_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46091,6 +45975,8 @@ static void dao__gsl_stats_long_double_ttest( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_long_double_ttest = gsl_stats_long_double_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46101,6 +45987,7 @@ static void dao__gsl_stats_long_double_max( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   long double _gsl_stats_long_double_max = gsl_stats_long_double_max( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46111,6 +45998,7 @@ static void dao__gsl_stats_long_double_min( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   long double _gsl_stats_long_double_min = gsl_stats_long_double_min( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46123,6 +46011,7 @@ static void dao__gsl_stats_long_double_minmax( DaoProcess *_proc, DaoValue *_p[]
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_long_double_minmax( &min, &max, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewDouble( _proc, (double)min );
   DaoProcess_NewDouble( _proc, (double)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -46135,6 +46024,7 @@ static void dao__gsl_stats_long_double_max_index( DaoProcess *_proc, DaoValue *_
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_long_double_max_index = gsl_stats_long_double_max_index( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_long_double_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46145,6 +46035,7 @@ static void dao__gsl_stats_long_double_min_index( DaoProcess *_proc, DaoValue *_
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_long_double_min_index = gsl_stats_long_double_min_index( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_long_double_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46157,6 +46048,7 @@ static void dao__gsl_stats_long_double_minmax_index( DaoProcess *_proc, DaoValue
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_long_double_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -46169,6 +46061,7 @@ static void dao__gsl_stats_long_double_median_from_sorted_data( DaoProcess *_pro
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_double_median_from_sorted_data = gsl_stats_long_double_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_long_double.h */
@@ -46180,6 +46073,7 @@ static void dao__gsl_stats_long_double_quantile_from_sorted_data( DaoProcess *_p
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_double_quantile_from_sorted_data = gsl_stats_long_double_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_double_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46190,6 +46084,7 @@ static void dao__gsl_stats_mean( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_mean = gsl_stats_mean( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46200,6 +46095,7 @@ static void dao__gsl_stats_variance( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_variance = gsl_stats_variance( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46210,6 +46106,7 @@ static void dao__gsl_stats_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_sd = gsl_stats_sd( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46221,6 +46118,7 @@ static void dao__gsl_stats_variance_with_fixed_mean( DaoProcess *_proc, DaoValue
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_variance_with_fixed_mean = gsl_stats_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46232,6 +46130,7 @@ static void dao__gsl_stats_sd_with_fixed_mean( DaoProcess *_proc, DaoValue *_p[]
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_sd_with_fixed_mean = gsl_stats_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46242,6 +46141,7 @@ static void dao__gsl_stats_tss( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_tss = gsl_stats_tss( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46253,6 +46153,7 @@ static void dao__gsl_stats_tss_m( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_tss_m = gsl_stats_tss_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46263,6 +46164,7 @@ static void dao__gsl_stats_absdev( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_absdev = gsl_stats_absdev( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46273,6 +46175,7 @@ static void dao__gsl_stats_skew( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_skew = gsl_stats_skew( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46283,6 +46186,7 @@ static void dao__gsl_stats_kurtosis( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_kurtosis = gsl_stats_kurtosis( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46293,6 +46197,7 @@ static void dao__gsl_stats_lag1_autocorrelation( DaoProcess *_proc, DaoValue *_p
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_lag1_autocorrelation = gsl_stats_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46305,6 +46210,8 @@ static void dao__gsl_stats_covariance( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_covariance = gsl_stats_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46317,6 +46224,8 @@ static void dao__gsl_stats_correlation( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_correlation = gsl_stats_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46328,6 +46237,7 @@ static void dao__gsl_stats_variance_m( DaoProcess *_proc, DaoValue *_p[], int _n
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_variance_m = gsl_stats_variance_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46339,6 +46249,7 @@ static void dao__gsl_stats_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_sd_m = gsl_stats_sd_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46350,6 +46261,7 @@ static void dao__gsl_stats_absdev_m( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_absdev_m = gsl_stats_absdev_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46362,6 +46274,7 @@ static void dao__gsl_stats_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], int _n 
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_skew_m_sd = gsl_stats_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46374,6 +46287,7 @@ static void dao__gsl_stats_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[], int
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_kurtosis_m_sd = gsl_stats_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46385,6 +46299,7 @@ static void dao__gsl_stats_lag1_autocorrelation_m( DaoProcess *_proc, DaoValue *
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_lag1_autocorrelation_m = gsl_stats_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46399,6 +46314,8 @@ static void dao__gsl_stats_covariance_m( DaoProcess *_proc, DaoValue *_p[], int 
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_covariance_m = gsl_stats_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46411,6 +46328,8 @@ static void dao__gsl_stats_wmean( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_wmean = gsl_stats_wmean( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wmean );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46423,6 +46342,8 @@ static void dao__gsl_stats_wvariance( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_wvariance = gsl_stats_wvariance( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46435,6 +46356,8 @@ static void dao__gsl_stats_wsd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_wsd = gsl_stats_wsd( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wsd );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46448,6 +46371,8 @@ static void dao__gsl_stats_wvariance_with_fixed_mean( DaoProcess *_proc, DaoValu
   const double mean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_wvariance_with_fixed_mean = gsl_stats_wvariance_with_fixed_mean( w, wstride, data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wvariance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46461,6 +46386,8 @@ static void dao__gsl_stats_wsd_with_fixed_mean( DaoProcess *_proc, DaoValue *_p[
   const double mean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_wsd_with_fixed_mean = gsl_stats_wsd_with_fixed_mean( w, wstride, data, stride, n, mean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wsd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46473,6 +46400,8 @@ static void dao__gsl_stats_wtss( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_wtss = gsl_stats_wtss( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wtss );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46486,6 +46415,8 @@ static void dao__gsl_stats_wtss_m( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_wtss_m = gsl_stats_wtss_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wtss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46498,6 +46429,8 @@ static void dao__gsl_stats_wabsdev( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_wabsdev = gsl_stats_wabsdev( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wabsdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46510,6 +46443,8 @@ static void dao__gsl_stats_wskew( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_wskew = gsl_stats_wskew( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wskew );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46522,6 +46457,8 @@ static void dao__gsl_stats_wkurtosis( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_wkurtosis = gsl_stats_wkurtosis( w, wstride, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wkurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46535,6 +46472,8 @@ static void dao__gsl_stats_wvariance_m( DaoProcess *_proc, DaoValue *_p[], int _
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_wvariance_m = gsl_stats_wvariance_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wvariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46548,6 +46487,8 @@ static void dao__gsl_stats_wsd_m( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_wsd_m = gsl_stats_wsd_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wsd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46561,6 +46502,8 @@ static void dao__gsl_stats_wabsdev_m( DaoProcess *_proc, DaoValue *_p[], int _n 
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_wabsdev_m = gsl_stats_wabsdev_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wabsdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46575,6 +46518,8 @@ static void dao__gsl_stats_wskew_m_sd( DaoProcess *_proc, DaoValue *_p[], int _n
   const double wsd = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_wskew_m_sd = gsl_stats_wskew_m_sd( w, wstride, data, stride, n, wmean, wsd );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wskew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46589,6 +46534,8 @@ static void dao__gsl_stats_wkurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[], in
   const double wsd = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_wkurtosis_m_sd = gsl_stats_wkurtosis_m_sd( w, wstride, data, stride, n, wmean, wsd );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_wkurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46602,6 +46549,8 @@ static void dao__gsl_stats_pvariance( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_pvariance = gsl_stats_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46615,6 +46564,8 @@ static void dao__gsl_stats_ttest( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_ttest = gsl_stats_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
+  DaoArray_FromDouble( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46625,6 +46576,7 @@ static void dao__gsl_stats_max( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_max = gsl_stats_max( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46635,6 +46587,7 @@ static void dao__gsl_stats_min( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_min = gsl_stats_min( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46647,6 +46600,7 @@ static void dao__gsl_stats_minmax( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_minmax( &min, &max, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewDouble( _proc, (double)min );
   DaoProcess_NewDouble( _proc, (double)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -46659,6 +46613,7 @@ static void dao__gsl_stats_max_index( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_max_index = gsl_stats_max_index( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46669,6 +46624,7 @@ static void dao__gsl_stats_min_index( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_min_index = gsl_stats_min_index( data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46681,6 +46637,7 @@ static void dao__gsl_stats_minmax_index( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -46693,6 +46650,7 @@ static void dao__gsl_stats_median_from_sorted_data( DaoProcess *_proc, DaoValue 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_median_from_sorted_data = gsl_stats_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_double.h */
@@ -46704,6 +46662,7 @@ static void dao__gsl_stats_quantile_from_sorted_data( DaoProcess *_proc, DaoValu
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_quantile_from_sorted_data = gsl_stats_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46714,6 +46673,7 @@ static void dao__gsl_stats_float_mean( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_mean = gsl_stats_float_mean( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46724,6 +46684,7 @@ static void dao__gsl_stats_float_variance( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_variance = gsl_stats_float_variance( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46734,6 +46695,7 @@ static void dao__gsl_stats_float_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_sd = gsl_stats_float_sd( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46745,6 +46707,7 @@ static void dao__gsl_stats_float_variance_with_fixed_mean( DaoProcess *_proc, Da
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_float_variance_with_fixed_mean = gsl_stats_float_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46756,6 +46719,7 @@ static void dao__gsl_stats_float_sd_with_fixed_mean( DaoProcess *_proc, DaoValue
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_float_sd_with_fixed_mean = gsl_stats_float_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46766,6 +46730,7 @@ static void dao__gsl_stats_float_tss( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_tss = gsl_stats_float_tss( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46777,6 +46742,7 @@ static void dao__gsl_stats_float_tss_m( DaoProcess *_proc, DaoValue *_p[], int _
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_float_tss_m = gsl_stats_float_tss_m( data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46787,6 +46753,7 @@ static void dao__gsl_stats_float_absdev( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_absdev = gsl_stats_float_absdev( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46797,6 +46764,7 @@ static void dao__gsl_stats_float_skew( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_skew = gsl_stats_float_skew( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46807,6 +46775,7 @@ static void dao__gsl_stats_float_kurtosis( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_kurtosis = gsl_stats_float_kurtosis( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46817,6 +46786,7 @@ static void dao__gsl_stats_float_lag1_autocorrelation( DaoProcess *_proc, DaoVal
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_lag1_autocorrelation = gsl_stats_float_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46829,6 +46799,8 @@ static void dao__gsl_stats_float_covariance( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_covariance = gsl_stats_float_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46841,6 +46813,8 @@ static void dao__gsl_stats_float_correlation( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_correlation = gsl_stats_float_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46852,6 +46826,7 @@ static void dao__gsl_stats_float_variance_m( DaoProcess *_proc, DaoValue *_p[], 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_float_variance_m = gsl_stats_float_variance_m( data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46863,6 +46838,7 @@ static void dao__gsl_stats_float_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_float_sd_m = gsl_stats_float_sd_m( data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46874,6 +46850,7 @@ static void dao__gsl_stats_float_absdev_m( DaoProcess *_proc, DaoValue *_p[], in
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_float_absdev_m = gsl_stats_float_absdev_m( data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46886,6 +46863,7 @@ static void dao__gsl_stats_float_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], i
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_float_skew_m_sd = gsl_stats_float_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46898,6 +46876,7 @@ static void dao__gsl_stats_float_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_float_kurtosis_m_sd = gsl_stats_float_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46909,6 +46888,7 @@ static void dao__gsl_stats_float_lag1_autocorrelation_m( DaoProcess *_proc, DaoV
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_float_lag1_autocorrelation_m = gsl_stats_float_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46923,6 +46903,8 @@ static void dao__gsl_stats_float_covariance_m( DaoProcess *_proc, DaoValue *_p[]
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_float_covariance_m = gsl_stats_float_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46935,6 +46917,8 @@ static void dao__gsl_stats_float_wmean( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_wmean = gsl_stats_float_wmean( w, wstride, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wmean );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46947,6 +46931,8 @@ static void dao__gsl_stats_float_wvariance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_wvariance = gsl_stats_float_wvariance( w, wstride, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46959,6 +46945,8 @@ static void dao__gsl_stats_float_wsd( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_wsd = gsl_stats_float_wsd( w, wstride, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wsd );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46972,6 +46960,8 @@ static void dao__gsl_stats_float_wvariance_with_fixed_mean( DaoProcess *_proc, D
   const double mean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_float_wvariance_with_fixed_mean = gsl_stats_float_wvariance_with_fixed_mean( w, wstride, data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wvariance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46985,6 +46975,8 @@ static void dao__gsl_stats_float_wsd_with_fixed_mean( DaoProcess *_proc, DaoValu
   const double mean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_float_wsd_with_fixed_mean = gsl_stats_float_wsd_with_fixed_mean( w, wstride, data, stride, n, mean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wsd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -46997,6 +46989,8 @@ static void dao__gsl_stats_float_wtss( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_wtss = gsl_stats_float_wtss( w, wstride, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wtss );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47010,6 +47004,8 @@ static void dao__gsl_stats_float_wtss_m( DaoProcess *_proc, DaoValue *_p[], int 
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_float_wtss_m = gsl_stats_float_wtss_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wtss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47022,6 +47018,8 @@ static void dao__gsl_stats_float_wabsdev( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_wabsdev = gsl_stats_float_wabsdev( w, wstride, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wabsdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47034,6 +47032,8 @@ static void dao__gsl_stats_float_wskew( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_wskew = gsl_stats_float_wskew( w, wstride, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wskew );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47046,6 +47046,8 @@ static void dao__gsl_stats_float_wkurtosis( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_float_wkurtosis = gsl_stats_float_wkurtosis( w, wstride, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wkurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47059,6 +47061,8 @@ static void dao__gsl_stats_float_wvariance_m( DaoProcess *_proc, DaoValue *_p[],
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_float_wvariance_m = gsl_stats_float_wvariance_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wvariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47072,6 +47076,8 @@ static void dao__gsl_stats_float_wsd_m( DaoProcess *_proc, DaoValue *_p[], int _
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_float_wsd_m = gsl_stats_float_wsd_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wsd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47085,6 +47091,8 @@ static void dao__gsl_stats_float_wabsdev_m( DaoProcess *_proc, DaoValue *_p[], i
   const double wmean = (const double) DaoValue_TryGetDouble( _p[5] );
 
   double _gsl_stats_float_wabsdev_m = gsl_stats_float_wabsdev_m( w, wstride, data, stride, n, wmean );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wabsdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47099,6 +47107,8 @@ static void dao__gsl_stats_float_wskew_m_sd( DaoProcess *_proc, DaoValue *_p[], 
   const double wsd = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_float_wskew_m_sd = gsl_stats_float_wskew_m_sd( w, wstride, data, stride, n, wmean, wsd );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wskew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47113,6 +47123,8 @@ static void dao__gsl_stats_float_wkurtosis_m_sd( DaoProcess *_proc, DaoValue *_p
   const double wsd = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_float_wkurtosis_m_sd = gsl_stats_float_wkurtosis_m_sd( w, wstride, data, stride, n, wmean, wsd );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_wkurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47126,6 +47138,8 @@ static void dao__gsl_stats_float_pvariance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_float_pvariance = gsl_stats_float_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47139,6 +47153,8 @@ static void dao__gsl_stats_float_ttest( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_float_ttest = gsl_stats_float_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
+  DaoArray_FromFloat( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47149,6 +47165,7 @@ static void dao__gsl_stats_float_max( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   float _gsl_stats_float_max = gsl_stats_float_max( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutFloat( _proc, (float) _gsl_stats_float_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47159,6 +47176,7 @@ static void dao__gsl_stats_float_min( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   float _gsl_stats_float_min = gsl_stats_float_min( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutFloat( _proc, (float) _gsl_stats_float_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47171,6 +47189,7 @@ static void dao__gsl_stats_float_minmax( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_float_minmax( &min, &max, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_NewFloat( _proc, (float)min );
   DaoProcess_NewFloat( _proc, (float)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -47183,6 +47202,7 @@ static void dao__gsl_stats_float_max_index( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_float_max_index = gsl_stats_float_max_index( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_float_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47193,6 +47213,7 @@ static void dao__gsl_stats_float_min_index( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_float_min_index = gsl_stats_float_min_index( data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_float_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47205,6 +47226,7 @@ static void dao__gsl_stats_float_minmax_index( DaoProcess *_proc, DaoValue *_p[]
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_float_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -47217,6 +47239,7 @@ static void dao__gsl_stats_float_median_from_sorted_data( DaoProcess *_proc, Dao
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_float_median_from_sorted_data = gsl_stats_float_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_float.h */
@@ -47228,6 +47251,7 @@ static void dao__gsl_stats_float_quantile_from_sorted_data( DaoProcess *_proc, D
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_float_quantile_from_sorted_data = gsl_stats_float_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromFloat( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_float_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47238,6 +47262,7 @@ static void dao__gsl_stats_ulong_mean( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_mean = gsl_stats_ulong_mean( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47248,6 +47273,7 @@ static void dao__gsl_stats_ulong_variance( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_variance = gsl_stats_ulong_variance( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47258,6 +47284,7 @@ static void dao__gsl_stats_ulong_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_sd = gsl_stats_ulong_sd( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47269,6 +47296,7 @@ static void dao__gsl_stats_ulong_variance_with_fixed_mean( DaoProcess *_proc, Da
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ulong_variance_with_fixed_mean = gsl_stats_ulong_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47280,6 +47308,7 @@ static void dao__gsl_stats_ulong_sd_with_fixed_mean( DaoProcess *_proc, DaoValue
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ulong_sd_with_fixed_mean = gsl_stats_ulong_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47290,6 +47319,7 @@ static void dao__gsl_stats_ulong_tss( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_tss = gsl_stats_ulong_tss( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47301,6 +47331,7 @@ static void dao__gsl_stats_ulong_tss_m( DaoProcess *_proc, DaoValue *_p[], int _
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ulong_tss_m = gsl_stats_ulong_tss_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47311,6 +47342,7 @@ static void dao__gsl_stats_ulong_absdev( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_absdev = gsl_stats_ulong_absdev( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47321,6 +47353,7 @@ static void dao__gsl_stats_ulong_skew( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_skew = gsl_stats_ulong_skew( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47331,6 +47364,7 @@ static void dao__gsl_stats_ulong_kurtosis( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_kurtosis = gsl_stats_ulong_kurtosis( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47341,6 +47375,7 @@ static void dao__gsl_stats_ulong_lag1_autocorrelation( DaoProcess *_proc, DaoVal
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_lag1_autocorrelation = gsl_stats_ulong_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47353,6 +47388,8 @@ static void dao__gsl_stats_ulong_covariance( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_ulong_covariance = gsl_stats_ulong_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47365,6 +47402,8 @@ static void dao__gsl_stats_ulong_correlation( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_ulong_correlation = gsl_stats_ulong_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47376,6 +47415,7 @@ static void dao__gsl_stats_ulong_variance_m( DaoProcess *_proc, DaoValue *_p[], 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ulong_variance_m = gsl_stats_ulong_variance_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47387,6 +47427,7 @@ static void dao__gsl_stats_ulong_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ulong_sd_m = gsl_stats_ulong_sd_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47398,6 +47439,7 @@ static void dao__gsl_stats_ulong_absdev_m( DaoProcess *_proc, DaoValue *_p[], in
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ulong_absdev_m = gsl_stats_ulong_absdev_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47410,6 +47452,7 @@ static void dao__gsl_stats_ulong_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], i
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_ulong_skew_m_sd = gsl_stats_ulong_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47422,6 +47465,7 @@ static void dao__gsl_stats_ulong_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_ulong_kurtosis_m_sd = gsl_stats_ulong_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47433,6 +47477,7 @@ static void dao__gsl_stats_ulong_lag1_autocorrelation_m( DaoProcess *_proc, DaoV
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ulong_lag1_autocorrelation_m = gsl_stats_ulong_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47447,6 +47492,8 @@ static void dao__gsl_stats_ulong_covariance_m( DaoProcess *_proc, DaoValue *_p[]
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_ulong_covariance_m = gsl_stats_ulong_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47460,6 +47507,8 @@ static void dao__gsl_stats_ulong_pvariance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_ulong_pvariance = gsl_stats_ulong_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47473,6 +47522,8 @@ static void dao__gsl_stats_ulong_ttest( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_ulong_ttest = gsl_stats_ulong_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47483,6 +47534,7 @@ static void dao__gsl_stats_ulong_max( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   unsigned long _gsl_stats_ulong_max = gsl_stats_ulong_max( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_ulong_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47493,6 +47545,7 @@ static void dao__gsl_stats_ulong_min( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   unsigned long _gsl_stats_ulong_min = gsl_stats_ulong_min( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_ulong_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47505,6 +47558,7 @@ static void dao__gsl_stats_ulong_minmax( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_ulong_minmax( &min, &max, data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min );
   DaoProcess_NewInteger( _proc, (daoint)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -47517,6 +47571,7 @@ static void dao__gsl_stats_ulong_max_index( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_ulong_max_index = gsl_stats_ulong_max_index( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_ulong_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47527,6 +47582,7 @@ static void dao__gsl_stats_ulong_min_index( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_ulong_min_index = gsl_stats_ulong_min_index( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_ulong_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47539,6 +47595,7 @@ static void dao__gsl_stats_ulong_minmax_index( DaoProcess *_proc, DaoValue *_p[]
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_ulong_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -47551,6 +47608,7 @@ static void dao__gsl_stats_ulong_median_from_sorted_data( DaoProcess *_proc, Dao
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ulong_median_from_sorted_data = gsl_stats_ulong_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_ulong.h */
@@ -47562,6 +47620,7 @@ static void dao__gsl_stats_ulong_quantile_from_sorted_data( DaoProcess *_proc, D
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ulong_quantile_from_sorted_data = gsl_stats_ulong_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ulong_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47572,6 +47631,7 @@ static void dao__gsl_stats_long_mean( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_mean = gsl_stats_long_mean( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47582,6 +47642,7 @@ static void dao__gsl_stats_long_variance( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_variance = gsl_stats_long_variance( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47592,6 +47653,7 @@ static void dao__gsl_stats_long_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_sd = gsl_stats_long_sd( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47603,6 +47665,7 @@ static void dao__gsl_stats_long_variance_with_fixed_mean( DaoProcess *_proc, Dao
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_variance_with_fixed_mean = gsl_stats_long_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47614,6 +47677,7 @@ static void dao__gsl_stats_long_sd_with_fixed_mean( DaoProcess *_proc, DaoValue 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_sd_with_fixed_mean = gsl_stats_long_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47624,6 +47688,7 @@ static void dao__gsl_stats_long_tss( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_tss = gsl_stats_long_tss( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47635,6 +47700,7 @@ static void dao__gsl_stats_long_tss_m( DaoProcess *_proc, DaoValue *_p[], int _n
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_tss_m = gsl_stats_long_tss_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47645,6 +47711,7 @@ static void dao__gsl_stats_long_absdev( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_absdev = gsl_stats_long_absdev( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47655,6 +47722,7 @@ static void dao__gsl_stats_long_skew( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_skew = gsl_stats_long_skew( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47665,6 +47733,7 @@ static void dao__gsl_stats_long_kurtosis( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_kurtosis = gsl_stats_long_kurtosis( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47675,6 +47744,7 @@ static void dao__gsl_stats_long_lag1_autocorrelation( DaoProcess *_proc, DaoValu
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_lag1_autocorrelation = gsl_stats_long_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47687,6 +47757,8 @@ static void dao__gsl_stats_long_covariance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_covariance = gsl_stats_long_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47699,6 +47771,8 @@ static void dao__gsl_stats_long_correlation( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_long_correlation = gsl_stats_long_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47710,6 +47784,7 @@ static void dao__gsl_stats_long_variance_m( DaoProcess *_proc, DaoValue *_p[], i
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_variance_m = gsl_stats_long_variance_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47721,6 +47796,7 @@ static void dao__gsl_stats_long_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_sd_m = gsl_stats_long_sd_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47732,6 +47808,7 @@ static void dao__gsl_stats_long_absdev_m( DaoProcess *_proc, DaoValue *_p[], int
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_absdev_m = gsl_stats_long_absdev_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47744,6 +47821,7 @@ static void dao__gsl_stats_long_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], in
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_long_skew_m_sd = gsl_stats_long_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47756,6 +47834,7 @@ static void dao__gsl_stats_long_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[]
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_long_kurtosis_m_sd = gsl_stats_long_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47767,6 +47846,7 @@ static void dao__gsl_stats_long_lag1_autocorrelation_m( DaoProcess *_proc, DaoVa
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_lag1_autocorrelation_m = gsl_stats_long_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47781,6 +47861,8 @@ static void dao__gsl_stats_long_covariance_m( DaoProcess *_proc, DaoValue *_p[],
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_long_covariance_m = gsl_stats_long_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47794,6 +47876,8 @@ static void dao__gsl_stats_long_pvariance( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_long_pvariance = gsl_stats_long_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47807,6 +47891,8 @@ static void dao__gsl_stats_long_ttest( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_long_ttest = gsl_stats_long_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47817,6 +47903,7 @@ static void dao__gsl_stats_long_max( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   long _gsl_stats_long_max = gsl_stats_long_max( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_long_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47827,6 +47914,7 @@ static void dao__gsl_stats_long_min( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   long _gsl_stats_long_min = gsl_stats_long_min( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_long_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47839,6 +47927,7 @@ static void dao__gsl_stats_long_minmax( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_long_minmax( &min, &max, data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min );
   DaoProcess_NewInteger( _proc, (daoint)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -47851,6 +47940,7 @@ static void dao__gsl_stats_long_max_index( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_long_max_index = gsl_stats_long_max_index( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_long_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47861,6 +47951,7 @@ static void dao__gsl_stats_long_min_index( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_long_min_index = gsl_stats_long_min_index( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_long_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47873,6 +47964,7 @@ static void dao__gsl_stats_long_minmax_index( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_long_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -47885,6 +47977,7 @@ static void dao__gsl_stats_long_median_from_sorted_data( DaoProcess *_proc, DaoV
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_long_median_from_sorted_data = gsl_stats_long_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_long.h */
@@ -47896,6 +47989,7 @@ static void dao__gsl_stats_long_quantile_from_sorted_data( DaoProcess *_proc, Da
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_long_quantile_from_sorted_data = gsl_stats_long_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_long_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47906,6 +48000,7 @@ static void dao__gsl_stats_uint_mean( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_mean = gsl_stats_uint_mean( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47916,6 +48011,7 @@ static void dao__gsl_stats_uint_variance( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_variance = gsl_stats_uint_variance( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47926,6 +48022,7 @@ static void dao__gsl_stats_uint_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_sd = gsl_stats_uint_sd( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47937,6 +48034,7 @@ static void dao__gsl_stats_uint_variance_with_fixed_mean( DaoProcess *_proc, Dao
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uint_variance_with_fixed_mean = gsl_stats_uint_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47948,6 +48046,7 @@ static void dao__gsl_stats_uint_sd_with_fixed_mean( DaoProcess *_proc, DaoValue 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uint_sd_with_fixed_mean = gsl_stats_uint_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47958,6 +48057,7 @@ static void dao__gsl_stats_uint_tss( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_tss = gsl_stats_uint_tss( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47969,6 +48069,7 @@ static void dao__gsl_stats_uint_tss_m( DaoProcess *_proc, DaoValue *_p[], int _n
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uint_tss_m = gsl_stats_uint_tss_m( data, stride, n, mean );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47979,6 +48080,7 @@ static void dao__gsl_stats_uint_absdev( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_absdev = gsl_stats_uint_absdev( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47989,6 +48091,7 @@ static void dao__gsl_stats_uint_skew( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_skew = gsl_stats_uint_skew( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -47999,6 +48102,7 @@ static void dao__gsl_stats_uint_kurtosis( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_kurtosis = gsl_stats_uint_kurtosis( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48009,6 +48113,7 @@ static void dao__gsl_stats_uint_lag1_autocorrelation( DaoProcess *_proc, DaoValu
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_lag1_autocorrelation = gsl_stats_uint_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48021,6 +48126,8 @@ static void dao__gsl_stats_uint_covariance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_uint_covariance = gsl_stats_uint_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
+  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48033,6 +48140,8 @@ static void dao__gsl_stats_uint_correlation( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_uint_correlation = gsl_stats_uint_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
+  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48044,6 +48153,7 @@ static void dao__gsl_stats_uint_variance_m( DaoProcess *_proc, DaoValue *_p[], i
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uint_variance_m = gsl_stats_uint_variance_m( data, stride, n, mean );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48055,6 +48165,7 @@ static void dao__gsl_stats_uint_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uint_sd_m = gsl_stats_uint_sd_m( data, stride, n, mean );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48066,6 +48177,7 @@ static void dao__gsl_stats_uint_absdev_m( DaoProcess *_proc, DaoValue *_p[], int
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uint_absdev_m = gsl_stats_uint_absdev_m( data, stride, n, mean );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48078,6 +48190,7 @@ static void dao__gsl_stats_uint_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], in
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_uint_skew_m_sd = gsl_stats_uint_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48090,6 +48203,7 @@ static void dao__gsl_stats_uint_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[]
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_uint_kurtosis_m_sd = gsl_stats_uint_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48101,6 +48215,7 @@ static void dao__gsl_stats_uint_lag1_autocorrelation_m( DaoProcess *_proc, DaoVa
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uint_lag1_autocorrelation_m = gsl_stats_uint_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48115,6 +48230,8 @@ static void dao__gsl_stats_uint_covariance_m( DaoProcess *_proc, DaoValue *_p[],
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_uint_covariance_m = gsl_stats_uint_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
+  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48128,6 +48245,8 @@ static void dao__gsl_stats_uint_pvariance( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_uint_pvariance = gsl_stats_uint_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
+  DaoArray_FromUInt( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48141,6 +48260,8 @@ static void dao__gsl_stats_uint_ttest( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_uint_ttest = gsl_stats_uint_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
+  DaoArray_FromUInt( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48151,6 +48272,7 @@ static void dao__gsl_stats_uint_max( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   unsigned int _gsl_stats_uint_max = gsl_stats_uint_max( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_uint_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48161,6 +48283,7 @@ static void dao__gsl_stats_uint_min( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   unsigned int _gsl_stats_uint_min = gsl_stats_uint_min( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_uint_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48173,6 +48296,7 @@ static void dao__gsl_stats_uint_minmax( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_uint_minmax( &min, &max, data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min );
   DaoProcess_NewInteger( _proc, (daoint)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -48185,6 +48309,7 @@ static void dao__gsl_stats_uint_max_index( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_uint_max_index = gsl_stats_uint_max_index( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_uint_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48195,6 +48320,7 @@ static void dao__gsl_stats_uint_min_index( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_uint_min_index = gsl_stats_uint_min_index( data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_uint_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48207,6 +48333,7 @@ static void dao__gsl_stats_uint_minmax_index( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_uint_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -48219,6 +48346,7 @@ static void dao__gsl_stats_uint_median_from_sorted_data( DaoProcess *_proc, DaoV
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uint_median_from_sorted_data = gsl_stats_uint_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_uint.h */
@@ -48230,6 +48358,7 @@ static void dao__gsl_stats_uint_quantile_from_sorted_data( DaoProcess *_proc, Da
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uint_quantile_from_sorted_data = gsl_stats_uint_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromUInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uint_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48240,6 +48369,7 @@ static void dao__gsl_stats_int_mean( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_mean = gsl_stats_int_mean( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48250,6 +48380,7 @@ static void dao__gsl_stats_int_variance( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_variance = gsl_stats_int_variance( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48260,6 +48391,7 @@ static void dao__gsl_stats_int_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_sd = gsl_stats_int_sd( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48271,6 +48403,7 @@ static void dao__gsl_stats_int_variance_with_fixed_mean( DaoProcess *_proc, DaoV
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_int_variance_with_fixed_mean = gsl_stats_int_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48282,6 +48415,7 @@ static void dao__gsl_stats_int_sd_with_fixed_mean( DaoProcess *_proc, DaoValue *
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_int_sd_with_fixed_mean = gsl_stats_int_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48292,6 +48426,7 @@ static void dao__gsl_stats_int_tss( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_tss = gsl_stats_int_tss( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48303,6 +48438,7 @@ static void dao__gsl_stats_int_tss_m( DaoProcess *_proc, DaoValue *_p[], int _n 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_int_tss_m = gsl_stats_int_tss_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48313,6 +48449,7 @@ static void dao__gsl_stats_int_absdev( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_absdev = gsl_stats_int_absdev( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48323,6 +48460,7 @@ static void dao__gsl_stats_int_skew( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_skew = gsl_stats_int_skew( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48333,6 +48471,7 @@ static void dao__gsl_stats_int_kurtosis( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_kurtosis = gsl_stats_int_kurtosis( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48343,6 +48482,7 @@ static void dao__gsl_stats_int_lag1_autocorrelation( DaoProcess *_proc, DaoValue
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_lag1_autocorrelation = gsl_stats_int_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48355,6 +48495,8 @@ static void dao__gsl_stats_int_covariance( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_int_covariance = gsl_stats_int_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48367,6 +48509,8 @@ static void dao__gsl_stats_int_correlation( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_int_correlation = gsl_stats_int_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48378,6 +48522,7 @@ static void dao__gsl_stats_int_variance_m( DaoProcess *_proc, DaoValue *_p[], in
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_int_variance_m = gsl_stats_int_variance_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48389,6 +48534,7 @@ static void dao__gsl_stats_int_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n )
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_int_sd_m = gsl_stats_int_sd_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48400,6 +48546,7 @@ static void dao__gsl_stats_int_absdev_m( DaoProcess *_proc, DaoValue *_p[], int 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_int_absdev_m = gsl_stats_int_absdev_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48412,6 +48559,7 @@ static void dao__gsl_stats_int_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], int
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_int_skew_m_sd = gsl_stats_int_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48424,6 +48572,7 @@ static void dao__gsl_stats_int_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[],
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_int_kurtosis_m_sd = gsl_stats_int_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48435,6 +48584,7 @@ static void dao__gsl_stats_int_lag1_autocorrelation_m( DaoProcess *_proc, DaoVal
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_int_lag1_autocorrelation_m = gsl_stats_int_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48449,6 +48599,8 @@ static void dao__gsl_stats_int_covariance_m( DaoProcess *_proc, DaoValue *_p[], 
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_int_covariance_m = gsl_stats_int_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48462,6 +48614,8 @@ static void dao__gsl_stats_int_pvariance( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_int_pvariance = gsl_stats_int_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48475,6 +48629,8 @@ static void dao__gsl_stats_int_ttest( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_int_ttest = gsl_stats_int_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
+  DaoArray_FromSInt( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48485,6 +48641,7 @@ static void dao__gsl_stats_int_max( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   int _gsl_stats_int_max = gsl_stats_int_max( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_int_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48495,6 +48652,7 @@ static void dao__gsl_stats_int_min( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   int _gsl_stats_int_min = gsl_stats_int_min( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_int_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48507,6 +48665,7 @@ static void dao__gsl_stats_int_minmax( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_int_minmax( &min, &max, data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min );
   DaoProcess_NewInteger( _proc, (daoint)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -48519,6 +48678,7 @@ static void dao__gsl_stats_int_max_index( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_int_max_index = gsl_stats_int_max_index( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_int_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48529,6 +48689,7 @@ static void dao__gsl_stats_int_min_index( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_int_min_index = gsl_stats_int_min_index( data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_int_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48541,6 +48702,7 @@ static void dao__gsl_stats_int_minmax_index( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_int_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -48553,6 +48715,7 @@ static void dao__gsl_stats_int_median_from_sorted_data( DaoProcess *_proc, DaoVa
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_int_median_from_sorted_data = gsl_stats_int_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_int.h */
@@ -48564,6 +48727,7 @@ static void dao__gsl_stats_int_quantile_from_sorted_data( DaoProcess *_proc, Dao
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_int_quantile_from_sorted_data = gsl_stats_int_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromSInt( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_int_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48574,6 +48738,7 @@ static void dao__gsl_stats_ushort_mean( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_mean = gsl_stats_ushort_mean( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48584,6 +48749,7 @@ static void dao__gsl_stats_ushort_variance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_variance = gsl_stats_ushort_variance( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48594,6 +48760,7 @@ static void dao__gsl_stats_ushort_sd( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_sd = gsl_stats_ushort_sd( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48605,6 +48772,7 @@ static void dao__gsl_stats_ushort_variance_with_fixed_mean( DaoProcess *_proc, D
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ushort_variance_with_fixed_mean = gsl_stats_ushort_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48616,6 +48784,7 @@ static void dao__gsl_stats_ushort_sd_with_fixed_mean( DaoProcess *_proc, DaoValu
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ushort_sd_with_fixed_mean = gsl_stats_ushort_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48626,6 +48795,7 @@ static void dao__gsl_stats_ushort_tss( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_tss = gsl_stats_ushort_tss( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48637,6 +48807,7 @@ static void dao__gsl_stats_ushort_tss_m( DaoProcess *_proc, DaoValue *_p[], int 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ushort_tss_m = gsl_stats_ushort_tss_m( data, stride, n, mean );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48647,6 +48818,7 @@ static void dao__gsl_stats_ushort_absdev( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_absdev = gsl_stats_ushort_absdev( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48657,6 +48829,7 @@ static void dao__gsl_stats_ushort_skew( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_skew = gsl_stats_ushort_skew( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48667,6 +48840,7 @@ static void dao__gsl_stats_ushort_kurtosis( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_kurtosis = gsl_stats_ushort_kurtosis( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48677,6 +48851,7 @@ static void dao__gsl_stats_ushort_lag1_autocorrelation( DaoProcess *_proc, DaoVa
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_lag1_autocorrelation = gsl_stats_ushort_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48689,6 +48864,8 @@ static void dao__gsl_stats_ushort_covariance( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_ushort_covariance = gsl_stats_ushort_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
+  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48701,6 +48878,8 @@ static void dao__gsl_stats_ushort_correlation( DaoProcess *_proc, DaoValue *_p[]
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_ushort_correlation = gsl_stats_ushort_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
+  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48712,6 +48891,7 @@ static void dao__gsl_stats_ushort_variance_m( DaoProcess *_proc, DaoValue *_p[],
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ushort_variance_m = gsl_stats_ushort_variance_m( data, stride, n, mean );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48723,6 +48903,7 @@ static void dao__gsl_stats_ushort_sd_m( DaoProcess *_proc, DaoValue *_p[], int _
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ushort_sd_m = gsl_stats_ushort_sd_m( data, stride, n, mean );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48734,6 +48915,7 @@ static void dao__gsl_stats_ushort_absdev_m( DaoProcess *_proc, DaoValue *_p[], i
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ushort_absdev_m = gsl_stats_ushort_absdev_m( data, stride, n, mean );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48746,6 +48928,7 @@ static void dao__gsl_stats_ushort_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], 
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_ushort_skew_m_sd = gsl_stats_ushort_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48758,6 +48941,7 @@ static void dao__gsl_stats_ushort_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_ushort_kurtosis_m_sd = gsl_stats_ushort_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48769,6 +48953,7 @@ static void dao__gsl_stats_ushort_lag1_autocorrelation_m( DaoProcess *_proc, Dao
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ushort_lag1_autocorrelation_m = gsl_stats_ushort_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48783,6 +48968,8 @@ static void dao__gsl_stats_ushort_covariance_m( DaoProcess *_proc, DaoValue *_p[
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_ushort_covariance_m = gsl_stats_ushort_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
+  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48796,6 +48983,8 @@ static void dao__gsl_stats_ushort_pvariance( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_ushort_pvariance = gsl_stats_ushort_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
+  DaoArray_FromUShort( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48809,6 +48998,8 @@ static void dao__gsl_stats_ushort_ttest( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_ushort_ttest = gsl_stats_ushort_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
+  DaoArray_FromUShort( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48819,6 +49010,7 @@ static void dao__gsl_stats_ushort_max( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   unsigned short _gsl_stats_ushort_max = gsl_stats_ushort_max( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_ushort_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48829,6 +49021,7 @@ static void dao__gsl_stats_ushort_min( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   unsigned short _gsl_stats_ushort_min = gsl_stats_ushort_min( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_ushort_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48841,6 +49034,7 @@ static void dao__gsl_stats_ushort_minmax( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_ushort_minmax( &min, &max, data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min );
   DaoProcess_NewInteger( _proc, (daoint)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -48853,6 +49047,7 @@ static void dao__gsl_stats_ushort_max_index( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_ushort_max_index = gsl_stats_ushort_max_index( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_ushort_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48863,6 +49058,7 @@ static void dao__gsl_stats_ushort_min_index( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_ushort_min_index = gsl_stats_ushort_min_index( data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_ushort_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48875,6 +49071,7 @@ static void dao__gsl_stats_ushort_minmax_index( DaoProcess *_proc, DaoValue *_p[
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_ushort_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -48887,6 +49084,7 @@ static void dao__gsl_stats_ushort_median_from_sorted_data( DaoProcess *_proc, Da
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_ushort_median_from_sorted_data = gsl_stats_ushort_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_ushort.h */
@@ -48898,6 +49096,7 @@ static void dao__gsl_stats_ushort_quantile_from_sorted_data( DaoProcess *_proc, 
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_ushort_quantile_from_sorted_data = gsl_stats_ushort_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromUShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_ushort_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48908,6 +49107,7 @@ static void dao__gsl_stats_short_mean( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_mean = gsl_stats_short_mean( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48918,6 +49118,7 @@ static void dao__gsl_stats_short_variance( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_variance = gsl_stats_short_variance( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48928,6 +49129,7 @@ static void dao__gsl_stats_short_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_sd = gsl_stats_short_sd( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48939,6 +49141,7 @@ static void dao__gsl_stats_short_variance_with_fixed_mean( DaoProcess *_proc, Da
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_short_variance_with_fixed_mean = gsl_stats_short_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48950,6 +49153,7 @@ static void dao__gsl_stats_short_sd_with_fixed_mean( DaoProcess *_proc, DaoValue
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_short_sd_with_fixed_mean = gsl_stats_short_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48960,6 +49164,7 @@ static void dao__gsl_stats_short_tss( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_tss = gsl_stats_short_tss( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48971,6 +49176,7 @@ static void dao__gsl_stats_short_tss_m( DaoProcess *_proc, DaoValue *_p[], int _
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_short_tss_m = gsl_stats_short_tss_m( data, stride, n, mean );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48981,6 +49187,7 @@ static void dao__gsl_stats_short_absdev( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_absdev = gsl_stats_short_absdev( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -48991,6 +49198,7 @@ static void dao__gsl_stats_short_skew( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_skew = gsl_stats_short_skew( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49001,6 +49209,7 @@ static void dao__gsl_stats_short_kurtosis( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_kurtosis = gsl_stats_short_kurtosis( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49011,6 +49220,7 @@ static void dao__gsl_stats_short_lag1_autocorrelation( DaoProcess *_proc, DaoVal
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_lag1_autocorrelation = gsl_stats_short_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49023,6 +49233,8 @@ static void dao__gsl_stats_short_covariance( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_short_covariance = gsl_stats_short_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
+  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49035,6 +49247,8 @@ static void dao__gsl_stats_short_correlation( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_short_correlation = gsl_stats_short_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
+  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49046,6 +49260,7 @@ static void dao__gsl_stats_short_variance_m( DaoProcess *_proc, DaoValue *_p[], 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_short_variance_m = gsl_stats_short_variance_m( data, stride, n, mean );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49057,6 +49272,7 @@ static void dao__gsl_stats_short_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_short_sd_m = gsl_stats_short_sd_m( data, stride, n, mean );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49068,6 +49284,7 @@ static void dao__gsl_stats_short_absdev_m( DaoProcess *_proc, DaoValue *_p[], in
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_short_absdev_m = gsl_stats_short_absdev_m( data, stride, n, mean );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49080,6 +49297,7 @@ static void dao__gsl_stats_short_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], i
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_short_skew_m_sd = gsl_stats_short_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49092,6 +49310,7 @@ static void dao__gsl_stats_short_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_short_kurtosis_m_sd = gsl_stats_short_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49103,6 +49322,7 @@ static void dao__gsl_stats_short_lag1_autocorrelation_m( DaoProcess *_proc, DaoV
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_short_lag1_autocorrelation_m = gsl_stats_short_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49117,6 +49337,8 @@ static void dao__gsl_stats_short_covariance_m( DaoProcess *_proc, DaoValue *_p[]
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_short_covariance_m = gsl_stats_short_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
+  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49130,6 +49352,8 @@ static void dao__gsl_stats_short_pvariance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_short_pvariance = gsl_stats_short_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
+  DaoArray_FromSShort( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49143,6 +49367,8 @@ static void dao__gsl_stats_short_ttest( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_short_ttest = gsl_stats_short_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
+  DaoArray_FromSShort( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49153,6 +49379,7 @@ static void dao__gsl_stats_short_max( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   short _gsl_stats_short_max = gsl_stats_short_max( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_short_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49163,6 +49390,7 @@ static void dao__gsl_stats_short_min( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   short _gsl_stats_short_min = gsl_stats_short_min( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_short_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49175,6 +49403,7 @@ static void dao__gsl_stats_short_minmax( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_short_minmax( &min, &max, data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min );
   DaoProcess_NewInteger( _proc, (daoint)max );
   DaoProcess_PutTuple( _proc, -2 );
@@ -49187,6 +49416,7 @@ static void dao__gsl_stats_short_max_index( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_short_max_index = gsl_stats_short_max_index( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_short_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49197,6 +49427,7 @@ static void dao__gsl_stats_short_min_index( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_short_min_index = gsl_stats_short_min_index( data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_short_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49209,6 +49440,7 @@ static void dao__gsl_stats_short_minmax_index( DaoProcess *_proc, DaoValue *_p[]
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_short_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -49221,6 +49453,7 @@ static void dao__gsl_stats_short_median_from_sorted_data( DaoProcess *_proc, Dao
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_short_median_from_sorted_data = gsl_stats_short_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_short.h */
@@ -49232,6 +49465,7 @@ static void dao__gsl_stats_short_quantile_from_sorted_data( DaoProcess *_proc, D
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_short_quantile_from_sorted_data = gsl_stats_short_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromSShort( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_short_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49242,6 +49476,7 @@ static void dao__gsl_stats_uchar_mean( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_mean = gsl_stats_uchar_mean( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49252,6 +49487,7 @@ static void dao__gsl_stats_uchar_variance( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_variance = gsl_stats_uchar_variance( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49262,6 +49498,7 @@ static void dao__gsl_stats_uchar_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_sd = gsl_stats_uchar_sd( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49273,6 +49510,7 @@ static void dao__gsl_stats_uchar_variance_with_fixed_mean( DaoProcess *_proc, Da
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uchar_variance_with_fixed_mean = gsl_stats_uchar_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49284,6 +49522,7 @@ static void dao__gsl_stats_uchar_sd_with_fixed_mean( DaoProcess *_proc, DaoValue
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uchar_sd_with_fixed_mean = gsl_stats_uchar_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49294,6 +49533,7 @@ static void dao__gsl_stats_uchar_tss( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_tss = gsl_stats_uchar_tss( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49305,6 +49545,7 @@ static void dao__gsl_stats_uchar_tss_m( DaoProcess *_proc, DaoValue *_p[], int _
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uchar_tss_m = gsl_stats_uchar_tss_m( data, stride, n, mean );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49315,6 +49556,7 @@ static void dao__gsl_stats_uchar_absdev( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_absdev = gsl_stats_uchar_absdev( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49325,6 +49567,7 @@ static void dao__gsl_stats_uchar_skew( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_skew = gsl_stats_uchar_skew( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49335,6 +49578,7 @@ static void dao__gsl_stats_uchar_kurtosis( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_kurtosis = gsl_stats_uchar_kurtosis( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49345,6 +49589,7 @@ static void dao__gsl_stats_uchar_lag1_autocorrelation( DaoProcess *_proc, DaoVal
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_lag1_autocorrelation = gsl_stats_uchar_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49357,6 +49602,8 @@ static void dao__gsl_stats_uchar_covariance( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_uchar_covariance = gsl_stats_uchar_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
+  DaoArray_FromUByte( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49369,6 +49616,8 @@ static void dao__gsl_stats_uchar_correlation( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_uchar_correlation = gsl_stats_uchar_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
+  DaoArray_FromUByte( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49380,6 +49629,7 @@ static void dao__gsl_stats_uchar_variance_m( DaoProcess *_proc, DaoValue *_p[], 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uchar_variance_m = gsl_stats_uchar_variance_m( data, stride, n, mean );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49391,6 +49641,7 @@ static void dao__gsl_stats_uchar_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uchar_sd_m = gsl_stats_uchar_sd_m( data, stride, n, mean );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49402,6 +49653,7 @@ static void dao__gsl_stats_uchar_absdev_m( DaoProcess *_proc, DaoValue *_p[], in
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uchar_absdev_m = gsl_stats_uchar_absdev_m( data, stride, n, mean );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49414,6 +49666,7 @@ static void dao__gsl_stats_uchar_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], i
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_uchar_skew_m_sd = gsl_stats_uchar_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49426,6 +49679,7 @@ static void dao__gsl_stats_uchar_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_uchar_kurtosis_m_sd = gsl_stats_uchar_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49437,6 +49691,7 @@ static void dao__gsl_stats_uchar_lag1_autocorrelation_m( DaoProcess *_proc, DaoV
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uchar_lag1_autocorrelation_m = gsl_stats_uchar_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49451,6 +49706,8 @@ static void dao__gsl_stats_uchar_covariance_m( DaoProcess *_proc, DaoValue *_p[]
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_uchar_covariance_m = gsl_stats_uchar_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
+  DaoArray_FromUByte( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49464,6 +49721,8 @@ static void dao__gsl_stats_uchar_pvariance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_uchar_pvariance = gsl_stats_uchar_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
+  DaoArray_FromUByte( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49477,6 +49736,8 @@ static void dao__gsl_stats_uchar_ttest( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_uchar_ttest = gsl_stats_uchar_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
+  DaoArray_FromUByte( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49487,6 +49748,7 @@ static void dao__gsl_stats_uchar_max( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   unsigned char _gsl_stats_uchar_max = gsl_stats_uchar_max( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_uchar_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49497,6 +49759,7 @@ static void dao__gsl_stats_uchar_min( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   unsigned char _gsl_stats_uchar_min = gsl_stats_uchar_min( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_uchar_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49509,6 +49772,7 @@ static void dao__gsl_stats_uchar_minmax( DaoProcess *_proc, DaoValue *_p[], int 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_uchar_minmax( min, max, data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[2] );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
 static void dao__gsl_stats_uchar_max_index( DaoProcess *_proc, DaoValue *_p[], int _n )
@@ -49518,6 +49782,7 @@ static void dao__gsl_stats_uchar_max_index( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_uchar_max_index = gsl_stats_uchar_max_index( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_uchar_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49528,6 +49793,7 @@ static void dao__gsl_stats_uchar_min_index( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_uchar_min_index = gsl_stats_uchar_min_index( data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_uchar_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49540,6 +49806,7 @@ static void dao__gsl_stats_uchar_minmax_index( DaoProcess *_proc, DaoValue *_p[]
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_uchar_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -49552,6 +49819,7 @@ static void dao__gsl_stats_uchar_median_from_sorted_data( DaoProcess *_proc, Dao
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_uchar_median_from_sorted_data = gsl_stats_uchar_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_uchar.h */
@@ -49563,6 +49831,7 @@ static void dao__gsl_stats_uchar_quantile_from_sorted_data( DaoProcess *_proc, D
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_uchar_quantile_from_sorted_data = gsl_stats_uchar_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromUByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_uchar_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49573,6 +49842,7 @@ static void dao__gsl_stats_char_mean( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_mean = gsl_stats_char_mean( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49583,6 +49853,7 @@ static void dao__gsl_stats_char_variance( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_variance = gsl_stats_char_variance( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_variance );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49593,6 +49864,7 @@ static void dao__gsl_stats_char_sd( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_sd = gsl_stats_char_sd( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49604,6 +49876,7 @@ static void dao__gsl_stats_char_variance_with_fixed_mean( DaoProcess *_proc, Dao
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_char_variance_with_fixed_mean = gsl_stats_char_variance_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_variance_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49615,6 +49888,7 @@ static void dao__gsl_stats_char_sd_with_fixed_mean( DaoProcess *_proc, DaoValue 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_char_sd_with_fixed_mean = gsl_stats_char_sd_with_fixed_mean( data, stride, n, mean );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_sd_with_fixed_mean );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49625,6 +49899,7 @@ static void dao__gsl_stats_char_tss( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_tss = gsl_stats_char_tss( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_tss );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49636,6 +49911,7 @@ static void dao__gsl_stats_char_tss_m( DaoProcess *_proc, DaoValue *_p[], int _n
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_char_tss_m = gsl_stats_char_tss_m( data, stride, n, mean );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_tss_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49646,6 +49922,7 @@ static void dao__gsl_stats_char_absdev( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_absdev = gsl_stats_char_absdev( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_absdev );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49656,6 +49933,7 @@ static void dao__gsl_stats_char_skew( DaoProcess *_proc, DaoValue *_p[], int _n 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_skew = gsl_stats_char_skew( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_skew );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49666,6 +49944,7 @@ static void dao__gsl_stats_char_kurtosis( DaoProcess *_proc, DaoValue *_p[], int
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_kurtosis = gsl_stats_char_kurtosis( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_kurtosis );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49676,6 +49955,7 @@ static void dao__gsl_stats_char_lag1_autocorrelation( DaoProcess *_proc, DaoValu
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_lag1_autocorrelation = gsl_stats_char_lag1_autocorrelation( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_lag1_autocorrelation );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49688,6 +49968,8 @@ static void dao__gsl_stats_char_covariance( DaoProcess *_proc, DaoValue *_p[], i
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_char_covariance = gsl_stats_char_covariance( data1, stride1, data2, stride2, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
+  DaoArray_FromSByte( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_covariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49700,6 +49982,8 @@ static void dao__gsl_stats_char_correlation( DaoProcess *_proc, DaoValue *_p[], 
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   double _gsl_stats_char_correlation = gsl_stats_char_correlation( data1, stride1, data2, stride2, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
+  DaoArray_FromSByte( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_correlation );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49711,6 +49995,7 @@ static void dao__gsl_stats_char_variance_m( DaoProcess *_proc, DaoValue *_p[], i
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_char_variance_m = gsl_stats_char_variance_m( data, stride, n, mean );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_variance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49722,6 +50007,7 @@ static void dao__gsl_stats_char_sd_m( DaoProcess *_proc, DaoValue *_p[], int _n 
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_char_sd_m = gsl_stats_char_sd_m( data, stride, n, mean );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_sd_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49733,6 +50019,7 @@ static void dao__gsl_stats_char_absdev_m( DaoProcess *_proc, DaoValue *_p[], int
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_char_absdev_m = gsl_stats_char_absdev_m( data, stride, n, mean );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_absdev_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49745,6 +50032,7 @@ static void dao__gsl_stats_char_skew_m_sd( DaoProcess *_proc, DaoValue *_p[], in
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_char_skew_m_sd = gsl_stats_char_skew_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_skew_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49757,6 +50045,7 @@ static void dao__gsl_stats_char_kurtosis_m_sd( DaoProcess *_proc, DaoValue *_p[]
   const double sd = (const double) DaoValue_TryGetDouble( _p[4] );
 
   double _gsl_stats_char_kurtosis_m_sd = gsl_stats_char_kurtosis_m_sd( data, stride, n, mean, sd );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_kurtosis_m_sd );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49768,6 +50057,7 @@ static void dao__gsl_stats_char_lag1_autocorrelation_m( DaoProcess *_proc, DaoVa
   const double mean = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_char_lag1_autocorrelation_m = gsl_stats_char_lag1_autocorrelation_m( data, stride, n, mean );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_lag1_autocorrelation_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49782,6 +50072,8 @@ static void dao__gsl_stats_char_covariance_m( DaoProcess *_proc, DaoValue *_p[],
   const double mean2 = (const double) DaoValue_TryGetDouble( _p[6] );
 
   double _gsl_stats_char_covariance_m = gsl_stats_char_covariance_m( data1, stride1, data2, stride2, n, mean1, mean2 );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
+  DaoArray_FromSByte( (DaoArray*)_p[2] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_covariance_m );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49795,6 +50087,8 @@ static void dao__gsl_stats_char_pvariance( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_char_pvariance = gsl_stats_char_pvariance( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
+  DaoArray_FromSByte( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_pvariance );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49808,6 +50102,8 @@ static void dao__gsl_stats_char_ttest( DaoProcess *_proc, DaoValue *_p[], int _n
   const unsigned long n2 = (const unsigned long) DaoValue_TryGetInteger( _p[5] );
 
   double _gsl_stats_char_ttest = gsl_stats_char_ttest( data1, stride1, n1, data2, stride2, n2 );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
+  DaoArray_FromSByte( (DaoArray*)_p[3] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_ttest );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49818,6 +50114,7 @@ static void dao__gsl_stats_char_max( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   char _gsl_stats_char_max = gsl_stats_char_max( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_char_max );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49828,6 +50125,7 @@ static void dao__gsl_stats_char_min( DaoProcess *_proc, DaoValue *_p[], int _n )
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   char _gsl_stats_char_min = gsl_stats_char_min( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_char_min );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49840,6 +50138,7 @@ static void dao__gsl_stats_char_minmax( DaoProcess *_proc, DaoValue *_p[], int _
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_char_minmax( min, max, data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[2] );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
 static void dao__gsl_stats_char_max_index( DaoProcess *_proc, DaoValue *_p[], int _n )
@@ -49849,6 +50148,7 @@ static void dao__gsl_stats_char_max_index( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_char_max_index = gsl_stats_char_max_index( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_char_max_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49859,6 +50159,7 @@ static void dao__gsl_stats_char_min_index( DaoProcess *_proc, DaoValue *_p[], in
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   size_t _gsl_stats_char_min_index = gsl_stats_char_min_index( data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutInteger( _proc, (daoint) _gsl_stats_char_min_index );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49871,6 +50172,7 @@ static void dao__gsl_stats_char_minmax_index( DaoProcess *_proc, DaoValue *_p[],
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[4] );
 
   gsl_stats_char_minmax_index( &min_index, &max_index, data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[2] );
   DaoProcess_NewInteger( _proc, (daoint)min_index );
   DaoProcess_NewInteger( _proc, (daoint)max_index );
   DaoProcess_PutTuple( _proc, -2 );
@@ -49883,6 +50185,7 @@ static void dao__gsl_stats_char_median_from_sorted_data( DaoProcess *_proc, DaoV
   const unsigned long n = (const unsigned long) DaoValue_TryGetInteger( _p[2] );
 
   double _gsl_stats_char_median_from_sorted_data = gsl_stats_char_median_from_sorted_data( sorted_data, stride, n );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_median_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_statistics_char.h */
@@ -49894,6 +50197,7 @@ static void dao__gsl_stats_char_quantile_from_sorted_data( DaoProcess *_proc, Da
   const double f = (const double) DaoValue_TryGetDouble( _p[3] );
 
   double _gsl_stats_char_quantile_from_sorted_data = gsl_stats_char_quantile_from_sorted_data( sorted_data, stride, n, f );
+  DaoArray_FromSByte( (DaoArray*)_p[0] );
   DaoProcess_PutDouble( _proc, (double) _gsl_stats_char_quantile_from_sorted_data );
 }
 /* /usr/local/include/gsl/gsl_sum.h */
@@ -49921,7 +50225,6 @@ static void dao__gsl_sum_levin_u_accel( DaoProcess *_proc, DaoValue *_p[], int _
   const double* array = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int _gsl_sum_levin_u_accel = gsl_sum_levin_u_accel( array, n, w, &sum_accel, &abserr );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sum_levin_u_accel );
   DaoProcess_NewDouble( _proc, (double)sum_accel );
   DaoProcess_NewDouble( _proc, (double)abserr );
@@ -49939,7 +50242,6 @@ static void dao__gsl_sum_levin_u_minmax( DaoProcess *_proc, DaoValue *_p[], int 
   const double* array = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int _gsl_sum_levin_u_minmax = gsl_sum_levin_u_minmax( array, n, min_terms, max_terms, w, &sum_accel, &abserr );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sum_levin_u_minmax );
   DaoProcess_NewDouble( _proc, (double)sum_accel );
   DaoProcess_NewDouble( _proc, (double)abserr );
@@ -49984,7 +50286,6 @@ static void dao__gsl_sum_levin_utrunc_accel( DaoProcess *_proc, DaoValue *_p[], 
   const double* array = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int _gsl_sum_levin_utrunc_accel = gsl_sum_levin_utrunc_accel( array, n, w, &sum_accel, &abserr_trunc );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sum_levin_utrunc_accel );
   DaoProcess_NewDouble( _proc, (double)sum_accel );
   DaoProcess_NewDouble( _proc, (double)abserr_trunc );
@@ -50002,7 +50303,6 @@ static void dao__gsl_sum_levin_utrunc_minmax( DaoProcess *_proc, DaoValue *_p[],
   const double* array = (const double*) DaoArray_ToDouble( (DaoArray*)_p[0] );
 
   int _gsl_sum_levin_utrunc_minmax = gsl_sum_levin_utrunc_minmax( array, n, min_terms, max_terms, w, &sum_accel, &abserr_trunc );
-  DaoArray_FromDouble( (DaoArray*)_p[0] );
   DaoProcess_NewInteger( _proc, (daoint) _gsl_sum_levin_utrunc_minmax );
   DaoProcess_NewDouble( _proc, (double)sum_accel );
   DaoProcess_NewDouble( _proc, (double)abserr_trunc );
@@ -50858,12 +51158,10 @@ int DaoOnLoad( DaoVmSpace *vms, DaoNamespace *ns )
 {
 	__daoVmSpace = vms;
 	DaoNamespace_AddConstNumbers( ns, dao__Nums );
-	dao_type___darwin_pthread_handler_rec = DaoNamespace_WrapType( ns, dao___darwin_pthread_handler_rec_Typer, 1 );
 	dao_type__opaque_pthread_attr_t = DaoNamespace_WrapType( ns, dao__opaque_pthread_attr_t_Typer, 1 );
 	dao_type_sigval = DaoNamespace_WrapType( ns, dao_sigval_Typer, 1 );
 	dao_type_sigevent = DaoNamespace_WrapType( ns, dao_sigevent_Typer, 1 );
 	dao_type___siginfo = DaoNamespace_WrapType( ns, dao___siginfo_Typer, 1 );
-	dao_type___sigaction_u = DaoNamespace_WrapType( ns, dao___sigaction_u_Typer, 1 );
 	dao_type_sigvec = DaoNamespace_WrapType( ns, dao_sigvec_Typer, 1 );
 	dao_type_timeval = DaoNamespace_WrapType( ns, dao_timeval_Typer, 1 );
 	dao_type_rusage = DaoNamespace_WrapType( ns, dao_rusage_Typer, 1 );

@@ -3,11 +3,6 @@
 extern "C"{
 #endif
 /* /usr/include/sys/_types.h */
-static DaoTypeBase __darwin_pthread_handler_rec_Typer = 
-{ "__darwin_pthread_handler_rec", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao___darwin_pthread_handler_rec_Typer = & __darwin_pthread_handler_rec_Typer;
-DaoType *dao_type___darwin_pthread_handler_rec = NULL;
-/* /usr/include/sys/_types.h */
 static DaoTypeBase _opaque_pthread_attr_t_Typer = 
 { "_opaque_pthread_attr_t", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
 DaoTypeBase DAO_DLL_GSL *dao__opaque_pthread_attr_t_Typer = & _opaque_pthread_attr_t_Typer;
@@ -27,11 +22,6 @@ static DaoTypeBase __siginfo_Typer =
 { "__siginfo", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
 DaoTypeBase DAO_DLL_GSL *dao___siginfo_Typer = & __siginfo_Typer;
 DaoType *dao_type___siginfo = NULL;
-/* /usr/include/sys/signal.h */
-static DaoTypeBase __sigaction_u_Typer = 
-{ "__sigaction_u", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao___sigaction_u_Typer = & __sigaction_u_Typer;
-DaoType *dao_type___sigaction_u = NULL;
 /* /usr/include/sys/signal.h */
 static DaoTypeBase sigvec_Typer = 
 { "sigvec", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
@@ -8154,6 +8144,7 @@ static void dao_gsl_fft_complex_wavetable_GETF_nf( DaoProcess *_proc, DaoValue *
 static void dao_gsl_fft_complex_wavetable_SETF_nf( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_complex_wavetable_GETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_complex_wavetable_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_fft_complex_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_complex_wavetable_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_complex_wavetable_gsl_fft_complex_wavetable( DaoProcess *_proc, DaoValue *_p[], int _n );
 
@@ -8165,6 +8156,7 @@ static DaoFuncItem dao_gsl_fft_complex_wavetable_Meths[] =
   { dao_gsl_fft_complex_wavetable_SETF_nf, ".nf=( self :gsl_fft_complex_wavetable, nf :int )" },
   { dao_gsl_fft_complex_wavetable_GETF_factor, ".factor( self :gsl_fft_complex_wavetable )=>array<int>" },
   { dao_gsl_fft_complex_wavetable_SETF_factor, ".factor=( self :gsl_fft_complex_wavetable, factor :array<int> )" },
+  { dao_gsl_fft_complex_wavetable_GETF_twiddle, ".twiddle( self :gsl_fft_complex_wavetable )=>list<gsl_complex>" },
   { dao_gsl_fft_complex_wavetable_GETF_trig, ".trig( self :gsl_fft_complex_wavetable )=>gsl_complex" },
   { dao_gsl_fft_complex_wavetable_gsl_fft_complex_wavetable, "gsl_fft_complex_wavetable(  )=>gsl_fft_complex_wavetable" },
   { NULL, NULL }
@@ -8216,6 +8208,16 @@ static void dao_gsl_fft_complex_wavetable_SETF_factor( DaoProcess *_proc, DaoVal
   int size = DaoArray_Size( (DaoArray*)_p[1] );
   if( size > 64 ) size = 64;
   memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+}
+static void dao_gsl_fft_complex_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_fft_complex_wavetable *self = (gsl_fft_complex_wavetable*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_complex_wavetable);
+  DaoList *list = DaoProcess_PutList( _proc );
+  daoint i, n = 64;
+  for(i=0; i<n; i++){
+    DaoCdata *it = DaoProcess_NewCdata( _proc, dao_type_gsl_complex, self->twiddle[i], 0 );
+    DaoList_PushBack( list, (DaoValue*) it );
+  }
 }
 static void dao_gsl_fft_complex_wavetable_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8300,6 +8302,7 @@ static void dao_gsl_fft_complex_wavetable_float_GETF_nf( DaoProcess *_proc, DaoV
 static void dao_gsl_fft_complex_wavetable_float_SETF_nf( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_complex_wavetable_float_GETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_complex_wavetable_float_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_fft_complex_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_complex_wavetable_float_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_complex_wavetable_float_gsl_fft_complex_wavetable_float( DaoProcess *_proc, DaoValue *_p[], int _n );
 
@@ -8311,6 +8314,7 @@ static DaoFuncItem dao_gsl_fft_complex_wavetable_float_Meths[] =
   { dao_gsl_fft_complex_wavetable_float_SETF_nf, ".nf=( self :gsl_fft_complex_wavetable_float, nf :int )" },
   { dao_gsl_fft_complex_wavetable_float_GETF_factor, ".factor( self :gsl_fft_complex_wavetable_float )=>array<int>" },
   { dao_gsl_fft_complex_wavetable_float_SETF_factor, ".factor=( self :gsl_fft_complex_wavetable_float, factor :array<int> )" },
+  { dao_gsl_fft_complex_wavetable_float_GETF_twiddle, ".twiddle( self :gsl_fft_complex_wavetable_float )=>list<gsl_complex_float>" },
   { dao_gsl_fft_complex_wavetable_float_GETF_trig, ".trig( self :gsl_fft_complex_wavetable_float )=>gsl_complex_float" },
   { dao_gsl_fft_complex_wavetable_float_gsl_fft_complex_wavetable_float, "gsl_fft_complex_wavetable_float(  )=>gsl_fft_complex_wavetable_float" },
   { NULL, NULL }
@@ -8362,6 +8366,16 @@ static void dao_gsl_fft_complex_wavetable_float_SETF_factor( DaoProcess *_proc, 
   int size = DaoArray_Size( (DaoArray*)_p[1] );
   if( size > 64 ) size = 64;
   memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+}
+static void dao_gsl_fft_complex_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_fft_complex_wavetable_float *self = (gsl_fft_complex_wavetable_float*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_complex_wavetable_float);
+  DaoList *list = DaoProcess_PutList( _proc );
+  daoint i, n = 64;
+  for(i=0; i<n; i++){
+    DaoCdata *it = DaoProcess_NewCdata( _proc, dao_type_gsl_complex_float, self->twiddle[i], 0 );
+    DaoList_PushBack( list, (DaoValue*) it );
+  }
 }
 static void dao_gsl_fft_complex_wavetable_float_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8446,6 +8460,7 @@ static void dao_gsl_fft_real_wavetable_GETF_nf( DaoProcess *_proc, DaoValue *_p[
 static void dao_gsl_fft_real_wavetable_SETF_nf( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_real_wavetable_GETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_real_wavetable_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_fft_real_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_real_wavetable_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_real_wavetable_gsl_fft_real_wavetable( DaoProcess *_proc, DaoValue *_p[], int _n );
 
@@ -8457,6 +8472,7 @@ static DaoFuncItem dao_gsl_fft_real_wavetable_Meths[] =
   { dao_gsl_fft_real_wavetable_SETF_nf, ".nf=( self :gsl_fft_real_wavetable, nf :int )" },
   { dao_gsl_fft_real_wavetable_GETF_factor, ".factor( self :gsl_fft_real_wavetable )=>array<int>" },
   { dao_gsl_fft_real_wavetable_SETF_factor, ".factor=( self :gsl_fft_real_wavetable, factor :array<int> )" },
+  { dao_gsl_fft_real_wavetable_GETF_twiddle, ".twiddle( self :gsl_fft_real_wavetable )=>list<gsl_complex>" },
   { dao_gsl_fft_real_wavetable_GETF_trig, ".trig( self :gsl_fft_real_wavetable )=>gsl_complex" },
   { dao_gsl_fft_real_wavetable_gsl_fft_real_wavetable, "gsl_fft_real_wavetable(  )=>gsl_fft_real_wavetable" },
   { NULL, NULL }
@@ -8508,6 +8524,16 @@ static void dao_gsl_fft_real_wavetable_SETF_factor( DaoProcess *_proc, DaoValue 
   int size = DaoArray_Size( (DaoArray*)_p[1] );
   if( size > 64 ) size = 64;
   memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+}
+static void dao_gsl_fft_real_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_fft_real_wavetable *self = (gsl_fft_real_wavetable*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_real_wavetable);
+  DaoList *list = DaoProcess_PutList( _proc );
+  daoint i, n = 64;
+  for(i=0; i<n; i++){
+    DaoCdata *it = DaoProcess_NewCdata( _proc, dao_type_gsl_complex, self->twiddle[i], 0 );
+    DaoList_PushBack( list, (DaoValue*) it );
+  }
 }
 static void dao_gsl_fft_real_wavetable_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8592,6 +8618,7 @@ static void dao_gsl_fft_halfcomplex_wavetable_GETF_nf( DaoProcess *_proc, DaoVal
 static void dao_gsl_fft_halfcomplex_wavetable_SETF_nf( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_halfcomplex_wavetable_GETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_halfcomplex_wavetable_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_fft_halfcomplex_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_halfcomplex_wavetable_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_halfcomplex_wavetable_gsl_fft_halfcomplex_wavetable( DaoProcess *_proc, DaoValue *_p[], int _n );
 
@@ -8603,6 +8630,7 @@ static DaoFuncItem dao_gsl_fft_halfcomplex_wavetable_Meths[] =
   { dao_gsl_fft_halfcomplex_wavetable_SETF_nf, ".nf=( self :gsl_fft_halfcomplex_wavetable, nf :int )" },
   { dao_gsl_fft_halfcomplex_wavetable_GETF_factor, ".factor( self :gsl_fft_halfcomplex_wavetable )=>array<int>" },
   { dao_gsl_fft_halfcomplex_wavetable_SETF_factor, ".factor=( self :gsl_fft_halfcomplex_wavetable, factor :array<int> )" },
+  { dao_gsl_fft_halfcomplex_wavetable_GETF_twiddle, ".twiddle( self :gsl_fft_halfcomplex_wavetable )=>list<gsl_complex>" },
   { dao_gsl_fft_halfcomplex_wavetable_GETF_trig, ".trig( self :gsl_fft_halfcomplex_wavetable )=>gsl_complex" },
   { dao_gsl_fft_halfcomplex_wavetable_gsl_fft_halfcomplex_wavetable, "gsl_fft_halfcomplex_wavetable(  )=>gsl_fft_halfcomplex_wavetable" },
   { NULL, NULL }
@@ -8655,6 +8683,16 @@ static void dao_gsl_fft_halfcomplex_wavetable_SETF_factor( DaoProcess *_proc, Da
   if( size > 64 ) size = 64;
   memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
 }
+static void dao_gsl_fft_halfcomplex_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_fft_halfcomplex_wavetable *self = (gsl_fft_halfcomplex_wavetable*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_halfcomplex_wavetable);
+  DaoList *list = DaoProcess_PutList( _proc );
+  daoint i, n = 64;
+  for(i=0; i<n; i++){
+    DaoCdata *it = DaoProcess_NewCdata( _proc, dao_type_gsl_complex, self->twiddle[i], 0 );
+    DaoList_PushBack( list, (DaoValue*) it );
+  }
+}
 static void dao_gsl_fft_halfcomplex_wavetable_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_fft_halfcomplex_wavetable *self = (gsl_fft_halfcomplex_wavetable*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_halfcomplex_wavetable);
@@ -8680,6 +8718,7 @@ static void dao_gsl_fft_real_wavetable_float_GETF_nf( DaoProcess *_proc, DaoValu
 static void dao_gsl_fft_real_wavetable_float_SETF_nf( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_real_wavetable_float_GETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_real_wavetable_float_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_fft_real_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_real_wavetable_float_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_real_wavetable_float_gsl_fft_real_wavetable_float( DaoProcess *_proc, DaoValue *_p[], int _n );
 
@@ -8691,6 +8730,7 @@ static DaoFuncItem dao_gsl_fft_real_wavetable_float_Meths[] =
   { dao_gsl_fft_real_wavetable_float_SETF_nf, ".nf=( self :gsl_fft_real_wavetable_float, nf :int )" },
   { dao_gsl_fft_real_wavetable_float_GETF_factor, ".factor( self :gsl_fft_real_wavetable_float )=>array<int>" },
   { dao_gsl_fft_real_wavetable_float_SETF_factor, ".factor=( self :gsl_fft_real_wavetable_float, factor :array<int> )" },
+  { dao_gsl_fft_real_wavetable_float_GETF_twiddle, ".twiddle( self :gsl_fft_real_wavetable_float )=>list<gsl_complex_float>" },
   { dao_gsl_fft_real_wavetable_float_GETF_trig, ".trig( self :gsl_fft_real_wavetable_float )=>gsl_complex_float" },
   { dao_gsl_fft_real_wavetable_float_gsl_fft_real_wavetable_float, "gsl_fft_real_wavetable_float(  )=>gsl_fft_real_wavetable_float" },
   { NULL, NULL }
@@ -8742,6 +8782,16 @@ static void dao_gsl_fft_real_wavetable_float_SETF_factor( DaoProcess *_proc, Dao
   int size = DaoArray_Size( (DaoArray*)_p[1] );
   if( size > 64 ) size = 64;
   memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+}
+static void dao_gsl_fft_real_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_fft_real_wavetable_float *self = (gsl_fft_real_wavetable_float*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_real_wavetable_float);
+  DaoList *list = DaoProcess_PutList( _proc );
+  daoint i, n = 64;
+  for(i=0; i<n; i++){
+    DaoCdata *it = DaoProcess_NewCdata( _proc, dao_type_gsl_complex_float, self->twiddle[i], 0 );
+    DaoList_PushBack( list, (DaoValue*) it );
+  }
 }
 static void dao_gsl_fft_real_wavetable_float_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8826,6 +8876,7 @@ static void dao_gsl_fft_halfcomplex_wavetable_float_GETF_nf( DaoProcess *_proc, 
 static void dao_gsl_fft_halfcomplex_wavetable_float_SETF_nf( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_halfcomplex_wavetable_float_GETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_halfcomplex_wavetable_float_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_fft_halfcomplex_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_halfcomplex_wavetable_float_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_fft_halfcomplex_wavetable_float_gsl_fft_halfcomplex_wavetable_float( DaoProcess *_proc, DaoValue *_p[], int _n );
 
@@ -8837,6 +8888,7 @@ static DaoFuncItem dao_gsl_fft_halfcomplex_wavetable_float_Meths[] =
   { dao_gsl_fft_halfcomplex_wavetable_float_SETF_nf, ".nf=( self :gsl_fft_halfcomplex_wavetable_float, nf :int )" },
   { dao_gsl_fft_halfcomplex_wavetable_float_GETF_factor, ".factor( self :gsl_fft_halfcomplex_wavetable_float )=>array<int>" },
   { dao_gsl_fft_halfcomplex_wavetable_float_SETF_factor, ".factor=( self :gsl_fft_halfcomplex_wavetable_float, factor :array<int> )" },
+  { dao_gsl_fft_halfcomplex_wavetable_float_GETF_twiddle, ".twiddle( self :gsl_fft_halfcomplex_wavetable_float )=>list<gsl_complex_float>" },
   { dao_gsl_fft_halfcomplex_wavetable_float_GETF_trig, ".trig( self :gsl_fft_halfcomplex_wavetable_float )=>gsl_complex_float" },
   { dao_gsl_fft_halfcomplex_wavetable_float_gsl_fft_halfcomplex_wavetable_float, "gsl_fft_halfcomplex_wavetable_float(  )=>gsl_fft_halfcomplex_wavetable_float" },
   { NULL, NULL }
@@ -8888,6 +8940,16 @@ static void dao_gsl_fft_halfcomplex_wavetable_float_SETF_factor( DaoProcess *_pr
   int size = DaoArray_Size( (DaoArray*)_p[1] );
   if( size > 64 ) size = 64;
   memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+}
+static void dao_gsl_fft_halfcomplex_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_fft_halfcomplex_wavetable_float *self = (gsl_fft_halfcomplex_wavetable_float*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_halfcomplex_wavetable_float);
+  DaoList *list = DaoProcess_PutList( _proc );
+  daoint i, n = 64;
+  for(i=0; i<n; i++){
+    DaoCdata *it = DaoProcess_NewCdata( _proc, dao_type_gsl_complex_float, self->twiddle[i], 0 );
+    DaoList_PushBack( list, (DaoValue*) it );
+  }
 }
 static void dao_gsl_fft_halfcomplex_wavetable_float_GETF_trig( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -15668,13 +15730,9 @@ static DaoNumItem dao_gsl_wavelet_Nums[] =
 
 static void dao_gsl_wavelet_GETF_type( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_wavelet_GETF_h1( DaoProcess *_proc, DaoValue *_p[], int _n );
-static void dao_gsl_wavelet_SETF_h1( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_wavelet_GETF_g1( DaoProcess *_proc, DaoValue *_p[], int _n );
-static void dao_gsl_wavelet_SETF_g1( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_wavelet_GETF_h2( DaoProcess *_proc, DaoValue *_p[], int _n );
-static void dao_gsl_wavelet_SETF_h2( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_wavelet_GETF_g2( DaoProcess *_proc, DaoValue *_p[], int _n );
-static void dao_gsl_wavelet_SETF_g2( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_wavelet_GETF_nc( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_wavelet_SETF_nc( DaoProcess *_proc, DaoValue *_p[], int _n );
 static void dao_gsl_wavelet_GETF_offset( DaoProcess *_proc, DaoValue *_p[], int _n );
@@ -15685,13 +15743,9 @@ static DaoFuncItem dao_gsl_wavelet_Meths[] =
 {
   { dao_gsl_wavelet_GETF_type, ".type( self :gsl_wavelet )=>gsl_wavelet_type" },
   { dao_gsl_wavelet_GETF_h1, ".h1( self :gsl_wavelet )=>array<double>" },
-  { dao_gsl_wavelet_SETF_h1, ".h1=( self :gsl_wavelet, h1 :array<double> )" },
   { dao_gsl_wavelet_GETF_g1, ".g1( self :gsl_wavelet )=>array<double>" },
-  { dao_gsl_wavelet_SETF_g1, ".g1=( self :gsl_wavelet, g1 :array<double> )" },
   { dao_gsl_wavelet_GETF_h2, ".h2( self :gsl_wavelet )=>array<double>" },
-  { dao_gsl_wavelet_SETF_h2, ".h2=( self :gsl_wavelet, h2 :array<double> )" },
   { dao_gsl_wavelet_GETF_g2, ".g2( self :gsl_wavelet )=>array<double>" },
-  { dao_gsl_wavelet_SETF_g2, ".g2=( self :gsl_wavelet, g2 :array<double> )" },
   { dao_gsl_wavelet_GETF_nc, ".nc( self :gsl_wavelet )=>int" },
   { dao_gsl_wavelet_SETF_nc, ".nc=( self :gsl_wavelet, nc :int )" },
   { dao_gsl_wavelet_GETF_offset, ".offset( self :gsl_wavelet )=>int" },
@@ -15725,48 +15779,20 @@ static void dao_gsl_wavelet_GETF_h1( DaoProcess *_proc, DaoValue *_p[], int _n )
   gsl_wavelet *self = (gsl_wavelet*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet);
   DaoProcess_PutVectorD( _proc, (double*) self->h1, 0 );
 }
-static void dao_gsl_wavelet_SETF_h1( DaoProcess *_proc, DaoValue *_p[], int _n )
-{
-  gsl_wavelet *self = (gsl_wavelet*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
-  if( size > 0 ) size = 0;
-  memmove( self->h1, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
-}
 static void dao_gsl_wavelet_GETF_g1( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_wavelet *self = (gsl_wavelet*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet);
   DaoProcess_PutVectorD( _proc, (double*) self->g1, 0 );
-}
-static void dao_gsl_wavelet_SETF_g1( DaoProcess *_proc, DaoValue *_p[], int _n )
-{
-  gsl_wavelet *self = (gsl_wavelet*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
-  if( size > 0 ) size = 0;
-  memmove( self->g1, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
 }
 static void dao_gsl_wavelet_GETF_h2( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_wavelet *self = (gsl_wavelet*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet);
   DaoProcess_PutVectorD( _proc, (double*) self->h2, 0 );
 }
-static void dao_gsl_wavelet_SETF_h2( DaoProcess *_proc, DaoValue *_p[], int _n )
-{
-  gsl_wavelet *self = (gsl_wavelet*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
-  if( size > 0 ) size = 0;
-  memmove( self->h2, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
-}
 static void dao_gsl_wavelet_GETF_g2( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_wavelet *self = (gsl_wavelet*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet);
   DaoProcess_PutVectorD( _proc, (double*) self->g2, 0 );
-}
-static void dao_gsl_wavelet_SETF_g2( DaoProcess *_proc, DaoValue *_p[], int _n )
-{
-  gsl_wavelet *self = (gsl_wavelet*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
-  if( size > 0 ) size = 0;
-  memmove( self->g2, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
 }
 static void dao_gsl_wavelet_GETF_nc( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
