@@ -11407,7 +11407,7 @@ static DaoFuncItem dao_gsl_monte_vegas_state_Meths[] =
   { dao_gsl_monte_vegas_state_SETF_samples, ".samples=( self :gsl_monte_vegas_state, samples :int )" },
   { dao_gsl_monte_vegas_state_GETF_calls_per_box, ".calls_per_box( self :gsl_monte_vegas_state )=>int" },
   { dao_gsl_monte_vegas_state_SETF_calls_per_box, ".calls_per_box=( self :gsl_monte_vegas_state, calls_per_box :int )" },
-  { dao_gsl_monte_vegas_state_GETF_ostream, ".ostream( self :gsl_monte_vegas_state )=>stream" },
+  { dao_gsl_monte_vegas_state_GETF_ostream, ".ostream( self :gsl_monte_vegas_state )=>io::stream" },
   { dao_gsl_monte_vegas_state_gsl_monte_vegas_state, "gsl_monte_vegas_state(  )=>gsl_monte_vegas_state" },
   { NULL, NULL }
 };
@@ -11721,7 +11721,7 @@ static DaoFuncItem dao_gsl_monte_vegas_params_Meths[] =
   { dao_gsl_monte_vegas_params_SETF_mode, ".mode=( self :gsl_monte_vegas_params, mode :int )" },
   { dao_gsl_monte_vegas_params_GETF_verbose, ".verbose( self :gsl_monte_vegas_params )=>int" },
   { dao_gsl_monte_vegas_params_SETF_verbose, ".verbose=( self :gsl_monte_vegas_params, verbose :int )" },
-  { dao_gsl_monte_vegas_params_GETF_ostream, ".ostream( self :gsl_monte_vegas_params )=>stream" },
+  { dao_gsl_monte_vegas_params_GETF_ostream, ".ostream( self :gsl_monte_vegas_params )=>io::stream" },
   { dao_gsl_monte_vegas_params_gsl_monte_vegas_params, "gsl_monte_vegas_params(  )=>gsl_monte_vegas_params" },
   { NULL, NULL }
 };
@@ -13244,7 +13244,7 @@ static void dao_gsl_ntuple_gsl_ntuple( DaoProcess *_proc, DaoValue *_p[], int _n
 
 static DaoFuncItem dao_gsl_ntuple_Meths[] = 
 {
-  { dao_gsl_ntuple_GETF_file, ".file( self :gsl_ntuple )=>stream" },
+  { dao_gsl_ntuple_GETF_file, ".file( self :gsl_ntuple )=>io::stream" },
   { dao_gsl_ntuple_GETF_ntuple_data, ".ntuple_data( self :gsl_ntuple )=>cdata" },
   { dao_gsl_ntuple_GETF_size, ".size( self :gsl_ntuple )=>int" },
   { dao_gsl_ntuple_SETF_size, ".size=( self :gsl_ntuple, size :int )" },

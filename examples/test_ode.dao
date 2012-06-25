@@ -65,9 +65,9 @@ if(1){
 }else{
 	s = gsl_odeiv_step_alloc( gsl_odeiv_step_rk4, 2 );
 	h = 1E-2;
-	y_err = [0.0D:2];
-	dydt_in = [0.0D:2];
-	dydt_out = [0.0D:2];
+	y_err = [2 ~ 0D];
+	dydt_in = [2 ~ 0D];
+	dydt_out = [2 ~ 0D];
 	msys.function( t, y, dydt_in, msys );
 	while (t < t1) {
 		status = gsl_odeiv_step_apply (s, t, h, y, y_err, dydt_in, dydt_out, msys);
