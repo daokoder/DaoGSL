@@ -6339,7 +6339,7 @@ DaoType *dao_type_gsl_function_struct = NULL;
 static void dao_gsl_function_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_function_struct *self = (struct gsl_function_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_function_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_function_struct_gsl_function_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -6383,7 +6383,7 @@ DaoType *dao_type_gsl_function_fdf_struct = NULL;
 static void dao_gsl_function_fdf_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_function_fdf_struct *self = (struct gsl_function_fdf_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_function_fdf_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_function_fdf_struct_gsl_function_fdf_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -6427,7 +6427,7 @@ DaoType *dao_type_gsl_function_vec_struct = NULL;
 static void dao_gsl_function_vec_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_function_vec_struct *self = (struct gsl_function_vec_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_function_vec_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_function_vec_struct_gsl_function_vec_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10465,7 +10465,7 @@ static void dao_gsl_interp_SETF_size( DaoProcess *_proc, DaoValue *_p[], int _n 
 static void dao_gsl_interp_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_interp *self = (gsl_interp*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_interp);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_interp_gsl_interp( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10665,7 +10665,7 @@ static void dao_gsl_min_fminimizer_SETF_f_upper( DaoProcess *_proc, DaoValue *_p
 static void dao_gsl_min_fminimizer_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_min_fminimizer *self = (gsl_min_fminimizer*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_min_fminimizer);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_min_fminimizer_gsl_min_fminimizer( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10723,7 +10723,7 @@ static void dao_gsl_monte_function_struct_SETF_dim( DaoProcess *_proc, DaoValue 
 static void dao_gsl_monte_function_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_monte_function_struct *self = (struct gsl_monte_function_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_monte_function_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_monte_function_struct_gsl_monte_function_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10860,7 +10860,7 @@ static void dao_gsl_rng_GETF_type( DaoProcess *_proc, DaoValue *_p[], int _n )
 static void dao_gsl_rng_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_rng *self = (gsl_rng*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_rng);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_rng_gsl_rng( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -11407,7 +11407,7 @@ static DaoFuncItem dao_gsl_monte_vegas_state_Meths[] =
   { dao_gsl_monte_vegas_state_SETF_samples, ".samples=( self :gsl_monte_vegas_state, samples :int )" },
   { dao_gsl_monte_vegas_state_GETF_calls_per_box, ".calls_per_box( self :gsl_monte_vegas_state )=>int" },
   { dao_gsl_monte_vegas_state_SETF_calls_per_box, ".calls_per_box=( self :gsl_monte_vegas_state, calls_per_box :int )" },
-  { dao_gsl_monte_vegas_state_GETF_ostream, ".ostream( self :gsl_monte_vegas_state )=>io::stream" },
+  { dao_gsl_monte_vegas_state_GETF_ostream, ".ostream( self :gsl_monte_vegas_state )=>dao::io::stream" },
   { dao_gsl_monte_vegas_state_gsl_monte_vegas_state, "gsl_monte_vegas_state(  )=>gsl_monte_vegas_state" },
   { NULL, NULL }
 };
@@ -11721,7 +11721,7 @@ static DaoFuncItem dao_gsl_monte_vegas_params_Meths[] =
   { dao_gsl_monte_vegas_params_SETF_mode, ".mode=( self :gsl_monte_vegas_params, mode :int )" },
   { dao_gsl_monte_vegas_params_GETF_verbose, ".verbose( self :gsl_monte_vegas_params )=>int" },
   { dao_gsl_monte_vegas_params_SETF_verbose, ".verbose=( self :gsl_monte_vegas_params, verbose :int )" },
-  { dao_gsl_monte_vegas_params_GETF_ostream, ".ostream( self :gsl_monte_vegas_params )=>io::stream" },
+  { dao_gsl_monte_vegas_params_GETF_ostream, ".ostream( self :gsl_monte_vegas_params )=>dao::io::stream" },
   { dao_gsl_monte_vegas_params_gsl_monte_vegas_params, "gsl_monte_vegas_params(  )=>gsl_monte_vegas_params" },
   { NULL, NULL }
 };
@@ -11980,7 +11980,7 @@ static void dao_gsl_multifit_function_struct_SETF_p( DaoProcess *_proc, DaoValue
 static void dao_gsl_multifit_function_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_multifit_function_struct *self = (struct gsl_multifit_function_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_function_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_multifit_function_struct_gsl_multifit_function_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12117,7 +12117,7 @@ static void dao_gsl_multifit_fsolver_GETF_dx( DaoProcess *_proc, DaoValue *_p[],
 static void dao_gsl_multifit_fsolver_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multifit_fsolver *self = (gsl_multifit_fsolver*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_fsolver);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_multifit_fsolver_gsl_multifit_fsolver( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12189,7 +12189,7 @@ static void dao_gsl_multifit_function_fdf_struct_SETF_p( DaoProcess *_proc, DaoV
 static void dao_gsl_multifit_function_fdf_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_multifit_function_fdf_struct *self = (struct gsl_multifit_function_fdf_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_function_fdf_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_multifit_function_fdf_struct_gsl_multifit_function_fdf_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12333,7 +12333,7 @@ static void dao_gsl_multifit_fdfsolver_GETF_dx( DaoProcess *_proc, DaoValue *_p[
 static void dao_gsl_multifit_fdfsolver_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multifit_fdfsolver *self = (gsl_multifit_fdfsolver*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_fdfsolver);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_multifit_fdfsolver_gsl_multifit_fdfsolver( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12391,7 +12391,7 @@ static void dao_gsl_multimin_function_struct_SETF_n( DaoProcess *_proc, DaoValue
 static void dao_gsl_multimin_function_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_multimin_function_struct *self = (struct gsl_multimin_function_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multimin_function_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_multimin_function_struct_gsl_multimin_function_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12449,7 +12449,7 @@ static void dao_gsl_multimin_function_fdf_struct_SETF_n( DaoProcess *_proc, DaoV
 static void dao_gsl_multimin_function_fdf_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_multimin_function_fdf_struct *self = (struct gsl_multimin_function_fdf_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multimin_function_fdf_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_multimin_function_fdf_struct_gsl_multimin_function_fdf_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12600,7 +12600,7 @@ static void dao_gsl_multimin_fminimizer_SETF_size( DaoProcess *_proc, DaoValue *
 static void dao_gsl_multimin_fminimizer_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multimin_fminimizer *self = (gsl_multimin_fminimizer*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multimin_fminimizer);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_multimin_fminimizer_gsl_multimin_fminimizer( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12751,7 +12751,7 @@ static void dao_gsl_multimin_fdfminimizer_GETF_dx( DaoProcess *_proc, DaoValue *
 static void dao_gsl_multimin_fdfminimizer_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multimin_fdfminimizer *self = (gsl_multimin_fdfminimizer*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multimin_fdfminimizer);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_multimin_fdfminimizer_gsl_multimin_fdfminimizer( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12809,7 +12809,7 @@ static void dao_gsl_multiroot_function_struct_SETF_n( DaoProcess *_proc, DaoValu
 static void dao_gsl_multiroot_function_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_multiroot_function_struct *self = (struct gsl_multiroot_function_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multiroot_function_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_multiroot_function_struct_gsl_multiroot_function_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12946,7 +12946,7 @@ static void dao_gsl_multiroot_fsolver_GETF_dx( DaoProcess *_proc, DaoValue *_p[]
 static void dao_gsl_multiroot_fsolver_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multiroot_fsolver *self = (gsl_multiroot_fsolver*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multiroot_fsolver);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_multiroot_fsolver_gsl_multiroot_fsolver( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13004,7 +13004,7 @@ static void dao_gsl_multiroot_function_fdf_struct_SETF_n( DaoProcess *_proc, Dao
 static void dao_gsl_multiroot_function_fdf_struct_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_multiroot_function_fdf_struct *self = (struct gsl_multiroot_function_fdf_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multiroot_function_fdf_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_multiroot_function_fdf_struct_gsl_multiroot_function_fdf_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13148,7 +13148,7 @@ static void dao_gsl_multiroot_fdfsolver_GETF_dx( DaoProcess *_proc, DaoValue *_p
 static void dao_gsl_multiroot_fdfsolver_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multiroot_fdfsolver *self = (gsl_multiroot_fdfsolver*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multiroot_fdfsolver);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_multiroot_fdfsolver_gsl_multiroot_fdfsolver( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13244,7 +13244,7 @@ static void dao_gsl_ntuple_gsl_ntuple( DaoProcess *_proc, DaoValue *_p[], int _n
 
 static DaoFuncItem dao_gsl_ntuple_Meths[] = 
 {
-  { dao_gsl_ntuple_GETF_file, ".file( self :gsl_ntuple )=>io::stream" },
+  { dao_gsl_ntuple_GETF_file, ".file( self :gsl_ntuple )=>dao::io::stream" },
   { dao_gsl_ntuple_GETF_ntuple_data, ".ntuple_data( self :gsl_ntuple )=>cdata" },
   { dao_gsl_ntuple_GETF_size, ".size( self :gsl_ntuple )=>int" },
   { dao_gsl_ntuple_SETF_size, ".size=( self :gsl_ntuple, size :int )" },
@@ -13275,7 +13275,7 @@ static void dao_gsl_ntuple_GETF_file( DaoProcess *_proc, DaoValue *_p[], int _n 
 static void dao_gsl_ntuple_GETF_ntuple_data( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_ntuple *self = (gsl_ntuple*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_ntuple);
-  DaoProcess_PutCdata( _proc, (void*) self->ntuple_data, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->ntuple_data, NULL );
 }
 static void dao_gsl_ntuple_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13329,7 +13329,7 @@ DaoType *dao_type_gsl_ntuple_select_fn = NULL;
 static void dao_gsl_ntuple_select_fn_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_ntuple_select_fn *self = (gsl_ntuple_select_fn*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_ntuple_select_fn);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_ntuple_select_fn_gsl_ntuple_select_fn( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13373,7 +13373,7 @@ DaoType *dao_type_gsl_ntuple_value_fn = NULL;
 static void dao_gsl_ntuple_value_fn_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_ntuple_value_fn *self = (gsl_ntuple_value_fn*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_ntuple_value_fn);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_ntuple_value_fn_gsl_ntuple_value_fn( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13567,7 +13567,7 @@ static void dao_gsl_odeiv_step_SETF_dimension( DaoProcess *_proc, DaoValue *_p[]
 static void dao_gsl_odeiv_step_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_odeiv_step *self = (gsl_odeiv_step*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv_step);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_odeiv_step_gsl_odeiv_step( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13662,7 +13662,7 @@ static void dao_gsl_odeiv_control_GETF_type( DaoProcess *_proc, DaoValue *_p[], 
 static void dao_gsl_odeiv_control_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_odeiv_control *self = (gsl_odeiv_control*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv_control);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_odeiv_control_gsl_odeiv_control( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13841,7 +13841,7 @@ static void dao_gsl_odeiv2_system_SETF_dimension( DaoProcess *_proc, DaoValue *_
 static void dao_gsl_odeiv2_system_GETF_params( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_odeiv2_system *self = (gsl_odeiv2_system*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv2_system);
-  DaoProcess_PutCdata( _proc, (void*) self->params, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->params, NULL );
 }
 static void dao_gsl_odeiv2_system_gsl_odeiv2_system( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13906,7 +13906,7 @@ static void dao_gsl_odeiv2_step_struct_SETF_dimension( DaoProcess *_proc, DaoVal
 static void dao_gsl_odeiv2_step_struct_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_odeiv2_step_struct *self = (struct gsl_odeiv2_step_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv2_step_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_odeiv2_step_struct_gsl_odeiv2_step_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13957,7 +13957,7 @@ static void dao_gsl_odeiv2_control_struct_GETF_type( DaoProcess *_proc, DaoValue
 static void dao_gsl_odeiv2_control_struct_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_odeiv2_control_struct *self = (struct gsl_odeiv2_control_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv2_control_struct);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_odeiv2_control_struct_gsl_odeiv2_control_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -14531,7 +14531,7 @@ static void dao_gsl_qrng_SETF_state_size( DaoProcess *_proc, DaoValue *_p[], int
 static void dao_gsl_qrng_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_qrng *self = (gsl_qrng*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_qrng);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_qrng_gsl_qrng( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -14754,7 +14754,7 @@ static void dao_gsl_root_fsolver_SETF_x_upper( DaoProcess *_proc, DaoValue *_p[]
 static void dao_gsl_root_fsolver_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_root_fsolver *self = (gsl_root_fsolver*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_root_fsolver);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_root_fsolver_gsl_root_fsolver( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -14884,7 +14884,7 @@ static void dao_gsl_root_fdfsolver_SETF_root( DaoProcess *_proc, DaoValue *_p[],
 static void dao_gsl_root_fdfsolver_GETF_state( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_root_fdfsolver *self = (gsl_root_fdfsolver*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_root_fdfsolver);
-  DaoProcess_PutCdata( _proc, (void*) self->state, NULL );
+  DaoProcess_WrapCdata( _proc, (void*) self->state, NULL );
 }
 static void dao_gsl_root_fdfsolver_gsl_root_fdfsolver( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
