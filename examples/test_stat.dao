@@ -1,4 +1,4 @@
-load DaoGSL;
+load gsl;
 
 data = [17.20D, 18.1, 16.5, 18.3, 12.6];
 mean, variance, largest, smallest : double = 1.0D;

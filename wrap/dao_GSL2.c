@@ -1,4 +1,4 @@
-#include"dao_GSL.h"
+#include"dao_gsl.h"
 #ifdef __cplusplus
 extern "C"{
 #endif
@@ -62,7 +62,7 @@ static DaoTypeBase __sFILE_Typer =
 { "__sFILE", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
 DaoTypeBase DAO_DLL_GSL *dao___sFILE_Typer = & __sFILE_Typer;
 DaoType *dao_type___sFILE = NULL;
-/* /usr/local/include/gsl/gsl_complex.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_complex.h */
 
 
 static DaoNumItem dao_gsl_complex_long_double_Nums[] = 
@@ -106,16 +106,18 @@ static void dao_gsl_complex_long_double_GETF_dat( DaoProcess *_proc, DaoValue *_
 static void dao_gsl_complex_long_double_SETF_dat( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_complex_long_double *self = (gsl_complex_long_double*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_complex_long_double);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 2 ) size = 2;
-  memmove( self->dat, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
+  memmove( self->dat, DaoArray_ToDouble( array ), size*sizeof(double) );
+  DaoArray_FromDouble( array );
 }
 static void dao_gsl_complex_long_double_gsl_complex_long_double( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	gsl_complex_long_double *self = Dao_gsl_complex_long_double_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_complex_long_double );
 }
-/* /usr/local/include/gsl/gsl_complex.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_complex.h */
 
 
 static DaoNumItem dao_gsl_complex_Nums[] = 
@@ -159,16 +161,18 @@ static void dao_gsl_complex_GETF_dat( DaoProcess *_proc, DaoValue *_p[], int _n 
 static void dao_gsl_complex_SETF_dat( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_complex *self = (gsl_complex*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_complex);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 2 ) size = 2;
-  memmove( self->dat, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
+  memmove( self->dat, DaoArray_ToDouble( array ), size*sizeof(double) );
+  DaoArray_FromDouble( array );
 }
 static void dao_gsl_complex_gsl_complex( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	gsl_complex *self = Dao_gsl_complex_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_complex );
 }
-/* /usr/local/include/gsl/gsl_complex.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_complex.h */
 
 
 static DaoNumItem dao_gsl_complex_float_Nums[] = 
@@ -212,16 +216,18 @@ static void dao_gsl_complex_float_GETF_dat( DaoProcess *_proc, DaoValue *_p[], i
 static void dao_gsl_complex_float_SETF_dat( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_complex_float *self = (gsl_complex_float*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_complex_float);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 2 ) size = 2;
-  memmove( self->dat, DaoArray_ToFloat( (DaoArray*)_p[1] ), size*sizeof(float) );
+  memmove( self->dat, DaoArray_ToFloat( array ), size*sizeof(float) );
+  DaoArray_FromFloat( array );
 }
 static void dao_gsl_complex_float_gsl_complex_float( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	gsl_complex_float *self = Dao_gsl_complex_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_complex_float );
 }
-/* /usr/local/include/gsl/gsl_block_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_long_double.h */
 
 
 static DaoNumItem dao_gsl_block_long_double_struct_Nums[] = 
@@ -279,7 +285,7 @@ static void dao_gsl_block_long_double_struct_gsl_block_long_double_struct( DaoPr
 	struct gsl_block_long_double_struct *self = Dao_gsl_block_long_double_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_long_double_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_long_double.h */
 
 
 static DaoNumItem dao_gsl_vector_long_double_Nums[] = 
@@ -372,7 +378,7 @@ static void dao_gsl_vector_long_double_gsl_vector_long_double( DaoProcess *_proc
 	gsl_vector_long_double *self = Dao_gsl_vector_long_double_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_long_double );
 }
-/* /usr/local/include/gsl/gsl_vector_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_long_double.h */
 
 
 static DaoNumItem dao__gsl_vector_long_double_view_Nums[] = 
@@ -416,7 +422,7 @@ static void dao__gsl_vector_long_double_view__gsl_vector_long_double_view( DaoPr
 	_gsl_vector_long_double_view *self = Dao__gsl_vector_long_double_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_long_double_view );
 }
-/* /usr/local/include/gsl/gsl_vector_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_long_double.h */
 
 
 static DaoNumItem dao__gsl_vector_long_double_const_view_Nums[] = 
@@ -460,7 +466,7 @@ static void dao__gsl_vector_long_double_const_view__gsl_vector_long_double_const
 	_gsl_vector_long_double_const_view *self = Dao__gsl_vector_long_double_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_long_double_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_complex_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_complex_long_double.h */
 
 
 static DaoNumItem dao_gsl_block_complex_long_double_struct_Nums[] = 
@@ -518,7 +524,7 @@ static void dao_gsl_block_complex_long_double_struct_gsl_block_complex_long_doub
 	struct gsl_block_complex_long_double_struct *self = Dao_gsl_block_complex_long_double_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_complex_long_double_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_long_double.h */
 
 
 static DaoNumItem dao_gsl_vector_complex_long_double_Nums[] = 
@@ -611,7 +617,7 @@ static void dao_gsl_vector_complex_long_double_gsl_vector_complex_long_double( D
 	gsl_vector_complex_long_double *self = Dao_gsl_vector_complex_long_double_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_complex_long_double );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_long_double.h */
 
 
 static DaoNumItem dao__gsl_vector_complex_long_double_view_Nums[] = 
@@ -655,7 +661,7 @@ static void dao__gsl_vector_complex_long_double_view__gsl_vector_complex_long_do
 	_gsl_vector_complex_long_double_view *self = Dao__gsl_vector_complex_long_double_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_complex_long_double_view );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_long_double.h */
 
 
 static DaoNumItem dao__gsl_vector_complex_long_double_const_view_Nums[] = 
@@ -699,7 +705,7 @@ static void dao__gsl_vector_complex_long_double_const_view__gsl_vector_complex_l
 	_gsl_vector_complex_long_double_const_view *self = Dao__gsl_vector_complex_long_double_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_complex_long_double_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_double.h */
 
 
 static DaoNumItem dao_gsl_block_struct_Nums[] = 
@@ -757,7 +763,7 @@ static void dao_gsl_block_struct_gsl_block_struct( DaoProcess *_proc, DaoValue *
 	struct gsl_block_struct *self = Dao_gsl_block_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_double.h */
 
 
 static DaoNumItem dao_gsl_vector_Nums[] = 
@@ -850,7 +856,7 @@ static void dao_gsl_vector_gsl_vector( DaoProcess *_proc, DaoValue *_p[], int _n
 	gsl_vector *self = Dao_gsl_vector_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector );
 }
-/* /usr/local/include/gsl/gsl_vector_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_double.h */
 
 
 static DaoNumItem dao__gsl_vector_view_Nums[] = 
@@ -894,7 +900,7 @@ static void dao__gsl_vector_view__gsl_vector_view( DaoProcess *_proc, DaoValue *
 	_gsl_vector_view *self = Dao__gsl_vector_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_view );
 }
-/* /usr/local/include/gsl/gsl_vector_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_double.h */
 
 
 static DaoNumItem dao__gsl_vector_const_view_Nums[] = 
@@ -938,7 +944,7 @@ static void dao__gsl_vector_const_view__gsl_vector_const_view( DaoProcess *_proc
 	_gsl_vector_const_view *self = Dao__gsl_vector_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_complex_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_complex_double.h */
 
 
 static DaoNumItem dao_gsl_block_complex_struct_Nums[] = 
@@ -996,7 +1002,7 @@ static void dao_gsl_block_complex_struct_gsl_block_complex_struct( DaoProcess *_
 	struct gsl_block_complex_struct *self = Dao_gsl_block_complex_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_complex_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_double.h */
 
 
 static DaoNumItem dao_gsl_vector_complex_Nums[] = 
@@ -1089,7 +1095,7 @@ static void dao_gsl_vector_complex_gsl_vector_complex( DaoProcess *_proc, DaoVal
 	gsl_vector_complex *self = Dao_gsl_vector_complex_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_complex );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_double.h */
 
 
 static DaoNumItem dao__gsl_vector_complex_view_Nums[] = 
@@ -1133,7 +1139,7 @@ static void dao__gsl_vector_complex_view__gsl_vector_complex_view( DaoProcess *_
 	_gsl_vector_complex_view *self = Dao__gsl_vector_complex_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_complex_view );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_double.h */
 
 
 static DaoNumItem dao__gsl_vector_complex_const_view_Nums[] = 
@@ -1177,7 +1183,7 @@ static void dao__gsl_vector_complex_const_view__gsl_vector_complex_const_view( D
 	_gsl_vector_complex_const_view *self = Dao__gsl_vector_complex_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_complex_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_float.h */
 
 
 static DaoNumItem dao_gsl_block_float_struct_Nums[] = 
@@ -1235,7 +1241,7 @@ static void dao_gsl_block_float_struct_gsl_block_float_struct( DaoProcess *_proc
 	struct gsl_block_float_struct *self = Dao_gsl_block_float_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_float_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_float.h */
 
 
 static DaoNumItem dao_gsl_vector_float_Nums[] = 
@@ -1328,7 +1334,7 @@ static void dao_gsl_vector_float_gsl_vector_float( DaoProcess *_proc, DaoValue *
 	gsl_vector_float *self = Dao_gsl_vector_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_float );
 }
-/* /usr/local/include/gsl/gsl_vector_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_float.h */
 
 
 static DaoNumItem dao__gsl_vector_float_view_Nums[] = 
@@ -1372,7 +1378,7 @@ static void dao__gsl_vector_float_view__gsl_vector_float_view( DaoProcess *_proc
 	_gsl_vector_float_view *self = Dao__gsl_vector_float_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_float_view );
 }
-/* /usr/local/include/gsl/gsl_vector_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_float.h */
 
 
 static DaoNumItem dao__gsl_vector_float_const_view_Nums[] = 
@@ -1416,7 +1422,7 @@ static void dao__gsl_vector_float_const_view__gsl_vector_float_const_view( DaoPr
 	_gsl_vector_float_const_view *self = Dao__gsl_vector_float_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_float_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_complex_float.h */
 
 
 static DaoNumItem dao_gsl_block_complex_float_struct_Nums[] = 
@@ -1474,7 +1480,7 @@ static void dao_gsl_block_complex_float_struct_gsl_block_complex_float_struct( D
 	struct gsl_block_complex_float_struct *self = Dao_gsl_block_complex_float_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_complex_float_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_float.h */
 
 
 static DaoNumItem dao_gsl_vector_complex_float_Nums[] = 
@@ -1567,7 +1573,7 @@ static void dao_gsl_vector_complex_float_gsl_vector_complex_float( DaoProcess *_
 	gsl_vector_complex_float *self = Dao_gsl_vector_complex_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_complex_float );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_float.h */
 
 
 static DaoNumItem dao__gsl_vector_complex_float_view_Nums[] = 
@@ -1611,7 +1617,7 @@ static void dao__gsl_vector_complex_float_view__gsl_vector_complex_float_view( D
 	_gsl_vector_complex_float_view *self = Dao__gsl_vector_complex_float_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_complex_float_view );
 }
-/* /usr/local/include/gsl/gsl_vector_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_complex_float.h */
 
 
 static DaoNumItem dao__gsl_vector_complex_float_const_view_Nums[] = 
@@ -1655,7 +1661,7 @@ static void dao__gsl_vector_complex_float_const_view__gsl_vector_complex_float_c
 	_gsl_vector_complex_float_const_view *self = Dao__gsl_vector_complex_float_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_complex_float_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_ulong.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_ulong.h */
 
 
 static DaoNumItem dao_gsl_block_ulong_struct_Nums[] = 
@@ -1713,7 +1719,7 @@ static void dao_gsl_block_ulong_struct_gsl_block_ulong_struct( DaoProcess *_proc
 	struct gsl_block_ulong_struct *self = Dao_gsl_block_ulong_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_ulong_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_ulong.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_ulong.h */
 
 
 static DaoNumItem dao_gsl_vector_ulong_Nums[] = 
@@ -1806,7 +1812,7 @@ static void dao_gsl_vector_ulong_gsl_vector_ulong( DaoProcess *_proc, DaoValue *
 	gsl_vector_ulong *self = Dao_gsl_vector_ulong_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_ulong );
 }
-/* /usr/local/include/gsl/gsl_vector_ulong.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_ulong.h */
 
 
 static DaoNumItem dao__gsl_vector_ulong_view_Nums[] = 
@@ -1850,7 +1856,7 @@ static void dao__gsl_vector_ulong_view__gsl_vector_ulong_view( DaoProcess *_proc
 	_gsl_vector_ulong_view *self = Dao__gsl_vector_ulong_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_ulong_view );
 }
-/* /usr/local/include/gsl/gsl_vector_ulong.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_ulong.h */
 
 
 static DaoNumItem dao__gsl_vector_ulong_const_view_Nums[] = 
@@ -1894,7 +1900,7 @@ static void dao__gsl_vector_ulong_const_view__gsl_vector_ulong_const_view( DaoPr
 	_gsl_vector_ulong_const_view *self = Dao__gsl_vector_ulong_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_ulong_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_long.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_long.h */
 
 
 static DaoNumItem dao_gsl_block_long_struct_Nums[] = 
@@ -1952,7 +1958,7 @@ static void dao_gsl_block_long_struct_gsl_block_long_struct( DaoProcess *_proc, 
 	struct gsl_block_long_struct *self = Dao_gsl_block_long_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_long_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_long.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_long.h */
 
 
 static DaoNumItem dao_gsl_vector_long_Nums[] = 
@@ -2045,7 +2051,7 @@ static void dao_gsl_vector_long_gsl_vector_long( DaoProcess *_proc, DaoValue *_p
 	gsl_vector_long *self = Dao_gsl_vector_long_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_long );
 }
-/* /usr/local/include/gsl/gsl_vector_long.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_long.h */
 
 
 static DaoNumItem dao__gsl_vector_long_view_Nums[] = 
@@ -2089,7 +2095,7 @@ static void dao__gsl_vector_long_view__gsl_vector_long_view( DaoProcess *_proc, 
 	_gsl_vector_long_view *self = Dao__gsl_vector_long_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_long_view );
 }
-/* /usr/local/include/gsl/gsl_vector_long.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_long.h */
 
 
 static DaoNumItem dao__gsl_vector_long_const_view_Nums[] = 
@@ -2133,7 +2139,7 @@ static void dao__gsl_vector_long_const_view__gsl_vector_long_const_view( DaoProc
 	_gsl_vector_long_const_view *self = Dao__gsl_vector_long_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_long_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_uint.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_uint.h */
 
 
 static DaoNumItem dao_gsl_block_uint_struct_Nums[] = 
@@ -2191,7 +2197,7 @@ static void dao_gsl_block_uint_struct_gsl_block_uint_struct( DaoProcess *_proc, 
 	struct gsl_block_uint_struct *self = Dao_gsl_block_uint_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_uint_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_uint.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_uint.h */
 
 
 static DaoNumItem dao_gsl_vector_uint_Nums[] = 
@@ -2284,7 +2290,7 @@ static void dao_gsl_vector_uint_gsl_vector_uint( DaoProcess *_proc, DaoValue *_p
 	gsl_vector_uint *self = Dao_gsl_vector_uint_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_uint );
 }
-/* /usr/local/include/gsl/gsl_vector_uint.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_uint.h */
 
 
 static DaoNumItem dao__gsl_vector_uint_view_Nums[] = 
@@ -2328,7 +2334,7 @@ static void dao__gsl_vector_uint_view__gsl_vector_uint_view( DaoProcess *_proc, 
 	_gsl_vector_uint_view *self = Dao__gsl_vector_uint_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_uint_view );
 }
-/* /usr/local/include/gsl/gsl_vector_uint.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_uint.h */
 
 
 static DaoNumItem dao__gsl_vector_uint_const_view_Nums[] = 
@@ -2372,7 +2378,7 @@ static void dao__gsl_vector_uint_const_view__gsl_vector_uint_const_view( DaoProc
 	_gsl_vector_uint_const_view *self = Dao__gsl_vector_uint_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_uint_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_int.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_int.h */
 
 
 static DaoNumItem dao_gsl_block_int_struct_Nums[] = 
@@ -2430,7 +2436,7 @@ static void dao_gsl_block_int_struct_gsl_block_int_struct( DaoProcess *_proc, Da
 	struct gsl_block_int_struct *self = Dao_gsl_block_int_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_int_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_int.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_int.h */
 
 
 static DaoNumItem dao_gsl_vector_int_Nums[] = 
@@ -2523,7 +2529,7 @@ static void dao_gsl_vector_int_gsl_vector_int( DaoProcess *_proc, DaoValue *_p[]
 	gsl_vector_int *self = Dao_gsl_vector_int_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_int );
 }
-/* /usr/local/include/gsl/gsl_vector_int.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_int.h */
 
 
 static DaoNumItem dao__gsl_vector_int_view_Nums[] = 
@@ -2567,7 +2573,7 @@ static void dao__gsl_vector_int_view__gsl_vector_int_view( DaoProcess *_proc, Da
 	_gsl_vector_int_view *self = Dao__gsl_vector_int_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_int_view );
 }
-/* /usr/local/include/gsl/gsl_vector_int.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_int.h */
 
 
 static DaoNumItem dao__gsl_vector_int_const_view_Nums[] = 
@@ -2611,7 +2617,7 @@ static void dao__gsl_vector_int_const_view__gsl_vector_int_const_view( DaoProces
 	_gsl_vector_int_const_view *self = Dao__gsl_vector_int_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_int_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_ushort.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_ushort.h */
 
 
 static DaoNumItem dao_gsl_block_ushort_struct_Nums[] = 
@@ -2669,7 +2675,7 @@ static void dao_gsl_block_ushort_struct_gsl_block_ushort_struct( DaoProcess *_pr
 	struct gsl_block_ushort_struct *self = Dao_gsl_block_ushort_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_ushort_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_ushort.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_ushort.h */
 
 
 static DaoNumItem dao_gsl_vector_ushort_Nums[] = 
@@ -2762,7 +2768,7 @@ static void dao_gsl_vector_ushort_gsl_vector_ushort( DaoProcess *_proc, DaoValue
 	gsl_vector_ushort *self = Dao_gsl_vector_ushort_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_ushort );
 }
-/* /usr/local/include/gsl/gsl_vector_ushort.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_ushort.h */
 
 
 static DaoNumItem dao__gsl_vector_ushort_view_Nums[] = 
@@ -2806,7 +2812,7 @@ static void dao__gsl_vector_ushort_view__gsl_vector_ushort_view( DaoProcess *_pr
 	_gsl_vector_ushort_view *self = Dao__gsl_vector_ushort_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_ushort_view );
 }
-/* /usr/local/include/gsl/gsl_vector_ushort.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_ushort.h */
 
 
 static DaoNumItem dao__gsl_vector_ushort_const_view_Nums[] = 
@@ -2850,7 +2856,7 @@ static void dao__gsl_vector_ushort_const_view__gsl_vector_ushort_const_view( Dao
 	_gsl_vector_ushort_const_view *self = Dao__gsl_vector_ushort_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_ushort_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_short.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_short.h */
 
 
 static DaoNumItem dao_gsl_block_short_struct_Nums[] = 
@@ -2908,7 +2914,7 @@ static void dao_gsl_block_short_struct_gsl_block_short_struct( DaoProcess *_proc
 	struct gsl_block_short_struct *self = Dao_gsl_block_short_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_short_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_short.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_short.h */
 
 
 static DaoNumItem dao_gsl_vector_short_Nums[] = 
@@ -3001,7 +3007,7 @@ static void dao_gsl_vector_short_gsl_vector_short( DaoProcess *_proc, DaoValue *
 	gsl_vector_short *self = Dao_gsl_vector_short_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_short );
 }
-/* /usr/local/include/gsl/gsl_vector_short.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_short.h */
 
 
 static DaoNumItem dao__gsl_vector_short_view_Nums[] = 
@@ -3045,7 +3051,7 @@ static void dao__gsl_vector_short_view__gsl_vector_short_view( DaoProcess *_proc
 	_gsl_vector_short_view *self = Dao__gsl_vector_short_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_short_view );
 }
-/* /usr/local/include/gsl/gsl_vector_short.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_short.h */
 
 
 static DaoNumItem dao__gsl_vector_short_const_view_Nums[] = 
@@ -3089,7 +3095,7 @@ static void dao__gsl_vector_short_const_view__gsl_vector_short_const_view( DaoPr
 	_gsl_vector_short_const_view *self = Dao__gsl_vector_short_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_short_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_uchar.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_uchar.h */
 
 
 static DaoNumItem dao_gsl_block_uchar_struct_Nums[] = 
@@ -3140,14 +3146,14 @@ static void dao_gsl_block_uchar_struct_SETF_size( DaoProcess *_proc, DaoValue *_
 static void dao_gsl_block_uchar_struct_GETF_data( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_block_uchar_struct *self = (struct gsl_block_uchar_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_block_uchar_struct);
-  DaoProcess_PutMBString( _proc, (char*) self->data );
+  DaoProcess_PutChars( _proc, (char*) self->data );
 }
 static void dao_gsl_block_uchar_struct_gsl_block_uchar_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	struct gsl_block_uchar_struct *self = Dao_gsl_block_uchar_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_uchar_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_uchar.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_uchar.h */
 
 
 static DaoNumItem dao_gsl_vector_uchar_Nums[] = 
@@ -3218,7 +3224,7 @@ static void dao_gsl_vector_uchar_SETF_stride( DaoProcess *_proc, DaoValue *_p[],
 static void dao_gsl_vector_uchar_GETF_data( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_vector_uchar *self = (gsl_vector_uchar*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_vector_uchar);
-  DaoProcess_PutMBString( _proc, (char*) self->data );
+  DaoProcess_PutChars( _proc, (char*) self->data );
 }
 static void dao_gsl_vector_uchar_GETF_block( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -3240,7 +3246,7 @@ static void dao_gsl_vector_uchar_gsl_vector_uchar( DaoProcess *_proc, DaoValue *
 	gsl_vector_uchar *self = Dao_gsl_vector_uchar_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_uchar );
 }
-/* /usr/local/include/gsl/gsl_vector_uchar.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_uchar.h */
 
 
 static DaoNumItem dao__gsl_vector_uchar_view_Nums[] = 
@@ -3284,7 +3290,7 @@ static void dao__gsl_vector_uchar_view__gsl_vector_uchar_view( DaoProcess *_proc
 	_gsl_vector_uchar_view *self = Dao__gsl_vector_uchar_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_uchar_view );
 }
-/* /usr/local/include/gsl/gsl_vector_uchar.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_uchar.h */
 
 
 static DaoNumItem dao__gsl_vector_uchar_const_view_Nums[] = 
@@ -3328,7 +3334,7 @@ static void dao__gsl_vector_uchar_const_view__gsl_vector_uchar_const_view( DaoPr
 	_gsl_vector_uchar_const_view *self = Dao__gsl_vector_uchar_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_uchar_const_view );
 }
-/* /usr/local/include/gsl/gsl_block_char.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_block_char.h */
 
 
 static DaoNumItem dao_gsl_block_char_struct_Nums[] = 
@@ -3379,14 +3385,14 @@ static void dao_gsl_block_char_struct_SETF_size( DaoProcess *_proc, DaoValue *_p
 static void dao_gsl_block_char_struct_GETF_data( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   struct gsl_block_char_struct *self = (struct gsl_block_char_struct*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_block_char_struct);
-  DaoProcess_PutMBString( _proc, (char*) self->data );
+  DaoProcess_PutChars( _proc, (char*) self->data );
 }
 static void dao_gsl_block_char_struct_gsl_block_char_struct( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	struct gsl_block_char_struct *self = Dao_gsl_block_char_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_block_char_struct );
 }
-/* /usr/local/include/gsl/gsl_vector_char.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_char.h */
 
 
 static DaoNumItem dao_gsl_vector_char_Nums[] = 
@@ -3457,7 +3463,7 @@ static void dao_gsl_vector_char_SETF_stride( DaoProcess *_proc, DaoValue *_p[], 
 static void dao_gsl_vector_char_GETF_data( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_vector_char *self = (gsl_vector_char*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_vector_char);
-  DaoProcess_PutMBString( _proc, (char*) self->data );
+  DaoProcess_PutChars( _proc, (char*) self->data );
 }
 static void dao_gsl_vector_char_GETF_block( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -3479,7 +3485,7 @@ static void dao_gsl_vector_char_gsl_vector_char( DaoProcess *_proc, DaoValue *_p
 	gsl_vector_char *self = Dao_gsl_vector_char_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_vector_char );
 }
-/* /usr/local/include/gsl/gsl_vector_char.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_char.h */
 
 
 static DaoNumItem dao__gsl_vector_char_view_Nums[] = 
@@ -3523,7 +3529,7 @@ static void dao__gsl_vector_char_view__gsl_vector_char_view( DaoProcess *_proc, 
 	_gsl_vector_char_view *self = Dao__gsl_vector_char_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_char_view );
 }
-/* /usr/local/include/gsl/gsl_vector_char.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_vector_char.h */
 
 
 static DaoNumItem dao__gsl_vector_char_const_view_Nums[] = 
@@ -3567,7 +3573,7 @@ static void dao__gsl_vector_char_const_view__gsl_vector_char_const_view( DaoProc
 	_gsl_vector_char_const_view *self = Dao__gsl_vector_char_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_vector_char_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_long_double.h */
 
 
 static DaoNumItem dao_gsl_matrix_complex_long_double_Nums[] = 
@@ -3674,7 +3680,7 @@ static void dao_gsl_matrix_complex_long_double_gsl_matrix_complex_long_double( D
 	gsl_matrix_complex_long_double *self = Dao_gsl_matrix_complex_long_double_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_complex_long_double );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_long_double.h */
 
 
 static DaoNumItem dao__gsl_matrix_complex_long_double_view_Nums[] = 
@@ -3718,7 +3724,7 @@ static void dao__gsl_matrix_complex_long_double_view__gsl_matrix_complex_long_do
 	_gsl_matrix_complex_long_double_view *self = Dao__gsl_matrix_complex_long_double_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_complex_long_double_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_long_double.h */
 
 
 static DaoNumItem dao__gsl_matrix_complex_long_double_const_view_Nums[] = 
@@ -3762,7 +3768,7 @@ static void dao__gsl_matrix_complex_long_double_const_view__gsl_matrix_complex_l
 	_gsl_matrix_complex_long_double_const_view *self = Dao__gsl_matrix_complex_long_double_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_complex_long_double_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_double.h */
 
 
 static DaoNumItem dao_gsl_matrix_complex_Nums[] = 
@@ -3869,7 +3875,7 @@ static void dao_gsl_matrix_complex_gsl_matrix_complex( DaoProcess *_proc, DaoVal
 	gsl_matrix_complex *self = Dao_gsl_matrix_complex_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_complex );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_double.h */
 
 
 static DaoNumItem dao__gsl_matrix_complex_view_Nums[] = 
@@ -3913,7 +3919,7 @@ static void dao__gsl_matrix_complex_view__gsl_matrix_complex_view( DaoProcess *_
 	_gsl_matrix_complex_view *self = Dao__gsl_matrix_complex_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_complex_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_double.h */
 
 
 static DaoNumItem dao__gsl_matrix_complex_const_view_Nums[] = 
@@ -3957,7 +3963,7 @@ static void dao__gsl_matrix_complex_const_view__gsl_matrix_complex_const_view( D
 	_gsl_matrix_complex_const_view *self = Dao__gsl_matrix_complex_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_complex_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_float.h */
 
 
 static DaoNumItem dao_gsl_matrix_complex_float_Nums[] = 
@@ -4064,7 +4070,7 @@ static void dao_gsl_matrix_complex_float_gsl_matrix_complex_float( DaoProcess *_
 	gsl_matrix_complex_float *self = Dao_gsl_matrix_complex_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_complex_float );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_float.h */
 
 
 static DaoNumItem dao__gsl_matrix_complex_float_view_Nums[] = 
@@ -4108,7 +4114,7 @@ static void dao__gsl_matrix_complex_float_view__gsl_matrix_complex_float_view( D
 	_gsl_matrix_complex_float_view *self = Dao__gsl_matrix_complex_float_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_complex_float_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_complex_float.h */
 
 
 static DaoNumItem dao__gsl_matrix_complex_float_const_view_Nums[] = 
@@ -4152,7 +4158,7 @@ static void dao__gsl_matrix_complex_float_const_view__gsl_matrix_complex_float_c
 	_gsl_matrix_complex_float_const_view *self = Dao__gsl_matrix_complex_float_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_complex_float_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_long_double.h */
 
 
 static DaoNumItem dao_gsl_matrix_long_double_Nums[] = 
@@ -4259,7 +4265,7 @@ static void dao_gsl_matrix_long_double_gsl_matrix_long_double( DaoProcess *_proc
 	gsl_matrix_long_double *self = Dao_gsl_matrix_long_double_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_long_double );
 }
-/* /usr/local/include/gsl/gsl_matrix_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_long_double.h */
 
 
 static DaoNumItem dao__gsl_matrix_long_double_view_Nums[] = 
@@ -4303,7 +4309,7 @@ static void dao__gsl_matrix_long_double_view__gsl_matrix_long_double_view( DaoPr
 	_gsl_matrix_long_double_view *self = Dao__gsl_matrix_long_double_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_long_double_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_long_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_long_double.h */
 
 
 static DaoNumItem dao__gsl_matrix_long_double_const_view_Nums[] = 
@@ -4347,7 +4353,7 @@ static void dao__gsl_matrix_long_double_const_view__gsl_matrix_long_double_const
 	_gsl_matrix_long_double_const_view *self = Dao__gsl_matrix_long_double_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_long_double_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_double.h */
 
 
 static DaoNumItem dao_gsl_matrix_Nums[] = 
@@ -4454,7 +4460,7 @@ static void dao_gsl_matrix_gsl_matrix( DaoProcess *_proc, DaoValue *_p[], int _n
 	gsl_matrix *self = Dao_gsl_matrix_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix );
 }
-/* /usr/local/include/gsl/gsl_matrix_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_double.h */
 
 
 static DaoNumItem dao__gsl_matrix_view_Nums[] = 
@@ -4498,7 +4504,7 @@ static void dao__gsl_matrix_view__gsl_matrix_view( DaoProcess *_proc, DaoValue *
 	_gsl_matrix_view *self = Dao__gsl_matrix_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_double.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_double.h */
 
 
 static DaoNumItem dao__gsl_matrix_const_view_Nums[] = 
@@ -4542,7 +4548,7 @@ static void dao__gsl_matrix_const_view__gsl_matrix_const_view( DaoProcess *_proc
 	_gsl_matrix_const_view *self = Dao__gsl_matrix_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_float.h */
 
 
 static DaoNumItem dao_gsl_matrix_float_Nums[] = 
@@ -4649,7 +4655,7 @@ static void dao_gsl_matrix_float_gsl_matrix_float( DaoProcess *_proc, DaoValue *
 	gsl_matrix_float *self = Dao_gsl_matrix_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_float );
 }
-/* /usr/local/include/gsl/gsl_matrix_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_float.h */
 
 
 static DaoNumItem dao__gsl_matrix_float_view_Nums[] = 
@@ -4693,7 +4699,7 @@ static void dao__gsl_matrix_float_view__gsl_matrix_float_view( DaoProcess *_proc
 	_gsl_matrix_float_view *self = Dao__gsl_matrix_float_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_float_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_float.h */
 
 
 static DaoNumItem dao__gsl_matrix_float_const_view_Nums[] = 
@@ -4737,7 +4743,7 @@ static void dao__gsl_matrix_float_const_view__gsl_matrix_float_const_view( DaoPr
 	_gsl_matrix_float_const_view *self = Dao__gsl_matrix_float_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_float_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_ulong.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_ulong.h */
 
 
 static DaoNumItem dao_gsl_matrix_ulong_Nums[] = 
@@ -4844,7 +4850,7 @@ static void dao_gsl_matrix_ulong_gsl_matrix_ulong( DaoProcess *_proc, DaoValue *
 	gsl_matrix_ulong *self = Dao_gsl_matrix_ulong_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_ulong );
 }
-/* /usr/local/include/gsl/gsl_matrix_ulong.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_ulong.h */
 
 
 static DaoNumItem dao__gsl_matrix_ulong_view_Nums[] = 
@@ -4888,7 +4894,7 @@ static void dao__gsl_matrix_ulong_view__gsl_matrix_ulong_view( DaoProcess *_proc
 	_gsl_matrix_ulong_view *self = Dao__gsl_matrix_ulong_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_ulong_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_ulong.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_ulong.h */
 
 
 static DaoNumItem dao__gsl_matrix_ulong_const_view_Nums[] = 
@@ -4932,7 +4938,7 @@ static void dao__gsl_matrix_ulong_const_view__gsl_matrix_ulong_const_view( DaoPr
 	_gsl_matrix_ulong_const_view *self = Dao__gsl_matrix_ulong_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_ulong_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_long.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_long.h */
 
 
 static DaoNumItem dao_gsl_matrix_long_Nums[] = 
@@ -5039,7 +5045,7 @@ static void dao_gsl_matrix_long_gsl_matrix_long( DaoProcess *_proc, DaoValue *_p
 	gsl_matrix_long *self = Dao_gsl_matrix_long_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_long );
 }
-/* /usr/local/include/gsl/gsl_matrix_long.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_long.h */
 
 
 static DaoNumItem dao__gsl_matrix_long_view_Nums[] = 
@@ -5083,7 +5089,7 @@ static void dao__gsl_matrix_long_view__gsl_matrix_long_view( DaoProcess *_proc, 
 	_gsl_matrix_long_view *self = Dao__gsl_matrix_long_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_long_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_long.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_long.h */
 
 
 static DaoNumItem dao__gsl_matrix_long_const_view_Nums[] = 
@@ -5127,7 +5133,7 @@ static void dao__gsl_matrix_long_const_view__gsl_matrix_long_const_view( DaoProc
 	_gsl_matrix_long_const_view *self = Dao__gsl_matrix_long_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_long_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_uint.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_uint.h */
 
 
 static DaoNumItem dao_gsl_matrix_uint_Nums[] = 
@@ -5234,7 +5240,7 @@ static void dao_gsl_matrix_uint_gsl_matrix_uint( DaoProcess *_proc, DaoValue *_p
 	gsl_matrix_uint *self = Dao_gsl_matrix_uint_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_uint );
 }
-/* /usr/local/include/gsl/gsl_matrix_uint.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_uint.h */
 
 
 static DaoNumItem dao__gsl_matrix_uint_view_Nums[] = 
@@ -5278,7 +5284,7 @@ static void dao__gsl_matrix_uint_view__gsl_matrix_uint_view( DaoProcess *_proc, 
 	_gsl_matrix_uint_view *self = Dao__gsl_matrix_uint_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_uint_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_uint.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_uint.h */
 
 
 static DaoNumItem dao__gsl_matrix_uint_const_view_Nums[] = 
@@ -5322,7 +5328,7 @@ static void dao__gsl_matrix_uint_const_view__gsl_matrix_uint_const_view( DaoProc
 	_gsl_matrix_uint_const_view *self = Dao__gsl_matrix_uint_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_uint_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_int.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_int.h */
 
 
 static DaoNumItem dao_gsl_matrix_int_Nums[] = 
@@ -5429,7 +5435,7 @@ static void dao_gsl_matrix_int_gsl_matrix_int( DaoProcess *_proc, DaoValue *_p[]
 	gsl_matrix_int *self = Dao_gsl_matrix_int_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_int );
 }
-/* /usr/local/include/gsl/gsl_matrix_int.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_int.h */
 
 
 static DaoNumItem dao__gsl_matrix_int_view_Nums[] = 
@@ -5473,7 +5479,7 @@ static void dao__gsl_matrix_int_view__gsl_matrix_int_view( DaoProcess *_proc, Da
 	_gsl_matrix_int_view *self = Dao__gsl_matrix_int_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_int_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_int.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_int.h */
 
 
 static DaoNumItem dao__gsl_matrix_int_const_view_Nums[] = 
@@ -5517,7 +5523,7 @@ static void dao__gsl_matrix_int_const_view__gsl_matrix_int_const_view( DaoProces
 	_gsl_matrix_int_const_view *self = Dao__gsl_matrix_int_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_int_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_ushort.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_ushort.h */
 
 
 static DaoNumItem dao_gsl_matrix_ushort_Nums[] = 
@@ -5624,7 +5630,7 @@ static void dao_gsl_matrix_ushort_gsl_matrix_ushort( DaoProcess *_proc, DaoValue
 	gsl_matrix_ushort *self = Dao_gsl_matrix_ushort_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_ushort );
 }
-/* /usr/local/include/gsl/gsl_matrix_ushort.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_ushort.h */
 
 
 static DaoNumItem dao__gsl_matrix_ushort_view_Nums[] = 
@@ -5668,7 +5674,7 @@ static void dao__gsl_matrix_ushort_view__gsl_matrix_ushort_view( DaoProcess *_pr
 	_gsl_matrix_ushort_view *self = Dao__gsl_matrix_ushort_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_ushort_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_ushort.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_ushort.h */
 
 
 static DaoNumItem dao__gsl_matrix_ushort_const_view_Nums[] = 
@@ -5712,7 +5718,7 @@ static void dao__gsl_matrix_ushort_const_view__gsl_matrix_ushort_const_view( Dao
 	_gsl_matrix_ushort_const_view *self = Dao__gsl_matrix_ushort_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_ushort_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_short.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_short.h */
 
 
 static DaoNumItem dao_gsl_matrix_short_Nums[] = 
@@ -5819,7 +5825,7 @@ static void dao_gsl_matrix_short_gsl_matrix_short( DaoProcess *_proc, DaoValue *
 	gsl_matrix_short *self = Dao_gsl_matrix_short_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_short );
 }
-/* /usr/local/include/gsl/gsl_matrix_short.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_short.h */
 
 
 static DaoNumItem dao__gsl_matrix_short_view_Nums[] = 
@@ -5863,7 +5869,7 @@ static void dao__gsl_matrix_short_view__gsl_matrix_short_view( DaoProcess *_proc
 	_gsl_matrix_short_view *self = Dao__gsl_matrix_short_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_short_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_short.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_short.h */
 
 
 static DaoNumItem dao__gsl_matrix_short_const_view_Nums[] = 
@@ -5907,7 +5913,7 @@ static void dao__gsl_matrix_short_const_view__gsl_matrix_short_const_view( DaoPr
 	_gsl_matrix_short_const_view *self = Dao__gsl_matrix_short_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_short_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_uchar.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_uchar.h */
 
 
 static DaoNumItem dao_gsl_matrix_uchar_Nums[] = 
@@ -5992,7 +5998,7 @@ static void dao_gsl_matrix_uchar_SETF_tda( DaoProcess *_proc, DaoValue *_p[], in
 static void dao_gsl_matrix_uchar_GETF_data( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_matrix_uchar *self = (gsl_matrix_uchar*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_matrix_uchar);
-  DaoProcess_PutMBString( _proc, (char*) self->data );
+  DaoProcess_PutChars( _proc, (char*) self->data );
 }
 static void dao_gsl_matrix_uchar_GETF_block( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -6014,7 +6020,7 @@ static void dao_gsl_matrix_uchar_gsl_matrix_uchar( DaoProcess *_proc, DaoValue *
 	gsl_matrix_uchar *self = Dao_gsl_matrix_uchar_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_uchar );
 }
-/* /usr/local/include/gsl/gsl_matrix_uchar.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_uchar.h */
 
 
 static DaoNumItem dao__gsl_matrix_uchar_view_Nums[] = 
@@ -6058,7 +6064,7 @@ static void dao__gsl_matrix_uchar_view__gsl_matrix_uchar_view( DaoProcess *_proc
 	_gsl_matrix_uchar_view *self = Dao__gsl_matrix_uchar_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_uchar_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_uchar.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_uchar.h */
 
 
 static DaoNumItem dao__gsl_matrix_uchar_const_view_Nums[] = 
@@ -6102,7 +6108,7 @@ static void dao__gsl_matrix_uchar_const_view__gsl_matrix_uchar_const_view( DaoPr
 	_gsl_matrix_uchar_const_view *self = Dao__gsl_matrix_uchar_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_uchar_const_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_char.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_char.h */
 
 
 static DaoNumItem dao_gsl_matrix_char_Nums[] = 
@@ -6187,7 +6193,7 @@ static void dao_gsl_matrix_char_SETF_tda( DaoProcess *_proc, DaoValue *_p[], int
 static void dao_gsl_matrix_char_GETF_data( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_matrix_char *self = (gsl_matrix_char*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_matrix_char);
-  DaoProcess_PutMBString( _proc, (char*) self->data );
+  DaoProcess_PutChars( _proc, (char*) self->data );
 }
 static void dao_gsl_matrix_char_GETF_block( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -6209,7 +6215,7 @@ static void dao_gsl_matrix_char_gsl_matrix_char( DaoProcess *_proc, DaoValue *_p
 	gsl_matrix_char *self = Dao_gsl_matrix_char_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_matrix_char );
 }
-/* /usr/local/include/gsl/gsl_matrix_char.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_char.h */
 
 
 static DaoNumItem dao__gsl_matrix_char_view_Nums[] = 
@@ -6253,7 +6259,7 @@ static void dao__gsl_matrix_char_view__gsl_matrix_char_view( DaoProcess *_proc, 
 	_gsl_matrix_char_view *self = Dao__gsl_matrix_char_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_char_view );
 }
-/* /usr/local/include/gsl/gsl_matrix_char.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_matrix_char.h */
 
 
 static DaoNumItem dao__gsl_matrix_char_const_view_Nums[] = 
@@ -6297,12 +6303,12 @@ static void dao__gsl_matrix_char_const_view__gsl_matrix_char_const_view( DaoProc
 	_gsl_matrix_char_const_view *self = Dao__gsl_matrix_char_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_char_const_view );
 }
-/* /usr/include/architecture/i386/math.h */
+/* /usr/include/math.h */
 static DaoTypeBase exception_Typer = 
 { "exception", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
 DaoTypeBase DAO_DLL_GSL *dao_exception_Typer = & exception_Typer;
 DaoType *dao_type_exception = NULL;
-/* /usr/local/include/gsl/gsl_math.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_math.h */
 
 
 static DaoNumItem dao_gsl_function_struct_Nums[] = 
@@ -6346,7 +6352,7 @@ static void dao_gsl_function_struct_gsl_function_struct( DaoProcess *_proc, DaoV
 	Dao_gsl_function_struct *self = Dao_gsl_function_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_math.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_math.h */
 
 
 static DaoNumItem dao_gsl_function_fdf_struct_Nums[] = 
@@ -6390,7 +6396,7 @@ static void dao_gsl_function_fdf_struct_gsl_function_fdf_struct( DaoProcess *_pr
 	Dao_gsl_function_fdf_struct *self = Dao_gsl_function_fdf_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_math.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_math.h */
 
 
 static DaoNumItem dao_gsl_function_vec_struct_Nums[] = 
@@ -6434,7 +6440,7 @@ static void dao_gsl_function_vec_struct_gsl_function_vec_struct( DaoProcess *_pr
 	Dao_gsl_function_vec_struct *self = Dao_gsl_function_vec_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_bspline.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_bspline.h */
 
 
 static DaoNumItem dao_gsl_bspline_workspace_Nums[] = 
@@ -6569,7 +6575,7 @@ static void dao_gsl_bspline_workspace_gsl_bspline_workspace( DaoProcess *_proc, 
 	gsl_bspline_workspace *self = Dao_gsl_bspline_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_bspline_workspace );
 }
-/* /usr/local/include/gsl/gsl_bspline.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_bspline.h */
 
 
 static DaoNumItem dao_gsl_bspline_deriv_workspace_Nums[] = 
@@ -6634,7 +6640,7 @@ static void dao_gsl_bspline_deriv_workspace_gsl_bspline_deriv_workspace( DaoProc
 	gsl_bspline_deriv_workspace *self = Dao_gsl_bspline_deriv_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_bspline_deriv_workspace );
 }
-/* /usr/local/include/gsl/gsl_chebyshev.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_chebyshev.h */
 
 
 static DaoNumItem dao_gsl_cheb_series_struct_Nums[] = 
@@ -6741,7 +6747,7 @@ static void dao_gsl_cheb_series_struct_gsl_cheb_series_struct( DaoProcess *_proc
 	struct gsl_cheb_series_struct *self = Dao_gsl_cheb_series_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_cheb_series_struct );
 }
-/* /usr/local/include/gsl/gsl_combination.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_combination.h */
 
 
 static DaoNumItem dao_gsl_combination_struct_Nums[] = 
@@ -6813,7 +6819,7 @@ static void dao_gsl_combination_struct_gsl_combination_struct( DaoProcess *_proc
 	struct gsl_combination_struct *self = Dao_gsl_combination_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_combination_struct );
 }
-/* /usr/local/include/gsl/gsl_dht.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_dht.h */
 
 
 static DaoNumItem dao_gsl_dht_struct_Nums[] = 
@@ -6927,7 +6933,7 @@ static void dao_gsl_dht_struct_gsl_dht_struct( DaoProcess *_proc, DaoValue *_p[]
 	struct gsl_dht_struct *self = Dao_gsl_dht_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_dht_struct );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_symm_workspace_Nums[] = 
@@ -6992,7 +6998,7 @@ static void dao_gsl_eigen_symm_workspace_gsl_eigen_symm_workspace( DaoProcess *_
 	gsl_eigen_symm_workspace *self = Dao_gsl_eigen_symm_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_symm_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_symmv_workspace_Nums[] = 
@@ -7071,7 +7077,7 @@ static void dao_gsl_eigen_symmv_workspace_gsl_eigen_symmv_workspace( DaoProcess 
 	gsl_eigen_symmv_workspace *self = Dao_gsl_eigen_symmv_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_symmv_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_herm_workspace_Nums[] = 
@@ -7143,7 +7149,7 @@ static void dao_gsl_eigen_herm_workspace_gsl_eigen_herm_workspace( DaoProcess *_
 	gsl_eigen_herm_workspace *self = Dao_gsl_eigen_herm_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_herm_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_hermv_workspace_Nums[] = 
@@ -7229,7 +7235,7 @@ static void dao_gsl_eigen_hermv_workspace_gsl_eigen_hermv_workspace( DaoProcess 
 	gsl_eigen_hermv_workspace *self = Dao_gsl_eigen_hermv_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_hermv_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_francis_workspace_Nums[] = 
@@ -7350,7 +7356,7 @@ static void dao_gsl_eigen_francis_workspace_gsl_eigen_francis_workspace( DaoProc
 	gsl_eigen_francis_workspace *self = Dao_gsl_eigen_francis_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_francis_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_nonsymm_workspace_Nums[] = 
@@ -7457,7 +7463,7 @@ static void dao_gsl_eigen_nonsymm_workspace_gsl_eigen_nonsymm_workspace( DaoProc
 	gsl_eigen_nonsymm_workspace *self = Dao_gsl_eigen_nonsymm_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_nonsymm_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_nonsymmv_workspace_Nums[] = 
@@ -7543,7 +7549,7 @@ static void dao_gsl_eigen_nonsymmv_workspace_gsl_eigen_nonsymmv_workspace( DaoPr
 	gsl_eigen_nonsymmv_workspace *self = Dao_gsl_eigen_nonsymmv_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_nonsymmv_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_gensymm_workspace_Nums[] = 
@@ -7601,7 +7607,7 @@ static void dao_gsl_eigen_gensymm_workspace_gsl_eigen_gensymm_workspace( DaoProc
 	gsl_eigen_gensymm_workspace *self = Dao_gsl_eigen_gensymm_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_gensymm_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_gensymmv_workspace_Nums[] = 
@@ -7659,7 +7665,7 @@ static void dao_gsl_eigen_gensymmv_workspace_gsl_eigen_gensymmv_workspace( DaoPr
 	gsl_eigen_gensymmv_workspace *self = Dao_gsl_eigen_gensymmv_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_gensymmv_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_genherm_workspace_Nums[] = 
@@ -7717,7 +7723,7 @@ static void dao_gsl_eigen_genherm_workspace_gsl_eigen_genherm_workspace( DaoProc
 	gsl_eigen_genherm_workspace *self = Dao_gsl_eigen_genherm_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_genherm_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_genhermv_workspace_Nums[] = 
@@ -7775,7 +7781,7 @@ static void dao_gsl_eigen_genhermv_workspace_gsl_eigen_genhermv_workspace( DaoPr
 	gsl_eigen_genhermv_workspace *self = Dao_gsl_eigen_genhermv_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_genhermv_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_gen_workspace_Nums[] = 
@@ -8015,7 +8021,7 @@ static void dao_gsl_eigen_gen_workspace_gsl_eigen_gen_workspace( DaoProcess *_pr
 	gsl_eigen_gen_workspace *self = Dao_gsl_eigen_gen_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_gen_workspace );
 }
-/* /usr/local/include/gsl/gsl_eigen.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_eigen.h */
 
 
 static DaoNumItem dao_gsl_eigen_genv_workspace_Nums[] = 
@@ -8129,7 +8135,7 @@ static void dao_gsl_eigen_genv_workspace_gsl_eigen_genv_workspace( DaoProcess *_
 	gsl_eigen_genv_workspace *self = Dao_gsl_eigen_genv_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_eigen_genv_workspace );
 }
-/* /usr/local/include/gsl/gsl_fft_complex.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_complex.h */
 
 
 static DaoNumItem dao_gsl_fft_complex_wavetable_Nums[] = 
@@ -8205,9 +8211,11 @@ static void dao_gsl_fft_complex_wavetable_GETF_factor( DaoProcess *_proc, DaoVal
 static void dao_gsl_fft_complex_wavetable_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_fft_complex_wavetable *self = (gsl_fft_complex_wavetable*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_complex_wavetable);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 64 ) size = 64;
-  memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+  memmove( self->factor, DaoArray_ToSInt( array ), size*sizeof(signed int) );
+  DaoArray_FromSInt( array );
 }
 static void dao_gsl_fft_complex_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8229,7 +8237,7 @@ static void dao_gsl_fft_complex_wavetable_gsl_fft_complex_wavetable( DaoProcess 
 	gsl_fft_complex_wavetable *self = Dao_gsl_fft_complex_wavetable_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_complex_wavetable );
 }
-/* /usr/local/include/gsl/gsl_fft_complex.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_complex.h */
 
 
 static DaoNumItem dao_gsl_fft_complex_workspace_Nums[] = 
@@ -8287,7 +8295,7 @@ static void dao_gsl_fft_complex_workspace_gsl_fft_complex_workspace( DaoProcess 
 	gsl_fft_complex_workspace *self = Dao_gsl_fft_complex_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_complex_workspace );
 }
-/* /usr/local/include/gsl/gsl_fft_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_complex_float.h */
 
 
 static DaoNumItem dao_gsl_fft_complex_wavetable_float_Nums[] = 
@@ -8363,9 +8371,11 @@ static void dao_gsl_fft_complex_wavetable_float_GETF_factor( DaoProcess *_proc, 
 static void dao_gsl_fft_complex_wavetable_float_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_fft_complex_wavetable_float *self = (gsl_fft_complex_wavetable_float*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_complex_wavetable_float);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 64 ) size = 64;
-  memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+  memmove( self->factor, DaoArray_ToSInt( array ), size*sizeof(signed int) );
+  DaoArray_FromSInt( array );
 }
 static void dao_gsl_fft_complex_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8387,7 +8397,7 @@ static void dao_gsl_fft_complex_wavetable_float_gsl_fft_complex_wavetable_float(
 	gsl_fft_complex_wavetable_float *self = Dao_gsl_fft_complex_wavetable_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_complex_wavetable_float );
 }
-/* /usr/local/include/gsl/gsl_fft_complex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_complex_float.h */
 
 
 static DaoNumItem dao_gsl_fft_complex_workspace_float_Nums[] = 
@@ -8445,7 +8455,7 @@ static void dao_gsl_fft_complex_workspace_float_gsl_fft_complex_workspace_float(
 	gsl_fft_complex_workspace_float *self = Dao_gsl_fft_complex_workspace_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_complex_workspace_float );
 }
-/* /usr/local/include/gsl/gsl_fft_real.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_real.h */
 
 
 static DaoNumItem dao_gsl_fft_real_wavetable_Nums[] = 
@@ -8521,9 +8531,11 @@ static void dao_gsl_fft_real_wavetable_GETF_factor( DaoProcess *_proc, DaoValue 
 static void dao_gsl_fft_real_wavetable_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_fft_real_wavetable *self = (gsl_fft_real_wavetable*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_real_wavetable);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 64 ) size = 64;
-  memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+  memmove( self->factor, DaoArray_ToSInt( array ), size*sizeof(signed int) );
+  DaoArray_FromSInt( array );
 }
 static void dao_gsl_fft_real_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8545,7 +8557,7 @@ static void dao_gsl_fft_real_wavetable_gsl_fft_real_wavetable( DaoProcess *_proc
 	gsl_fft_real_wavetable *self = Dao_gsl_fft_real_wavetable_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_real_wavetable );
 }
-/* /usr/local/include/gsl/gsl_fft_real.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_real.h */
 
 
 static DaoNumItem dao_gsl_fft_real_workspace_Nums[] = 
@@ -8603,7 +8615,7 @@ static void dao_gsl_fft_real_workspace_gsl_fft_real_workspace( DaoProcess *_proc
 	gsl_fft_real_workspace *self = Dao_gsl_fft_real_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_real_workspace );
 }
-/* /usr/local/include/gsl/gsl_fft_halfcomplex.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_halfcomplex.h */
 
 
 static DaoNumItem dao_gsl_fft_halfcomplex_wavetable_Nums[] = 
@@ -8679,9 +8691,11 @@ static void dao_gsl_fft_halfcomplex_wavetable_GETF_factor( DaoProcess *_proc, Da
 static void dao_gsl_fft_halfcomplex_wavetable_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_fft_halfcomplex_wavetable *self = (gsl_fft_halfcomplex_wavetable*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_halfcomplex_wavetable);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 64 ) size = 64;
-  memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+  memmove( self->factor, DaoArray_ToSInt( array ), size*sizeof(signed int) );
+  DaoArray_FromSInt( array );
 }
 static void dao_gsl_fft_halfcomplex_wavetable_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8703,7 +8717,7 @@ static void dao_gsl_fft_halfcomplex_wavetable_gsl_fft_halfcomplex_wavetable( Dao
 	gsl_fft_halfcomplex_wavetable *self = Dao_gsl_fft_halfcomplex_wavetable_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_halfcomplex_wavetable );
 }
-/* /usr/local/include/gsl/gsl_fft_real_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_real_float.h */
 
 
 static DaoNumItem dao_gsl_fft_real_wavetable_float_Nums[] = 
@@ -8779,9 +8793,11 @@ static void dao_gsl_fft_real_wavetable_float_GETF_factor( DaoProcess *_proc, Dao
 static void dao_gsl_fft_real_wavetable_float_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_fft_real_wavetable_float *self = (gsl_fft_real_wavetable_float*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_real_wavetable_float);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 64 ) size = 64;
-  memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+  memmove( self->factor, DaoArray_ToSInt( array ), size*sizeof(signed int) );
+  DaoArray_FromSInt( array );
 }
 static void dao_gsl_fft_real_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8803,7 +8819,7 @@ static void dao_gsl_fft_real_wavetable_float_gsl_fft_real_wavetable_float( DaoPr
 	gsl_fft_real_wavetable_float *self = Dao_gsl_fft_real_wavetable_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_real_wavetable_float );
 }
-/* /usr/local/include/gsl/gsl_fft_real_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_real_float.h */
 
 
 static DaoNumItem dao_gsl_fft_real_workspace_float_Nums[] = 
@@ -8861,7 +8877,7 @@ static void dao_gsl_fft_real_workspace_float_gsl_fft_real_workspace_float( DaoPr
 	gsl_fft_real_workspace_float *self = Dao_gsl_fft_real_workspace_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_real_workspace_float );
 }
-/* /usr/local/include/gsl/gsl_fft_halfcomplex_float.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_fft_halfcomplex_float.h */
 
 
 static DaoNumItem dao_gsl_fft_halfcomplex_wavetable_float_Nums[] = 
@@ -8937,9 +8953,11 @@ static void dao_gsl_fft_halfcomplex_wavetable_float_GETF_factor( DaoProcess *_pr
 static void dao_gsl_fft_halfcomplex_wavetable_float_SETF_factor( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_fft_halfcomplex_wavetable_float *self = (gsl_fft_halfcomplex_wavetable_float*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_fft_halfcomplex_wavetable_float);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 64 ) size = 64;
-  memmove( self->factor, DaoArray_ToSInt( (DaoArray*)_p[1] ), size*sizeof(signed int) );
+  memmove( self->factor, DaoArray_ToSInt( array ), size*sizeof(signed int) );
+  DaoArray_FromSInt( array );
 }
 static void dao_gsl_fft_halfcomplex_wavetable_float_GETF_twiddle( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -8961,7 +8979,7 @@ static void dao_gsl_fft_halfcomplex_wavetable_float_gsl_fft_halfcomplex_wavetabl
 	gsl_fft_halfcomplex_wavetable_float *self = Dao_gsl_fft_halfcomplex_wavetable_float_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_fft_halfcomplex_wavetable_float );
 }
-/* /usr/local/include/gsl/gsl_permutation.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_permutation.h */
 
 
 static DaoNumItem dao_gsl_permutation_struct_Nums[] = 
@@ -9019,7 +9037,7 @@ static void dao_gsl_permutation_struct_gsl_permutation_struct( DaoProcess *_proc
 	struct gsl_permutation_struct *self = Dao_gsl_permutation_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_permutation_struct );
 }
-/* /usr/local/include/gsl/gsl_histogram.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_histogram.h */
 
 
 static DaoNumItem dao_gsl_histogram_Nums[] = 
@@ -9084,7 +9102,7 @@ static void dao_gsl_histogram_gsl_histogram( DaoProcess *_proc, DaoValue *_p[], 
 	gsl_histogram *self = Dao_gsl_histogram_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_histogram );
 }
-/* /usr/local/include/gsl/gsl_histogram.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_histogram.h */
 
 
 static DaoNumItem dao_gsl_histogram_pdf_Nums[] = 
@@ -9149,7 +9167,7 @@ static void dao_gsl_histogram_pdf_gsl_histogram_pdf( DaoProcess *_proc, DaoValue
 	gsl_histogram_pdf *self = Dao_gsl_histogram_pdf_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_histogram_pdf );
 }
-/* /usr/local/include/gsl/gsl_histogram2d.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_histogram2d.h */
 
 
 static DaoNumItem dao_gsl_histogram2d_Nums[] = 
@@ -9235,7 +9253,7 @@ static void dao_gsl_histogram2d_gsl_histogram2d( DaoProcess *_proc, DaoValue *_p
 	gsl_histogram2d *self = Dao_gsl_histogram2d_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_histogram2d );
 }
-/* /usr/local/include/gsl/gsl_histogram2d.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_histogram2d.h */
 
 
 static DaoNumItem dao_gsl_histogram2d_pdf_Nums[] = 
@@ -9321,7 +9339,7 @@ static void dao_gsl_histogram2d_pdf_gsl_histogram2d_pdf( DaoProcess *_proc, DaoV
 	gsl_histogram2d_pdf *self = Dao_gsl_histogram2d_pdf_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_histogram2d_pdf );
 }
-/* /usr/local/include/gsl/gsl_ieee_utils.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_ieee_utils.h */
 
 
 static DaoNumItem dao_gsl_ieee_float_rep_Nums[] = 
@@ -9389,7 +9407,7 @@ static void dao_gsl_ieee_float_rep_SETF_mantissa( DaoProcess *_proc, DaoValue *_
   gsl_ieee_float_rep *self = (gsl_ieee_float_rep*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_ieee_float_rep);
   int size = DaoString_Size( (DaoString*)_p[1] );
   if( size > 24 ) size = 24;
-  memmove( self->mantissa, DaoValue_TryGetMBString( _p[1] ), size );
+  memmove( self->mantissa, DaoValue_TryGetChars( _p[1] ), size );
 }
 static void dao_gsl_ieee_float_rep_GETF_exponent( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -9416,7 +9434,7 @@ static void dao_gsl_ieee_float_rep_gsl_ieee_float_rep( DaoProcess *_proc, DaoVal
 	gsl_ieee_float_rep *self = Dao_gsl_ieee_float_rep_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_ieee_float_rep );
 }
-/* /usr/local/include/gsl/gsl_ieee_utils.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_ieee_utils.h */
 
 
 static DaoNumItem dao_gsl_ieee_double_rep_Nums[] = 
@@ -9484,7 +9502,7 @@ static void dao_gsl_ieee_double_rep_SETF_mantissa( DaoProcess *_proc, DaoValue *
   gsl_ieee_double_rep *self = (gsl_ieee_double_rep*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_ieee_double_rep);
   int size = DaoString_Size( (DaoString*)_p[1] );
   if( size > 53 ) size = 53;
-  memmove( self->mantissa, DaoValue_TryGetMBString( _p[1] ), size );
+  memmove( self->mantissa, DaoValue_TryGetChars( _p[1] ), size );
 }
 static void dao_gsl_ieee_double_rep_GETF_exponent( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -9511,7 +9529,7 @@ static void dao_gsl_ieee_double_rep_gsl_ieee_double_rep( DaoProcess *_proc, DaoV
 	gsl_ieee_double_rep *self = Dao_gsl_ieee_double_rep_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_ieee_double_rep );
 }
-/* /usr/local/include/gsl/gsl_integration.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_integration.h */
 
 
 static DaoNumItem dao_gsl_integration_workspace_Nums[] = 
@@ -9660,7 +9678,7 @@ static void dao_gsl_integration_workspace_gsl_integration_workspace( DaoProcess 
 	gsl_integration_workspace *self = Dao_gsl_integration_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_integration_workspace );
 }
-/* /usr/local/include/gsl/gsl_integration.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_integration.h */
 
 
 static DaoNumItem dao_gsl_integration_qaws_table_Nums[] = 
@@ -9772,9 +9790,11 @@ static void dao_gsl_integration_qaws_table_GETF_ri( DaoProcess *_proc, DaoValue 
 static void dao_gsl_integration_qaws_table_SETF_ri( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_integration_qaws_table *self = (gsl_integration_qaws_table*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_integration_qaws_table);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 25 ) size = 25;
-  memmove( self->ri, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
+  memmove( self->ri, DaoArray_ToDouble( array ), size*sizeof(double) );
+  DaoArray_FromDouble( array );
 }
 static void dao_gsl_integration_qaws_table_GETF_rj( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -9784,9 +9804,11 @@ static void dao_gsl_integration_qaws_table_GETF_rj( DaoProcess *_proc, DaoValue 
 static void dao_gsl_integration_qaws_table_SETF_rj( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_integration_qaws_table *self = (gsl_integration_qaws_table*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_integration_qaws_table);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 25 ) size = 25;
-  memmove( self->rj, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
+  memmove( self->rj, DaoArray_ToDouble( array ), size*sizeof(double) );
+  DaoArray_FromDouble( array );
 }
 static void dao_gsl_integration_qaws_table_GETF_rg( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -9796,9 +9818,11 @@ static void dao_gsl_integration_qaws_table_GETF_rg( DaoProcess *_proc, DaoValue 
 static void dao_gsl_integration_qaws_table_SETF_rg( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_integration_qaws_table *self = (gsl_integration_qaws_table*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_integration_qaws_table);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 25 ) size = 25;
-  memmove( self->rg, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
+  memmove( self->rg, DaoArray_ToDouble( array ), size*sizeof(double) );
+  DaoArray_FromDouble( array );
 }
 static void dao_gsl_integration_qaws_table_GETF_rh( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -9808,16 +9832,18 @@ static void dao_gsl_integration_qaws_table_GETF_rh( DaoProcess *_proc, DaoValue 
 static void dao_gsl_integration_qaws_table_SETF_rh( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_integration_qaws_table *self = (gsl_integration_qaws_table*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_integration_qaws_table);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 25 ) size = 25;
-  memmove( self->rh, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
+  memmove( self->rh, DaoArray_ToDouble( array ), size*sizeof(double) );
+  DaoArray_FromDouble( array );
 }
 static void dao_gsl_integration_qaws_table_gsl_integration_qaws_table( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	gsl_integration_qaws_table *self = Dao_gsl_integration_qaws_table_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_integration_qaws_table );
 }
-/* /usr/local/include/gsl/gsl_integration.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_integration.h */
 
 
 static DaoNumItem dao_gsl_integration_qawo_table_Nums[] = 
@@ -9931,7 +9957,7 @@ static void dao_gsl_integration_qawo_table_gsl_integration_qawo_table( DaoProces
 	gsl_integration_qawo_table *self = Dao_gsl_integration_qawo_table_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_integration_qawo_table );
 }
-/* /usr/local/include/gsl/gsl_integration.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_integration.h */
 
 
 static DaoNumItem dao_gsl_integration_glfixed_table_Nums[] = 
@@ -10010,7 +10036,7 @@ static void dao_gsl_integration_glfixed_table_gsl_integration_glfixed_table( Dao
 	gsl_integration_glfixed_table *self = Dao_gsl_integration_glfixed_table_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_integration_glfixed_table );
 }
-/* /usr/local/include/gsl/gsl_integration.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_integration.h */
 
 
 static DaoNumItem dao_gsl_integration_cquad_ival_Nums[] = 
@@ -10106,9 +10132,11 @@ static void dao_gsl_integration_cquad_ival_GETF_c( DaoProcess *_proc, DaoValue *
 static void dao_gsl_integration_cquad_ival_SETF_c( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_integration_cquad_ival *self = (gsl_integration_cquad_ival*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_integration_cquad_ival);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 64 ) size = 64;
-  memmove( self->c, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
+  memmove( self->c, DaoArray_ToDouble( array ), size*sizeof(double) );
+  DaoArray_FromDouble( array );
 }
 static void dao_gsl_integration_cquad_ival_GETF_fx( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10118,9 +10146,11 @@ static void dao_gsl_integration_cquad_ival_GETF_fx( DaoProcess *_proc, DaoValue 
 static void dao_gsl_integration_cquad_ival_SETF_fx( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_integration_cquad_ival *self = (gsl_integration_cquad_ival*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_integration_cquad_ival);
-  int size = DaoArray_Size( (DaoArray*)_p[1] );
+  DaoArray *array = (DaoArray*) _p[1];
+  int size = DaoArray_Size( array );
   if( size > 33 ) size = 33;
-  memmove( self->fx, DaoArray_ToDouble( (DaoArray*)_p[1] ), size*sizeof(double) );
+  memmove( self->fx, DaoArray_ToDouble( array ), size*sizeof(double) );
+  DaoArray_FromDouble( array );
 }
 static void dao_gsl_integration_cquad_ival_GETF_igral( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10177,7 +10207,7 @@ static void dao_gsl_integration_cquad_ival_gsl_integration_cquad_ival( DaoProces
 	gsl_integration_cquad_ival *self = Dao_gsl_integration_cquad_ival_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_integration_cquad_ival );
 }
-/* /usr/local/include/gsl/gsl_integration.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_integration.h */
 
 
 static DaoNumItem dao_gsl_integration_cquad_workspace_Nums[] = 
@@ -10242,7 +10272,7 @@ static void dao_gsl_integration_cquad_workspace_gsl_integration_cquad_workspace(
 	gsl_integration_cquad_workspace *self = Dao_gsl_integration_cquad_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_integration_cquad_workspace );
 }
-/* /usr/local/include/gsl/gsl_interp.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_interp.h */
 
 
 static DaoNumItem dao_gsl_interp_accel_Nums[] = 
@@ -10321,7 +10351,7 @@ static void dao_gsl_interp_accel_gsl_interp_accel( DaoProcess *_proc, DaoValue *
 	gsl_interp_accel *self = Dao_gsl_interp_accel_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_interp_accel );
 }
-/* /usr/local/include/gsl/gsl_interp.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_interp.h */
 
 
 static DaoNumItem dao_gsl_interp_type_Nums[] = 
@@ -10362,7 +10392,7 @@ DaoType *dao_type_gsl_interp_type = NULL;
 static void dao_gsl_interp_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_interp_type *self = (gsl_interp_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_interp_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_interp_type_GETF_min_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10379,7 +10409,7 @@ static void dao_gsl_interp_type_gsl_interp_type( DaoProcess *_proc, DaoValue *_p
 	Dao_gsl_interp_type *self = Dao_gsl_interp_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_interp.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_interp.h */
 
 
 static DaoNumItem dao_gsl_interp_Nums[] = 
@@ -10472,7 +10502,7 @@ static void dao_gsl_interp_gsl_interp( DaoProcess *_proc, DaoValue *_p[], int _n
 	gsl_interp *self = Dao_gsl_interp_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_interp );
 }
-/* /usr/local/include/gsl/gsl_min.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_min.h */
 
 
 static DaoNumItem dao_gsl_min_fminimizer_type_Nums[] = 
@@ -10513,7 +10543,7 @@ DaoType *dao_type_gsl_min_fminimizer_type = NULL;
 static void dao_gsl_min_fminimizer_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_min_fminimizer_type *self = (gsl_min_fminimizer_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_min_fminimizer_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_min_fminimizer_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10530,7 +10560,7 @@ static void dao_gsl_min_fminimizer_type_gsl_min_fminimizer_type( DaoProcess *_pr
 	Dao_gsl_min_fminimizer_type *self = Dao_gsl_min_fminimizer_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_min.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_min.h */
 
 
 static DaoNumItem dao_gsl_min_fminimizer_Nums[] = 
@@ -10672,7 +10702,7 @@ static void dao_gsl_min_fminimizer_gsl_min_fminimizer( DaoProcess *_proc, DaoVal
 	gsl_min_fminimizer *self = Dao_gsl_min_fminimizer_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_min_fminimizer );
 }
-/* /usr/local/include/gsl/gsl_monte.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_monte.h */
 
 
 static DaoNumItem dao_gsl_monte_function_struct_Nums[] = 
@@ -10730,7 +10760,7 @@ static void dao_gsl_monte_function_struct_gsl_monte_function_struct( DaoProcess 
 	Dao_gsl_monte_function_struct *self = Dao_gsl_monte_function_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_rng.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_rng.h */
 
 
 static DaoNumItem dao_gsl_rng_type_Nums[] = 
@@ -10779,7 +10809,7 @@ DaoType *dao_type_gsl_rng_type = NULL;
 static void dao_gsl_rng_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_rng_type *self = (gsl_rng_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_rng_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_rng_type_GETF_max( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -10816,7 +10846,7 @@ static void dao_gsl_rng_type_gsl_rng_type( DaoProcess *_proc, DaoValue *_p[], in
 	Dao_gsl_rng_type *self = Dao_gsl_rng_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_rng.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_rng.h */
 
 
 static DaoNumItem dao_gsl_rng_Nums[] = 
@@ -10867,7 +10897,7 @@ static void dao_gsl_rng_gsl_rng( DaoProcess *_proc, DaoValue *_p[], int _n )
 	gsl_rng *self = Dao_gsl_rng_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_rng );
 }
-/* /usr/local/include/gsl/gsl_monte_plain.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_monte_plain.h */
 
 
 static DaoNumItem dao_gsl_monte_plain_state_Nums[] = 
@@ -10925,7 +10955,7 @@ static void dao_gsl_monte_plain_state_gsl_monte_plain_state( DaoProcess *_proc, 
 	gsl_monte_plain_state *self = Dao_gsl_monte_plain_state_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_monte_plain_state );
 }
-/* /usr/local/include/gsl/gsl_monte_miser.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_monte_miser.h */
 
 
 static DaoNumItem dao_gsl_monte_miser_state_Nums[] = 
@@ -11186,7 +11216,7 @@ static void dao_gsl_monte_miser_state_gsl_monte_miser_state( DaoProcess *_proc, 
 	gsl_monte_miser_state *self = Dao_gsl_monte_miser_state_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_monte_miser_state );
 }
-/* /usr/local/include/gsl/gsl_monte_miser.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_monte_miser.h */
 
 
 static DaoNumItem dao_gsl_monte_miser_params_Nums[] = 
@@ -11293,7 +11323,7 @@ static void dao_gsl_monte_miser_params_gsl_monte_miser_params( DaoProcess *_proc
 	gsl_monte_miser_params *self = Dao_gsl_monte_miser_params_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_monte_miser_params );
 }
-/* /usr/local/include/gsl/gsl_monte_vegas.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_monte_vegas.h */
 
 
 static DaoNumItem dao_gsl_monte_vegas_state_Nums[] = 
@@ -11687,7 +11717,7 @@ static void dao_gsl_monte_vegas_state_gsl_monte_vegas_state( DaoProcess *_proc, 
 	gsl_monte_vegas_state *self = Dao_gsl_monte_vegas_state_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_monte_vegas_state );
 }
-/* /usr/local/include/gsl/gsl_monte_vegas.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_monte_vegas.h */
 
 
 static DaoNumItem dao_gsl_monte_vegas_params_Nums[] = 
@@ -11801,7 +11831,7 @@ static void dao_gsl_monte_vegas_params_gsl_monte_vegas_params( DaoProcess *_proc
 	gsl_monte_vegas_params *self = Dao_gsl_monte_vegas_params_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_monte_vegas_params );
 }
-/* /usr/local/include/gsl/gsl_multifit.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit.h */
 
 
 static DaoNumItem dao_gsl_multifit_linear_workspace_Nums[] = 
@@ -11915,7 +11945,447 @@ static void dao_gsl_multifit_linear_workspace_gsl_multifit_linear_workspace( Dao
 	gsl_multifit_linear_workspace *self = Dao_gsl_multifit_linear_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multifit_linear_workspace );
 }
-/* /usr/local/include/gsl/gsl_multifit_nlin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit.h */
+
+
+static DaoNumItem dao_gsl_multifit_robust_type_Nums[] = 
+{
+  { NULL, 0, 0 }
+};
+
+
+static void dao_gsl_multifit_robust_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_type_GETF_tuning_default( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_type_SETF_tuning_default( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_type_gsl_multifit_robust_type( DaoProcess *_proc, DaoValue *_p[], int _n );
+
+static DaoFuncItem dao_gsl_multifit_robust_type_Meths[] = 
+{
+  { dao_gsl_multifit_robust_type_GETF_name, ".name( self :gsl_multifit_robust_type )=>string" },
+  { dao_gsl_multifit_robust_type_GETF_tuning_default, ".tuning_default( self :gsl_multifit_robust_type )=>double" },
+  { dao_gsl_multifit_robust_type_SETF_tuning_default, ".tuning_default=( self :gsl_multifit_robust_type, tuning_default :double )" },
+  { dao_gsl_multifit_robust_type_gsl_multifit_robust_type, "gsl_multifit_robust_type(  )=>gsl_multifit_robust_type" },
+  { NULL, NULL }
+};
+static void Dao_gsl_multifit_robust_type_Delete( void *self )
+{
+	free( self );
+}
+
+static DaoTypeBase gsl_multifit_robust_type_Typer = 
+{ "gsl_multifit_robust_type", NULL,
+  dao_gsl_multifit_robust_type_Nums,
+  dao_gsl_multifit_robust_type_Meths,
+  { NULL },
+  { NULL },
+  Dao_gsl_multifit_robust_type_Delete,
+  NULL
+};
+DaoTypeBase DAO_DLL_GSL *dao_gsl_multifit_robust_type_Typer = & gsl_multifit_robust_type_Typer;
+DaoType *dao_type_gsl_multifit_robust_type = NULL;
+static void dao_gsl_multifit_robust_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_type *self = (gsl_multifit_robust_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_type);
+  DaoProcess_PutChars( _proc, (char*) self->name );
+}
+static void dao_gsl_multifit_robust_type_GETF_tuning_default( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_type *self = (gsl_multifit_robust_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_type);
+  DaoProcess_PutDouble( _proc, (double) self->tuning_default );
+}
+static void dao_gsl_multifit_robust_type_SETF_tuning_default( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_type *self = (gsl_multifit_robust_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_type);
+  self->tuning_default = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_type_gsl_multifit_robust_type( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+	Dao_gsl_multifit_robust_type *self = Dao_gsl_multifit_robust_type_New();
+	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
+}
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit.h */
+
+
+static DaoNumItem dao_gsl_multifit_robust_stats_Nums[] = 
+{
+  { NULL, 0, 0 }
+};
+
+
+static void dao_gsl_multifit_robust_stats_GETF_sigma_ols( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_sigma_ols( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_sigma_mad( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_sigma_mad( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_sigma_rob( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_sigma_rob( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_sigma( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_sigma( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_Rsq( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_Rsq( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_adj_Rsq( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_adj_Rsq( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_rmse( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_rmse( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_sse( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_sse( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_dof( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_dof( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_numit( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_SETF_numit( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_weights( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_GETF_r( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_stats_gsl_multifit_robust_stats( DaoProcess *_proc, DaoValue *_p[], int _n );
+
+static DaoFuncItem dao_gsl_multifit_robust_stats_Meths[] = 
+{
+  { dao_gsl_multifit_robust_stats_GETF_sigma_ols, ".sigma_ols( self :gsl_multifit_robust_stats )=>double" },
+  { dao_gsl_multifit_robust_stats_SETF_sigma_ols, ".sigma_ols=( self :gsl_multifit_robust_stats, sigma_ols :double )" },
+  { dao_gsl_multifit_robust_stats_GETF_sigma_mad, ".sigma_mad( self :gsl_multifit_robust_stats )=>double" },
+  { dao_gsl_multifit_robust_stats_SETF_sigma_mad, ".sigma_mad=( self :gsl_multifit_robust_stats, sigma_mad :double )" },
+  { dao_gsl_multifit_robust_stats_GETF_sigma_rob, ".sigma_rob( self :gsl_multifit_robust_stats )=>double" },
+  { dao_gsl_multifit_robust_stats_SETF_sigma_rob, ".sigma_rob=( self :gsl_multifit_robust_stats, sigma_rob :double )" },
+  { dao_gsl_multifit_robust_stats_GETF_sigma, ".sigma( self :gsl_multifit_robust_stats )=>double" },
+  { dao_gsl_multifit_robust_stats_SETF_sigma, ".sigma=( self :gsl_multifit_robust_stats, sigma :double )" },
+  { dao_gsl_multifit_robust_stats_GETF_Rsq, ".Rsq( self :gsl_multifit_robust_stats )=>double" },
+  { dao_gsl_multifit_robust_stats_SETF_Rsq, ".Rsq=( self :gsl_multifit_robust_stats, Rsq :double )" },
+  { dao_gsl_multifit_robust_stats_GETF_adj_Rsq, ".adj_Rsq( self :gsl_multifit_robust_stats )=>double" },
+  { dao_gsl_multifit_robust_stats_SETF_adj_Rsq, ".adj_Rsq=( self :gsl_multifit_robust_stats, adj_Rsq :double )" },
+  { dao_gsl_multifit_robust_stats_GETF_rmse, ".rmse( self :gsl_multifit_robust_stats )=>double" },
+  { dao_gsl_multifit_robust_stats_SETF_rmse, ".rmse=( self :gsl_multifit_robust_stats, rmse :double )" },
+  { dao_gsl_multifit_robust_stats_GETF_sse, ".sse( self :gsl_multifit_robust_stats )=>double" },
+  { dao_gsl_multifit_robust_stats_SETF_sse, ".sse=( self :gsl_multifit_robust_stats, sse :double )" },
+  { dao_gsl_multifit_robust_stats_GETF_dof, ".dof( self :gsl_multifit_robust_stats )=>int" },
+  { dao_gsl_multifit_robust_stats_SETF_dof, ".dof=( self :gsl_multifit_robust_stats, dof :int )" },
+  { dao_gsl_multifit_robust_stats_GETF_numit, ".numit( self :gsl_multifit_robust_stats )=>int" },
+  { dao_gsl_multifit_robust_stats_SETF_numit, ".numit=( self :gsl_multifit_robust_stats, numit :int )" },
+  { dao_gsl_multifit_robust_stats_GETF_weights, ".weights( self :gsl_multifit_robust_stats )=>gsl_vector" },
+  { dao_gsl_multifit_robust_stats_GETF_r, ".r( self :gsl_multifit_robust_stats )=>gsl_vector" },
+  { dao_gsl_multifit_robust_stats_gsl_multifit_robust_stats, "gsl_multifit_robust_stats(  )=>gsl_multifit_robust_stats" },
+  { NULL, NULL }
+};
+static void Dao_gsl_multifit_robust_stats_Delete( void *self )
+{
+	free( self );
+}
+
+static DaoTypeBase gsl_multifit_robust_stats_Typer = 
+{ "gsl_multifit_robust_stats", NULL,
+  dao_gsl_multifit_robust_stats_Nums,
+  dao_gsl_multifit_robust_stats_Meths,
+  { NULL },
+  { NULL },
+  Dao_gsl_multifit_robust_stats_Delete,
+  NULL
+};
+DaoTypeBase DAO_DLL_GSL *dao_gsl_multifit_robust_stats_Typer = & gsl_multifit_robust_stats_Typer;
+DaoType *dao_type_gsl_multifit_robust_stats = NULL;
+static void dao_gsl_multifit_robust_stats_GETF_sigma_ols( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutDouble( _proc, (double) self->sigma_ols );
+}
+static void dao_gsl_multifit_robust_stats_SETF_sigma_ols( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->sigma_ols = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_sigma_mad( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutDouble( _proc, (double) self->sigma_mad );
+}
+static void dao_gsl_multifit_robust_stats_SETF_sigma_mad( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->sigma_mad = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_sigma_rob( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutDouble( _proc, (double) self->sigma_rob );
+}
+static void dao_gsl_multifit_robust_stats_SETF_sigma_rob( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->sigma_rob = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_sigma( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutDouble( _proc, (double) self->sigma );
+}
+static void dao_gsl_multifit_robust_stats_SETF_sigma( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->sigma = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_Rsq( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutDouble( _proc, (double) self->Rsq );
+}
+static void dao_gsl_multifit_robust_stats_SETF_Rsq( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->Rsq = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_adj_Rsq( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutDouble( _proc, (double) self->adj_Rsq );
+}
+static void dao_gsl_multifit_robust_stats_SETF_adj_Rsq( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->adj_Rsq = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_rmse( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutDouble( _proc, (double) self->rmse );
+}
+static void dao_gsl_multifit_robust_stats_SETF_rmse( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->rmse = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_sse( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutDouble( _proc, (double) self->sse );
+}
+static void dao_gsl_multifit_robust_stats_SETF_sse( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->sse = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_dof( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutInteger( _proc, (daoint) self->dof );
+}
+static void dao_gsl_multifit_robust_stats_SETF_dof( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->dof = (unsigned long) DaoValue_TryGetInteger(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_numit( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_PutInteger( _proc, (daoint) self->numit );
+}
+static void dao_gsl_multifit_robust_stats_SETF_numit( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  self->numit = (unsigned long) DaoValue_TryGetInteger(_p[1]);
+}
+static void dao_gsl_multifit_robust_stats_GETF_weights( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_WrapCdata( _proc, (void*) self->weights, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_stats_GETF_r( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_stats);
+  DaoProcess_WrapCdata( _proc, (void*) self->r, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_stats_gsl_multifit_robust_stats( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+	gsl_multifit_robust_stats *self = Dao_gsl_multifit_robust_stats_New();
+	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multifit_robust_stats );
+}
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit.h */
+
+
+static DaoNumItem dao_gsl_multifit_robust_workspace_Nums[] = 
+{
+  { NULL, 0, 0 }
+};
+
+
+static void dao_gsl_multifit_robust_workspace_GETF_n( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_SETF_n( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_p( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_SETF_p( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_numit( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_SETF_numit( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_maxiter( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_SETF_maxiter( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_type( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_tune( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_SETF_tune( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_r( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_weights( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_c_prev( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_resfac( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_psi( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_dpsi( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_QSI( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_D( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_workn( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_stats( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_GETF_multifit_p( DaoProcess *_proc, DaoValue *_p[], int _n );
+static void dao_gsl_multifit_robust_workspace_gsl_multifit_robust_workspace( DaoProcess *_proc, DaoValue *_p[], int _n );
+
+static DaoFuncItem dao_gsl_multifit_robust_workspace_Meths[] = 
+{
+  { dao_gsl_multifit_robust_workspace_GETF_n, ".n( self :gsl_multifit_robust_workspace )=>int" },
+  { dao_gsl_multifit_robust_workspace_SETF_n, ".n=( self :gsl_multifit_robust_workspace, n :int )" },
+  { dao_gsl_multifit_robust_workspace_GETF_p, ".p( self :gsl_multifit_robust_workspace )=>int" },
+  { dao_gsl_multifit_robust_workspace_SETF_p, ".p=( self :gsl_multifit_robust_workspace, p :int )" },
+  { dao_gsl_multifit_robust_workspace_GETF_numit, ".numit( self :gsl_multifit_robust_workspace )=>int" },
+  { dao_gsl_multifit_robust_workspace_SETF_numit, ".numit=( self :gsl_multifit_robust_workspace, numit :int )" },
+  { dao_gsl_multifit_robust_workspace_GETF_maxiter, ".maxiter( self :gsl_multifit_robust_workspace )=>int" },
+  { dao_gsl_multifit_robust_workspace_SETF_maxiter, ".maxiter=( self :gsl_multifit_robust_workspace, maxiter :int )" },
+  { dao_gsl_multifit_robust_workspace_GETF_type, ".type( self :gsl_multifit_robust_workspace )=>gsl_multifit_robust_type" },
+  { dao_gsl_multifit_robust_workspace_GETF_tune, ".tune( self :gsl_multifit_robust_workspace )=>double" },
+  { dao_gsl_multifit_robust_workspace_SETF_tune, ".tune=( self :gsl_multifit_robust_workspace, tune :double )" },
+  { dao_gsl_multifit_robust_workspace_GETF_r, ".r( self :gsl_multifit_robust_workspace )=>gsl_vector" },
+  { dao_gsl_multifit_robust_workspace_GETF_weights, ".weights( self :gsl_multifit_robust_workspace )=>gsl_vector" },
+  { dao_gsl_multifit_robust_workspace_GETF_c_prev, ".c_prev( self :gsl_multifit_robust_workspace )=>gsl_vector" },
+  { dao_gsl_multifit_robust_workspace_GETF_resfac, ".resfac( self :gsl_multifit_robust_workspace )=>gsl_vector" },
+  { dao_gsl_multifit_robust_workspace_GETF_psi, ".psi( self :gsl_multifit_robust_workspace )=>gsl_vector" },
+  { dao_gsl_multifit_robust_workspace_GETF_dpsi, ".dpsi( self :gsl_multifit_robust_workspace )=>gsl_vector" },
+  { dao_gsl_multifit_robust_workspace_GETF_QSI, ".QSI( self :gsl_multifit_robust_workspace )=>gsl_matrix" },
+  { dao_gsl_multifit_robust_workspace_GETF_D, ".D( self :gsl_multifit_robust_workspace )=>gsl_vector" },
+  { dao_gsl_multifit_robust_workspace_GETF_workn, ".workn( self :gsl_multifit_robust_workspace )=>gsl_vector" },
+  { dao_gsl_multifit_robust_workspace_GETF_stats, ".stats( self :gsl_multifit_robust_workspace )=>gsl_multifit_robust_stats" },
+  { dao_gsl_multifit_robust_workspace_GETF_multifit_p, ".multifit_p( self :gsl_multifit_robust_workspace )=>gsl_multifit_linear_workspace" },
+  { dao_gsl_multifit_robust_workspace_gsl_multifit_robust_workspace, "gsl_multifit_robust_workspace(  )=>gsl_multifit_robust_workspace" },
+  { NULL, NULL }
+};
+static void Dao_gsl_multifit_robust_workspace_Delete( void *self )
+{
+	free( self );
+}
+
+static DaoTypeBase gsl_multifit_robust_workspace_Typer = 
+{ "gsl_multifit_robust_workspace", NULL,
+  dao_gsl_multifit_robust_workspace_Nums,
+  dao_gsl_multifit_robust_workspace_Meths,
+  { NULL },
+  { NULL },
+  Dao_gsl_multifit_robust_workspace_Delete,
+  NULL
+};
+DaoTypeBase DAO_DLL_GSL *dao_gsl_multifit_robust_workspace_Typer = & gsl_multifit_robust_workspace_Typer;
+DaoType *dao_type_gsl_multifit_robust_workspace = NULL;
+static void dao_gsl_multifit_robust_workspace_GETF_n( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_PutInteger( _proc, (daoint) self->n );
+}
+static void dao_gsl_multifit_robust_workspace_SETF_n( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  self->n = (unsigned long) DaoValue_TryGetInteger(_p[1]);
+}
+static void dao_gsl_multifit_robust_workspace_GETF_p( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_PutInteger( _proc, (daoint) self->p );
+}
+static void dao_gsl_multifit_robust_workspace_SETF_p( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  self->p = (unsigned long) DaoValue_TryGetInteger(_p[1]);
+}
+static void dao_gsl_multifit_robust_workspace_GETF_numit( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_PutInteger( _proc, (daoint) self->numit );
+}
+static void dao_gsl_multifit_robust_workspace_SETF_numit( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  self->numit = (unsigned long) DaoValue_TryGetInteger(_p[1]);
+}
+static void dao_gsl_multifit_robust_workspace_GETF_maxiter( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_PutInteger( _proc, (daoint) self->maxiter );
+}
+static void dao_gsl_multifit_robust_workspace_SETF_maxiter( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  self->maxiter = (unsigned long) DaoValue_TryGetInteger(_p[1]);
+}
+static void dao_gsl_multifit_robust_workspace_GETF_type( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->type, dao_type_gsl_multifit_robust_type );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_tune( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_PutDouble( _proc, (double) self->tune );
+}
+static void dao_gsl_multifit_robust_workspace_SETF_tune( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  self->tune = (double) DaoValue_TryGetDouble(_p[1]);
+}
+static void dao_gsl_multifit_robust_workspace_GETF_r( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->r, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_weights( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->weights, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_c_prev( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->c_prev, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_resfac( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->resfac, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_psi( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->psi, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_dpsi( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->dpsi, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_QSI( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->QSI, dao_type_gsl_matrix );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_D( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->D, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_workn( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->workn, dao_type_gsl_vector );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_stats( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*)&self->stats, dao_type_gsl_multifit_robust_stats );
+}
+static void dao_gsl_multifit_robust_workspace_GETF_multifit_p( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+  gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_robust_workspace);
+  DaoProcess_WrapCdata( _proc, (void*) self->multifit_p, dao_type_gsl_multifit_linear_workspace );
+}
+static void dao_gsl_multifit_robust_workspace_gsl_multifit_robust_workspace( DaoProcess *_proc, DaoValue *_p[], int _n )
+{
+	gsl_multifit_robust_workspace *self = Dao_gsl_multifit_robust_workspace_New();
+	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multifit_robust_workspace );
+}
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit_nlin.h */
 
 
 static DaoNumItem dao_gsl_multifit_function_struct_Nums[] = 
@@ -11987,7 +12457,7 @@ static void dao_gsl_multifit_function_struct_gsl_multifit_function_struct( DaoPr
 	Dao_gsl_multifit_function_struct *self = Dao_gsl_multifit_function_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multifit_nlin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit_nlin.h */
 
 
 static DaoNumItem dao_gsl_multifit_fsolver_type_Nums[] = 
@@ -12028,7 +12498,7 @@ DaoType *dao_type_gsl_multifit_fsolver_type = NULL;
 static void dao_gsl_multifit_fsolver_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multifit_fsolver_type *self = (gsl_multifit_fsolver_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_fsolver_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_multifit_fsolver_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12045,7 +12515,7 @@ static void dao_gsl_multifit_fsolver_type_gsl_multifit_fsolver_type( DaoProcess 
 	Dao_gsl_multifit_fsolver_type *self = Dao_gsl_multifit_fsolver_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multifit_nlin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit_nlin.h */
 
 
 static DaoNumItem dao_gsl_multifit_fsolver_Nums[] = 
@@ -12124,7 +12594,7 @@ static void dao_gsl_multifit_fsolver_gsl_multifit_fsolver( DaoProcess *_proc, Da
 	gsl_multifit_fsolver *self = Dao_gsl_multifit_fsolver_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multifit_fsolver );
 }
-/* /usr/local/include/gsl/gsl_multifit_nlin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit_nlin.h */
 
 
 static DaoNumItem dao_gsl_multifit_function_fdf_struct_Nums[] = 
@@ -12196,7 +12666,7 @@ static void dao_gsl_multifit_function_fdf_struct_gsl_multifit_function_fdf_struc
 	Dao_gsl_multifit_function_fdf_struct *self = Dao_gsl_multifit_function_fdf_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multifit_nlin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit_nlin.h */
 
 
 static DaoNumItem dao_gsl_multifit_fdfsolver_type_Nums[] = 
@@ -12237,7 +12707,7 @@ DaoType *dao_type_gsl_multifit_fdfsolver_type = NULL;
 static void dao_gsl_multifit_fdfsolver_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multifit_fdfsolver_type *self = (gsl_multifit_fdfsolver_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multifit_fdfsolver_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_multifit_fdfsolver_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12254,7 +12724,7 @@ static void dao_gsl_multifit_fdfsolver_type_gsl_multifit_fdfsolver_type( DaoProc
 	Dao_gsl_multifit_fdfsolver_type *self = Dao_gsl_multifit_fdfsolver_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multifit_nlin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multifit_nlin.h */
 
 
 static DaoNumItem dao_gsl_multifit_fdfsolver_Nums[] = 
@@ -12340,7 +12810,7 @@ static void dao_gsl_multifit_fdfsolver_gsl_multifit_fdfsolver( DaoProcess *_proc
 	gsl_multifit_fdfsolver *self = Dao_gsl_multifit_fdfsolver_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multifit_fdfsolver );
 }
-/* /usr/local/include/gsl/gsl_multimin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multimin.h */
 
 
 static DaoNumItem dao_gsl_multimin_function_struct_Nums[] = 
@@ -12398,7 +12868,7 @@ static void dao_gsl_multimin_function_struct_gsl_multimin_function_struct( DaoPr
 	Dao_gsl_multimin_function_struct *self = Dao_gsl_multimin_function_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multimin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multimin.h */
 
 
 static DaoNumItem dao_gsl_multimin_function_fdf_struct_Nums[] = 
@@ -12456,7 +12926,7 @@ static void dao_gsl_multimin_function_fdf_struct_gsl_multimin_function_fdf_struc
 	Dao_gsl_multimin_function_fdf_struct *self = Dao_gsl_multimin_function_fdf_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multimin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multimin.h */
 
 
 static DaoNumItem dao_gsl_multimin_fminimizer_type_Nums[] = 
@@ -12497,7 +12967,7 @@ DaoType *dao_type_gsl_multimin_fminimizer_type = NULL;
 static void dao_gsl_multimin_fminimizer_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multimin_fminimizer_type *self = (gsl_multimin_fminimizer_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multimin_fminimizer_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_multimin_fminimizer_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12514,7 +12984,7 @@ static void dao_gsl_multimin_fminimizer_type_gsl_multimin_fminimizer_type( DaoPr
 	Dao_gsl_multimin_fminimizer_type *self = Dao_gsl_multimin_fminimizer_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multimin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multimin.h */
 
 
 static DaoNumItem dao_gsl_multimin_fminimizer_Nums[] = 
@@ -12607,7 +13077,7 @@ static void dao_gsl_multimin_fminimizer_gsl_multimin_fminimizer( DaoProcess *_pr
 	gsl_multimin_fminimizer *self = Dao_gsl_multimin_fminimizer_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multimin_fminimizer );
 }
-/* /usr/local/include/gsl/gsl_multimin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multimin.h */
 
 
 static DaoNumItem dao_gsl_multimin_fdfminimizer_type_Nums[] = 
@@ -12648,7 +13118,7 @@ DaoType *dao_type_gsl_multimin_fdfminimizer_type = NULL;
 static void dao_gsl_multimin_fdfminimizer_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multimin_fdfminimizer_type *self = (gsl_multimin_fdfminimizer_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multimin_fdfminimizer_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_multimin_fdfminimizer_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12665,7 +13135,7 @@ static void dao_gsl_multimin_fdfminimizer_type_gsl_multimin_fdfminimizer_type( D
 	Dao_gsl_multimin_fdfminimizer_type *self = Dao_gsl_multimin_fdfminimizer_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multimin.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multimin.h */
 
 
 static DaoNumItem dao_gsl_multimin_fdfminimizer_Nums[] = 
@@ -12758,7 +13228,7 @@ static void dao_gsl_multimin_fdfminimizer_gsl_multimin_fdfminimizer( DaoProcess 
 	gsl_multimin_fdfminimizer *self = Dao_gsl_multimin_fdfminimizer_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multimin_fdfminimizer );
 }
-/* /usr/local/include/gsl/gsl_multiroots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multiroots.h */
 
 
 static DaoNumItem dao_gsl_multiroot_function_struct_Nums[] = 
@@ -12816,7 +13286,7 @@ static void dao_gsl_multiroot_function_struct_gsl_multiroot_function_struct( Dao
 	Dao_gsl_multiroot_function_struct *self = Dao_gsl_multiroot_function_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multiroots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multiroots.h */
 
 
 static DaoNumItem dao_gsl_multiroot_fsolver_type_Nums[] = 
@@ -12857,7 +13327,7 @@ DaoType *dao_type_gsl_multiroot_fsolver_type = NULL;
 static void dao_gsl_multiroot_fsolver_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multiroot_fsolver_type *self = (gsl_multiroot_fsolver_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multiroot_fsolver_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_multiroot_fsolver_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -12874,7 +13344,7 @@ static void dao_gsl_multiroot_fsolver_type_gsl_multiroot_fsolver_type( DaoProces
 	Dao_gsl_multiroot_fsolver_type *self = Dao_gsl_multiroot_fsolver_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multiroots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multiroots.h */
 
 
 static DaoNumItem dao_gsl_multiroot_fsolver_Nums[] = 
@@ -12953,7 +13423,7 @@ static void dao_gsl_multiroot_fsolver_gsl_multiroot_fsolver( DaoProcess *_proc, 
 	gsl_multiroot_fsolver *self = Dao_gsl_multiroot_fsolver_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multiroot_fsolver );
 }
-/* /usr/local/include/gsl/gsl_multiroots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multiroots.h */
 
 
 static DaoNumItem dao_gsl_multiroot_function_fdf_struct_Nums[] = 
@@ -13011,7 +13481,7 @@ static void dao_gsl_multiroot_function_fdf_struct_gsl_multiroot_function_fdf_str
 	Dao_gsl_multiroot_function_fdf_struct *self = Dao_gsl_multiroot_function_fdf_struct_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multiroots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multiroots.h */
 
 
 static DaoNumItem dao_gsl_multiroot_fdfsolver_type_Nums[] = 
@@ -13052,7 +13522,7 @@ DaoType *dao_type_gsl_multiroot_fdfsolver_type = NULL;
 static void dao_gsl_multiroot_fdfsolver_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_multiroot_fdfsolver_type *self = (gsl_multiroot_fdfsolver_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_multiroot_fdfsolver_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_multiroot_fdfsolver_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13069,7 +13539,7 @@ static void dao_gsl_multiroot_fdfsolver_type_gsl_multiroot_fdfsolver_type( DaoPr
 	Dao_gsl_multiroot_fdfsolver_type *self = Dao_gsl_multiroot_fdfsolver_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_multiroots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multiroots.h */
 
 
 static DaoNumItem dao_gsl_multiroot_fdfsolver_Nums[] = 
@@ -13155,7 +13625,7 @@ static void dao_gsl_multiroot_fdfsolver_gsl_multiroot_fdfsolver( DaoProcess *_pr
 	gsl_multiroot_fdfsolver *self = Dao_gsl_multiroot_fdfsolver_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multiroot_fdfsolver );
 }
-/* /usr/local/include/gsl/gsl_multiset.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_multiset.h */
 
 
 static DaoNumItem dao_gsl_multiset_struct_Nums[] = 
@@ -13227,7 +13697,7 @@ static void dao_gsl_multiset_struct_gsl_multiset_struct( DaoProcess *_proc, DaoV
 	struct gsl_multiset_struct *self = Dao_gsl_multiset_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_multiset_struct );
 }
-/* /usr/local/include/gsl/gsl_ntuple.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_ntuple.h */
 
 
 static DaoNumItem dao_gsl_ntuple_Nums[] = 
@@ -13292,7 +13762,7 @@ static void dao_gsl_ntuple_gsl_ntuple( DaoProcess *_proc, DaoValue *_p[], int _n
 	gsl_ntuple *self = Dao_gsl_ntuple_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_ntuple );
 }
-/* /usr/local/include/gsl/gsl_ntuple.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_ntuple.h */
 
 
 static DaoNumItem dao_gsl_ntuple_select_fn_Nums[] = 
@@ -13336,7 +13806,7 @@ static void dao_gsl_ntuple_select_fn_gsl_ntuple_select_fn( DaoProcess *_proc, Da
 	Dao_gsl_ntuple_select_fn *self = Dao_gsl_ntuple_select_fn_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_ntuple.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_ntuple.h */
 
 
 static DaoNumItem dao_gsl_ntuple_value_fn_Nums[] = 
@@ -13380,7 +13850,7 @@ static void dao_gsl_ntuple_value_fn_gsl_ntuple_value_fn( DaoProcess *_proc, DaoV
 	Dao_gsl_ntuple_value_fn *self = Dao_gsl_ntuple_value_fn_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_odeiv.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv.h */
 
 
 static DaoNumItem dao_gsl_odeiv_system_Nums[] = 
@@ -13437,7 +13907,7 @@ static void dao_gsl_odeiv_system_gsl_odeiv_system( DaoProcess *_proc, DaoValue *
 	Dao_gsl_odeiv_system *self = Dao_gsl_odeiv_system_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_odeiv.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv.h */
 
 
 static DaoNumItem dao_gsl_odeiv_step_type_Nums[] = 
@@ -13482,7 +13952,7 @@ DaoType *dao_type_gsl_odeiv_step_type = NULL;
 static void dao_gsl_odeiv_step_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_odeiv_step_type *self = (gsl_odeiv_step_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv_step_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_odeiv_step_type_GETF_can_use_dydt_in( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -13509,7 +13979,7 @@ static void dao_gsl_odeiv_step_type_gsl_odeiv_step_type( DaoProcess *_proc, DaoV
 	Dao_gsl_odeiv_step_type *self = Dao_gsl_odeiv_step_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_odeiv.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv.h */
 
 
 static DaoNumItem dao_gsl_odeiv_step_Nums[] = 
@@ -13574,7 +14044,7 @@ static void dao_gsl_odeiv_step_gsl_odeiv_step( DaoProcess *_proc, DaoValue *_p[]
 	gsl_odeiv_step *self = Dao_gsl_odeiv_step_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_odeiv_step );
 }
-/* /usr/local/include/gsl/gsl_odeiv.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv.h */
 
 
 static DaoNumItem dao_gsl_odeiv_control_type_Nums[] = 
@@ -13611,14 +14081,14 @@ DaoType *dao_type_gsl_odeiv_control_type = NULL;
 static void dao_gsl_odeiv_control_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_odeiv_control_type *self = (gsl_odeiv_control_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv_control_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_odeiv_control_type_gsl_odeiv_control_type( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	Dao_gsl_odeiv_control_type *self = Dao_gsl_odeiv_control_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_odeiv.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv.h */
 
 
 static DaoNumItem dao_gsl_odeiv_control_Nums[] = 
@@ -13669,7 +14139,7 @@ static void dao_gsl_odeiv_control_gsl_odeiv_control( DaoProcess *_proc, DaoValue
 	gsl_odeiv_control *self = Dao_gsl_odeiv_control_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_odeiv_control );
 }
-/* /usr/local/include/gsl/gsl_odeiv.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv.h */
 
 
 static DaoNumItem dao_gsl_odeiv_evolve_Nums[] = 
@@ -13790,7 +14260,7 @@ static void dao_gsl_odeiv_evolve_gsl_odeiv_evolve( DaoProcess *_proc, DaoValue *
 	gsl_odeiv_evolve *self = Dao_gsl_odeiv_evolve_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_odeiv_evolve );
 }
-/* /usr/local/include/gsl/gsl_odeiv2.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv2.h */
 
 
 static DaoNumItem dao_gsl_odeiv2_system_Nums[] = 
@@ -13848,7 +14318,7 @@ static void dao_gsl_odeiv2_system_gsl_odeiv2_system( DaoProcess *_proc, DaoValue
 	Dao_gsl_odeiv2_system *self = Dao_gsl_odeiv2_system_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_odeiv2.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv2.h */
 
 
 static DaoNumItem dao_gsl_odeiv2_step_struct_Nums[] = 
@@ -13913,7 +14383,7 @@ static void dao_gsl_odeiv2_step_struct_gsl_odeiv2_step_struct( DaoProcess *_proc
 	struct gsl_odeiv2_step_struct *self = Dao_gsl_odeiv2_step_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_odeiv2_step_struct );
 }
-/* /usr/local/include/gsl/gsl_odeiv2.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv2.h */
 
 
 static DaoNumItem dao_gsl_odeiv2_control_struct_Nums[] = 
@@ -13964,7 +14434,7 @@ static void dao_gsl_odeiv2_control_struct_gsl_odeiv2_control_struct( DaoProcess 
 	struct gsl_odeiv2_control_struct *self = Dao_gsl_odeiv2_control_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_odeiv2_control_struct );
 }
-/* /usr/local/include/gsl/gsl_odeiv2.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv2.h */
 
 
 static DaoNumItem dao_gsl_odeiv2_evolve_struct_Nums[] = 
@@ -14092,7 +14562,7 @@ static void dao_gsl_odeiv2_evolve_struct_gsl_odeiv2_evolve_struct( DaoProcess *_
 	struct gsl_odeiv2_evolve_struct *self = Dao_gsl_odeiv2_evolve_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_odeiv2_evolve_struct );
 }
-/* /usr/local/include/gsl/gsl_odeiv2.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv2.h */
 
 
 static DaoNumItem dao_gsl_odeiv2_driver_struct_Nums[] = 
@@ -14227,7 +14697,7 @@ static void dao_gsl_odeiv2_driver_struct_gsl_odeiv2_driver_struct( DaoProcess *_
 	struct gsl_odeiv2_driver_struct *self = Dao_gsl_odeiv2_driver_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_odeiv2_driver_struct );
 }
-/* /usr/local/include/gsl/gsl_odeiv2.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv2.h */
 
 
 static DaoNumItem dao_gsl_odeiv2_step_type_Nums[] = 
@@ -14272,7 +14742,7 @@ DaoType *dao_type_gsl_odeiv2_step_type = NULL;
 static void dao_gsl_odeiv2_step_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_odeiv2_step_type *self = (gsl_odeiv2_step_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv2_step_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_odeiv2_step_type_GETF_can_use_dydt_in( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -14299,7 +14769,7 @@ static void dao_gsl_odeiv2_step_type_gsl_odeiv2_step_type( DaoProcess *_proc, Da
 	Dao_gsl_odeiv2_step_type *self = Dao_gsl_odeiv2_step_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_odeiv2.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_odeiv2.h */
 
 
 static DaoNumItem dao_gsl_odeiv2_control_type_Nums[] = 
@@ -14336,14 +14806,14 @@ DaoType *dao_type_gsl_odeiv2_control_type = NULL;
 static void dao_gsl_odeiv2_control_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_odeiv2_control_type *self = (gsl_odeiv2_control_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_odeiv2_control_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_odeiv2_control_type_gsl_odeiv2_control_type( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	Dao_gsl_odeiv2_control_type *self = Dao_gsl_odeiv2_control_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_poly.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_poly.h */
 
 
 static DaoNumItem dao_gsl_poly_complex_workspace_Nums[] = 
@@ -14401,7 +14871,7 @@ static void dao_gsl_poly_complex_workspace_gsl_poly_complex_workspace( DaoProces
 	gsl_poly_complex_workspace *self = Dao_gsl_poly_complex_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_poly_complex_workspace );
 }
-/* /usr/local/include/gsl/gsl_qrng.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_qrng.h */
 
 
 static DaoNumItem dao_gsl_qrng_type_Nums[] = 
@@ -14442,7 +14912,7 @@ DaoType *dao_type_gsl_qrng_type = NULL;
 static void dao_gsl_qrng_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_qrng_type *self = (gsl_qrng_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_qrng_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_qrng_type_GETF_max_dimension( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -14459,7 +14929,7 @@ static void dao_gsl_qrng_type_gsl_qrng_type( DaoProcess *_proc, DaoValue *_p[], 
 	Dao_gsl_qrng_type *self = Dao_gsl_qrng_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_qrng.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_qrng.h */
 
 
 static DaoNumItem dao_gsl_qrng_Nums[] = 
@@ -14538,7 +15008,7 @@ static void dao_gsl_qrng_gsl_qrng( DaoProcess *_proc, DaoValue *_p[], int _n )
 	gsl_qrng *self = Dao_gsl_qrng_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_qrng );
 }
-/* /usr/local/include/gsl/gsl_randist.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_randist.h */
 
 
 static DaoNumItem dao_gsl_ran_discrete_t_Nums[] = 
@@ -14603,7 +15073,7 @@ static void dao_gsl_ran_discrete_t_gsl_ran_discrete_t( DaoProcess *_proc, DaoVal
 	gsl_ran_discrete_t *self = Dao_gsl_ran_discrete_t_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_ran_discrete_t );
 }
-/* /usr/local/include/gsl/gsl_roots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_roots.h */
 
 
 static DaoNumItem dao_gsl_root_fsolver_type_Nums[] = 
@@ -14644,7 +15114,7 @@ DaoType *dao_type_gsl_root_fsolver_type = NULL;
 static void dao_gsl_root_fsolver_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_root_fsolver_type *self = (gsl_root_fsolver_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_root_fsolver_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_root_fsolver_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -14661,7 +15131,7 @@ static void dao_gsl_root_fsolver_type_gsl_root_fsolver_type( DaoProcess *_proc, 
 	Dao_gsl_root_fsolver_type *self = Dao_gsl_root_fsolver_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_roots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_roots.h */
 
 
 static DaoNumItem dao_gsl_root_fsolver_Nums[] = 
@@ -14761,7 +15231,7 @@ static void dao_gsl_root_fsolver_gsl_root_fsolver( DaoProcess *_proc, DaoValue *
 	gsl_root_fsolver *self = Dao_gsl_root_fsolver_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_root_fsolver );
 }
-/* /usr/local/include/gsl/gsl_roots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_roots.h */
 
 
 static DaoNumItem dao_gsl_root_fdfsolver_type_Nums[] = 
@@ -14802,7 +15272,7 @@ DaoType *dao_type_gsl_root_fdfsolver_type = NULL;
 static void dao_gsl_root_fdfsolver_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_root_fdfsolver_type *self = (gsl_root_fdfsolver_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_root_fdfsolver_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_root_fdfsolver_type_GETF_size( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
@@ -14819,7 +15289,7 @@ static void dao_gsl_root_fdfsolver_type_gsl_root_fdfsolver_type( DaoProcess *_pr
 	Dao_gsl_root_fdfsolver_type *self = Dao_gsl_root_fdfsolver_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_roots.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_roots.h */
 
 
 static DaoNumItem dao_gsl_root_fdfsolver_Nums[] = 
@@ -14891,7 +15361,7 @@ static void dao_gsl_root_fdfsolver_gsl_root_fdfsolver( DaoProcess *_proc, DaoVal
 	gsl_root_fdfsolver *self = Dao_gsl_root_fdfsolver_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_root_fdfsolver );
 }
-/* /usr/local/include/gsl/gsl_sf_result.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_sf_result.h */
 
 
 static DaoNumItem dao_gsl_sf_result_struct_Nums[] = 
@@ -14956,7 +15426,7 @@ static void dao_gsl_sf_result_struct_gsl_sf_result_struct( DaoProcess *_proc, Da
 	struct gsl_sf_result_struct *self = Dao_gsl_sf_result_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_sf_result_struct );
 }
-/* /usr/local/include/gsl/gsl_sf_result.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_sf_result.h */
 
 
 static DaoNumItem dao_gsl_sf_result_e10_struct_Nums[] = 
@@ -15035,7 +15505,7 @@ static void dao_gsl_sf_result_e10_struct_gsl_sf_result_e10_struct( DaoProcess *_
 	struct gsl_sf_result_e10_struct *self = Dao_gsl_sf_result_e10_struct_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_sf_result_e10_struct );
 }
-/* /usr/local/include/gsl/gsl_sf_mathieu.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_sf_mathieu.h */
 
 
 static DaoNumItem dao_gsl_sf_mathieu_workspace_Nums[] = 
@@ -15226,7 +15696,7 @@ static void dao_gsl_sf_mathieu_workspace_gsl_sf_mathieu_workspace( DaoProcess *_
 	gsl_sf_mathieu_workspace *self = Dao_gsl_sf_mathieu_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_sf_mathieu_workspace );
 }
-/* /usr/local/include/gsl/gsl_siman.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_siman.h */
 
 
 static DaoNumItem dao_gsl_siman_params_t_Nums[] = 
@@ -15361,7 +15831,7 @@ static void dao_gsl_siman_params_t_gsl_siman_params_t( DaoProcess *_proc, DaoVal
 	gsl_siman_params_t *self = Dao_gsl_siman_params_t_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_siman_params_t );
 }
-/* /usr/local/include/gsl/gsl_spline.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_spline.h */
 
 
 static DaoNumItem dao_gsl_spline_Nums[] = 
@@ -15433,7 +15903,7 @@ static void dao_gsl_spline_gsl_spline( DaoProcess *_proc, DaoValue *_p[], int _n
 	gsl_spline *self = Dao_gsl_spline_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_spline );
 }
-/* /usr/local/include/gsl/gsl_sum.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_sum.h */
 
 
 static DaoNumItem dao_gsl_sum_levin_u_workspace_Nums[] = 
@@ -15561,7 +16031,7 @@ static void dao_gsl_sum_levin_u_workspace_gsl_sum_levin_u_workspace( DaoProcess 
 	gsl_sum_levin_u_workspace *self = Dao_gsl_sum_levin_u_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_sum_levin_u_workspace );
 }
-/* /usr/local/include/gsl/gsl_sum.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_sum.h */
 
 
 static DaoNumItem dao_gsl_sum_levin_utrunc_workspace_Nums[] = 
@@ -15675,7 +16145,7 @@ static void dao_gsl_sum_levin_utrunc_workspace_gsl_sum_levin_utrunc_workspace( D
 	gsl_sum_levin_utrunc_workspace *self = Dao_gsl_sum_levin_utrunc_workspace_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_sum_levin_utrunc_workspace );
 }
-/* /usr/local/include/gsl/gsl_wavelet.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_wavelet.h */
 
 
 static DaoNumItem dao_gsl_wavelet_type_Nums[] = 
@@ -15712,14 +16182,14 @@ DaoType *dao_type_gsl_wavelet_type = NULL;
 static void dao_gsl_wavelet_type_GETF_name( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
   gsl_wavelet_type *self = (gsl_wavelet_type*)DaoValue_TryCastCdata(_p[0],dao_type_gsl_wavelet_type);
-  DaoProcess_PutMBString( _proc, (char*) self->name );
+  DaoProcess_PutChars( _proc, (char*) self->name );
 }
 static void dao_gsl_wavelet_type_gsl_wavelet_type( DaoProcess *_proc, DaoValue *_p[], int _n )
 {
 	Dao_gsl_wavelet_type *self = Dao_gsl_wavelet_type_New();
 	DaoProcess_PutValue( _proc, (DaoValue*) self->_cdata );
 }
-/* /usr/local/include/gsl/gsl_wavelet.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_wavelet.h */
 
 
 static DaoNumItem dao_gsl_wavelet_Nums[] = 
@@ -15819,7 +16289,7 @@ static void dao_gsl_wavelet_gsl_wavelet( DaoProcess *_proc, DaoValue *_p[], int 
 	gsl_wavelet *self = Dao_gsl_wavelet_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type_gsl_wavelet );
 }
-/* /usr/local/include/gsl/gsl_wavelet.h */
+/* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_wavelet.h */
 
 
 static DaoNumItem dao_gsl_wavelet_workspace_Nums[] = 

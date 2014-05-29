@@ -1,4 +1,4 @@
-#include"dao_GSL.h"
+#include"dao_gsl.h"
 DaoRoutine* Dao_Get_Object_Method( DaoCdata *cd, DaoObject **obj, const char *name )
 {
   DaoRoutine *meth;
@@ -10,7 +10,7 @@ DaoRoutine* Dao_Get_Object_Method( DaoCdata *cd, DaoObject **obj, const char *na
   if( DaoRoutine_IsWrapper( meth ) ) return NULL; /*do not call C function*/
   return meth;
 }
-static int DaoPF10932( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, const double* y, double* dydt, DaoValue *params )
+static int DaoPF1095F( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, const double* y, double* dydt, DaoValue *params )
 {
   DaoProcess *_proc = DaoVmSpace_AcquireProcess( __daoVmSpace );
   DaoValue *_res, **_dp;
@@ -22,7 +22,7 @@ static int DaoPF10932( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, cons
   DaoProcess_NewVectorD( _proc, (double*) dydt, 0 );
   DaoProcess_CacheValue( _proc, params );
   _dp = DaoProcess_GetLastValues( _proc, 4 );
-  _ro = DaoRoutine_Resolve( _ro, (DaoValue*) _ob, _dp, 4 );
+  _ro = DaoRoutine_ResolveByValue( _ro, (DaoValue*) _ob, _dp, 4 );
   if( _ro == NULL || DaoRoutine_IsWrapper( _ro ) ) goto EndCall;
   if( (*_cs = DaoProcess_Call( _proc, _ro, (DaoValue*)_ob, _dp, 4 )) ) goto EndCall;
   _res = DaoProcess_GetReturned( _proc );
@@ -31,7 +31,7 @@ EndCall:
   DaoVmSpace_ReleaseProcess( __daoVmSpace, _proc );
   return X;
 }
-static int DaoPF10933( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, const double* y, double* dfdy, double* dydt, DaoValue *params )
+static int DaoPF10960( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, const double* y, double* dfdy, double* dydt, DaoValue *params )
 {
   DaoProcess *_proc = DaoVmSpace_AcquireProcess( __daoVmSpace );
   DaoValue *_res, **_dp;
@@ -44,7 +44,7 @@ static int DaoPF10933( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, cons
   DaoProcess_NewVectorD( _proc, (double*) dydt, 0 );
   DaoProcess_CacheValue( _proc, params );
   _dp = DaoProcess_GetLastValues( _proc, 5 );
-  _ro = DaoRoutine_Resolve( _ro, (DaoValue*) _ob, _dp, 5 );
+  _ro = DaoRoutine_ResolveByValue( _ro, (DaoValue*) _ob, _dp, 5 );
   if( _ro == NULL || DaoRoutine_IsWrapper( _ro ) ) goto EndCall;
   if( (*_cs = DaoProcess_Call( _proc, _ro, (DaoValue*)_ob, _dp, 5 )) ) goto EndCall;
   _res = DaoProcess_GetReturned( _proc );
@@ -869,6 +869,24 @@ gsl_multifit_linear_workspace* Dao_gsl_multifit_linear_workspace_New()
 	gsl_multifit_linear_workspace *self = (gsl_multifit_linear_workspace*) calloc( 1, sizeof(gsl_multifit_linear_workspace) );
 	return self;
 }
+Dao_gsl_multifit_robust_type* Dao_gsl_multifit_robust_type_New()
+{
+	Dao_gsl_multifit_robust_type *wrap = calloc( 1, sizeof(Dao_gsl_multifit_robust_type) );
+	gsl_multifit_robust_type *self = (gsl_multifit_robust_type*) wrap;
+	wrap->_cdata = DaoCdata_New( dao_type_gsl_multifit_robust_type, wrap );
+	wrap->object = self;
+	return wrap;
+}
+gsl_multifit_robust_stats* Dao_gsl_multifit_robust_stats_New()
+{
+	gsl_multifit_robust_stats *self = (gsl_multifit_robust_stats*) calloc( 1, sizeof(gsl_multifit_robust_stats) );
+	return self;
+}
+gsl_multifit_robust_workspace* Dao_gsl_multifit_robust_workspace_New()
+{
+	gsl_multifit_robust_workspace *self = (gsl_multifit_robust_workspace*) calloc( 1, sizeof(gsl_multifit_robust_workspace) );
+	return self;
+}
 Dao_gsl_multifit_function_struct* Dao_gsl_multifit_function_struct_New()
 {
 	Dao_gsl_multifit_function_struct *wrap = calloc( 1, sizeof(Dao_gsl_multifit_function_struct) );
@@ -1031,7 +1049,7 @@ static int Dao_gsl_odeiv_system_function( double t, const double* y, double* dyd
   DaoRoutine *_ro = Dao_Get_Object_Method( _cdata, & _obj, "function" );
   int X = (int) 0;
   if( _ro == NULL || _obj == NULL ) return X;
-  return (int)DaoPF10932( & _cs, _ro, _obj, t, y, dydt, (DaoValue*)_cdata );
+  return (int)DaoPF1095F( & _cs, _ro, _obj, t, y, dydt, (DaoValue*)_cdata );
 }
 static int Dao_gsl_odeiv_system_jacobian( double t, const double* y, double* dfdy, double* dydt, void* params )
 {
@@ -1043,7 +1061,7 @@ static int Dao_gsl_odeiv_system_jacobian( double t, const double* y, double* dfd
   DaoRoutine *_ro = Dao_Get_Object_Method( _cdata, & _obj, "jacobian" );
   int X = (int) 0;
   if( _ro == NULL || _obj == NULL ) return X;
-  return (int)DaoPF10933( & _cs, _ro, _obj, t, y, dfdy, dydt, (DaoValue*)_cdata );
+  return (int)DaoPF10960( & _cs, _ro, _obj, t, y, dfdy, dydt, (DaoValue*)_cdata );
 }
 Dao_gsl_odeiv_system* Dao_gsl_odeiv_system_New()
 {

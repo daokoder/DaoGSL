@@ -8,45 +8,47 @@
 #ifdef __cplusplus
 extern "C"{
 #endif
+#include<modules/auxlib/dao_aux.h>
+
 #include<daoArray.h>
 
 #ifdef __cplusplus
 }
 #endif
-#include"gsl/gsl_vector_complex_long_double.h"
 #include"gsl/gsl_blas.h"
 #include"gsl/gsl_vector.h"
-#include"gsl/gsl_types.h"
+#include"gsl/gsl_vector_complex_long_double.h"
 #include"gsl/gsl_errno.h"
+#include"gsl/gsl_types.h"
 #include"gsl/gsl_complex.h"
 #include"gsl/gsl_check_range.h"
+#include"gsl/gsl_vector_long_double.h"
 #include"gsl/gsl_inline.h"
 #include"gsl/gsl_block_long_double.h"
-#include"gsl/gsl_vector_long_double.h"
 #include"gsl/gsl_vector_complex.h"
 #include"gsl/gsl_block_complex_long_double.h"
-#include"gsl/gsl_vector_complex_double.h"
 #include"gsl/gsl_vector_double.h"
+#include"gsl/gsl_vector_complex_double.h"
 #include"gsl/gsl_block_double.h"
 #include"gsl/gsl_block_complex_double.h"
 #include"gsl/gsl_vector_complex_float.h"
-#include"gsl/gsl_vector_float.h"
 #include"gsl/gsl_block_float.h"
+#include"gsl/gsl_vector_float.h"
 #include"gsl/gsl_block_complex_float.h"
 #include"gsl/gsl_vector_ulong.h"
 #include"gsl/gsl_block_ulong.h"
 #include"gsl/gsl_block_long.h"
 #include"gsl/gsl_vector_long.h"
-#include"gsl/gsl_vector_uint.h"
 #include"gsl/gsl_block_uint.h"
-#include"gsl/gsl_block_int.h"
+#include"gsl/gsl_vector_uint.h"
 #include"gsl/gsl_vector_int.h"
+#include"gsl/gsl_block_int.h"
 #include"gsl/gsl_block_ushort.h"
 #include"gsl/gsl_vector_ushort.h"
-#include"gsl/gsl_vector_short.h"
 #include"gsl/gsl_block_short.h"
-#include"gsl/gsl_block_uchar.h"
+#include"gsl/gsl_vector_short.h"
 #include"gsl/gsl_vector_uchar.h"
+#include"gsl/gsl_block_uchar.h"
 #include"gsl/gsl_vector_char.h"
 #include"gsl/gsl_block_char.h"
 #include"gsl/gsl_matrix_complex_long_double.h"
@@ -64,39 +66,39 @@ extern "C"{
 #include"gsl/gsl_matrix_short.h"
 #include"gsl/gsl_matrix_uchar.h"
 #include"gsl/gsl_matrix_char.h"
-#include"gsl/gsl_cblas.h"
 #include"gsl/gsl_blas_types.h"
+#include"gsl/gsl_cblas.h"
 #include"gsl/gsl_block.h"
-#include"gsl/gsl_math.h"
-#include"gsl/gsl_pow_int.h"
 #include"gsl/gsl_bspline.h"
+#include"gsl/gsl_math.h"
+#include"gsl/gsl_precision.h"
 #include"gsl/gsl_sys.h"
 #include"gsl/gsl_machine.h"
-#include"gsl/gsl_precision.h"
+#include"gsl/gsl_pow_int.h"
 #include"gsl/gsl_nan.h"
 #include"gsl/gsl_minmax.h"
 #include"gsl/gsl_cdf.h"
-#include"gsl/gsl_mode.h"
 #include"gsl/gsl_chebyshev.h"
+#include"gsl/gsl_mode.h"
 #include"gsl/gsl_combination.h"
 #include"gsl/gsl_complex_math.h"
-#include"gsl/gsl_const.h"
 #include"gsl/gsl_const_num.h"
+#include"gsl/gsl_const.h"
 #include"gsl/gsl_const_cgsm.h"
 #include"gsl/gsl_const_cgs.h"
-#include"gsl/gsl_deriv.h"
 #include"gsl/gsl_const_mksa.h"
+#include"gsl/gsl_deriv.h"
 #include"gsl/gsl_const_mks.h"
-#include"gsl/gsl_fft.h"
 #include"gsl/gsl_dft_complex.h"
+#include"gsl/gsl_fft.h"
 #include"gsl/gsl_dft_complex_float.h"
 #include"gsl/gsl_dht.h"
 #include"gsl/gsl_diff.h"
 #include"gsl/gsl_eigen.h"
 #include"gsl/gsl_fft_complex.h"
 #include"gsl/gsl_fft_complex_float.h"
-#include"gsl/gsl_fft_halfcomplex.h"
 #include"gsl/gsl_fft_real.h"
+#include"gsl/gsl_fft_halfcomplex.h"
 #include"gsl/gsl_fft_halfcomplex_float.h"
 #include"gsl/gsl_fft_real_float.h"
 #include"gsl/gsl_fit.h"
@@ -110,10 +112,9 @@ extern "C"{
 #include"gsl/gsl_linalg.h"
 #include"gsl/gsl_message.h"
 #include"gsl/gsl_min.h"
-#include"gsl/gsl_ntuple.h"
 #include"gsl/gsl_monte.h"
-#include"gsl/gsl_monte_miser.h"
 #include"gsl/gsl_rng.h"
+#include"gsl/gsl_monte_miser.h"
 #include"gsl/gsl_monte_plain.h"
 #include"gsl/gsl_monte_vegas.h"
 #include"gsl/gsl_multifit.h"
@@ -121,6 +122,7 @@ extern "C"{
 #include"gsl/gsl_multimin.h"
 #include"gsl/gsl_multiroots.h"
 #include"gsl/gsl_multiset.h"
+#include"gsl/gsl_ntuple.h"
 #include"gsl/gsl_odeiv.h"
 #include"gsl/gsl_odeiv2.h"
 #include"gsl/gsl_permute.h"
@@ -138,14 +140,14 @@ extern "C"{
 #include"gsl/gsl_permute_short.h"
 #include"gsl/gsl_permute_uchar.h"
 #include"gsl/gsl_permute_char.h"
-#include"gsl/gsl_permute_vector.h"
+#include"gsl/gsl_permute_vector_ulong.h"
 #include"gsl/gsl_permute_vector_complex_long_double.h"
+#include"gsl/gsl_permute_vector.h"
 #include"gsl/gsl_permute_vector_complex_double.h"
 #include"gsl/gsl_permute_vector_complex_float.h"
 #include"gsl/gsl_permute_vector_long_double.h"
 #include"gsl/gsl_permute_vector_double.h"
 #include"gsl/gsl_permute_vector_float.h"
-#include"gsl/gsl_permute_vector_ulong.h"
 #include"gsl/gsl_permute_vector_long.h"
 #include"gsl/gsl_permute_vector_uint.h"
 #include"gsl/gsl_permute_vector_int.h"
@@ -189,9 +191,8 @@ extern "C"{
 #include"gsl/gsl_sf_trig.h"
 #include"gsl/gsl_sf_zeta.h"
 #include"gsl/gsl_siman.h"
-#include"gsl/gsl_sort_vector.h"
-#include"gsl/gsl_sort_long_double.h"
 #include"gsl/gsl_sort.h"
+#include"gsl/gsl_sort_long_double.h"
 #include"gsl/gsl_sort_double.h"
 #include"gsl/gsl_sort_float.h"
 #include"gsl/gsl_sort_ulong.h"
@@ -203,6 +204,7 @@ extern "C"{
 #include"gsl/gsl_sort_uchar.h"
 #include"gsl/gsl_sort_char.h"
 #include"gsl/gsl_sort_vector_long_double.h"
+#include"gsl/gsl_sort_vector.h"
 #include"gsl/gsl_sort_vector_double.h"
 #include"gsl/gsl_sort_vector_float.h"
 #include"gsl/gsl_sort_vector_ulong.h"
@@ -217,7 +219,6 @@ extern "C"{
 #include"gsl/gsl_spline.h"
 #include"gsl/gsl_statistics.h"
 #include"gsl/gsl_statistics_long_double.h"
-#include"gsl/gsl_sum.h"
 #include"gsl/gsl_statistics_double.h"
 #include"gsl/gsl_statistics_float.h"
 #include"gsl/gsl_statistics_ulong.h"
@@ -228,9 +229,10 @@ extern "C"{
 #include"gsl/gsl_statistics_short.h"
 #include"gsl/gsl_statistics_uchar.h"
 #include"gsl/gsl_statistics_char.h"
+#include"gsl/gsl_sum.h"
 #include"gsl/gsl_test.h"
-#include"gsl/gsl_wavelet.h"
 #include"gsl/gsl_version.h"
+#include"gsl/gsl_wavelet.h"
 #include"gsl/gsl_wavelet2d.h"
 
 
@@ -418,6 +420,9 @@ extern DaoTypeBase *dao_gsl_monte_miser_params_Typer;
 extern DaoTypeBase *dao_gsl_monte_vegas_state_Typer;
 extern DaoTypeBase *dao_gsl_monte_vegas_params_Typer;
 extern DaoTypeBase *dao_gsl_multifit_linear_workspace_Typer;
+extern DaoTypeBase *dao_gsl_multifit_robust_type_Typer;
+extern DaoTypeBase *dao_gsl_multifit_robust_stats_Typer;
+extern DaoTypeBase *dao_gsl_multifit_robust_workspace_Typer;
 extern DaoTypeBase *dao_gsl_multifit_function_struct_Typer;
 extern DaoTypeBase *dao_gsl_multifit_fsolver_type_Typer;
 extern DaoTypeBase *dao_gsl_multifit_fsolver_Typer;
@@ -643,6 +648,9 @@ extern DaoType *dao_type_gsl_monte_miser_params;
 extern DaoType *dao_type_gsl_monte_vegas_state;
 extern DaoType *dao_type_gsl_monte_vegas_params;
 extern DaoType *dao_type_gsl_multifit_linear_workspace;
+extern DaoType *dao_type_gsl_multifit_robust_type;
+extern DaoType *dao_type_gsl_multifit_robust_stats;
+extern DaoType *dao_type_gsl_multifit_robust_workspace;
 extern DaoType *dao_type_gsl_multifit_function_struct;
 extern DaoType *dao_type_gsl_multifit_fsolver_type;
 extern DaoType *dao_type_gsl_multifit_fsolver;
@@ -907,6 +915,16 @@ gsl_monte_miser_params* DAO_DLL_GSL Dao_gsl_monte_miser_params_New();
 gsl_monte_vegas_state* DAO_DLL_GSL Dao_gsl_monte_vegas_state_New();
 gsl_monte_vegas_params* DAO_DLL_GSL Dao_gsl_monte_vegas_params_New();
 gsl_multifit_linear_workspace* DAO_DLL_GSL Dao_gsl_multifit_linear_workspace_New();
+typedef struct Dao_gsl_multifit_robust_type Dao_gsl_multifit_robust_type;
+struct DAO_DLL_GSL Dao_gsl_multifit_robust_type
+{
+	gsl_multifit_robust_type  nested;
+	gsl_multifit_robust_type *object;
+	DaoCdata *_cdata;
+};
+Dao_gsl_multifit_robust_type* DAO_DLL_GSL Dao_gsl_multifit_robust_type_New();
+gsl_multifit_robust_stats* DAO_DLL_GSL Dao_gsl_multifit_robust_stats_New();
+gsl_multifit_robust_workspace* DAO_DLL_GSL Dao_gsl_multifit_robust_workspace_New();
 typedef struct Dao_gsl_multifit_function_struct Dao_gsl_multifit_function_struct;
 struct DAO_DLL_GSL Dao_gsl_multifit_function_struct
 {
