@@ -12,51 +12,11 @@ static DaoTypeBase sigval_Typer =
 { "sigval", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
 DaoTypeBase DAO_DLL_GSL *dao_sigval_Typer = & sigval_Typer;
 DaoType *dao_type_sigval = NULL;
-/* /usr/include/sys/signal.h */
-static DaoTypeBase sigevent_Typer = 
-{ "sigevent", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao_sigevent_Typer = & sigevent_Typer;
-DaoType *dao_type_sigevent = NULL;
-/* /usr/include/sys/signal.h */
-static DaoTypeBase __siginfo_Typer = 
-{ "__siginfo", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao___siginfo_Typer = & __siginfo_Typer;
-DaoType *dao_type___siginfo = NULL;
-/* /usr/include/sys/signal.h */
-static DaoTypeBase sigvec_Typer = 
-{ "sigvec", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao_sigvec_Typer = & sigvec_Typer;
-DaoType *dao_type_sigvec = NULL;
 /* /usr/include/sys/_structs.h */
 static DaoTypeBase timeval_Typer = 
 { "timeval", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
 DaoTypeBase DAO_DLL_GSL *dao_timeval_Typer = & timeval_Typer;
 DaoType *dao_type_timeval = NULL;
-/* /usr/include/sys/resource.h */
-static DaoTypeBase rusage_Typer = 
-{ "rusage", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao_rusage_Typer = & rusage_Typer;
-DaoType *dao_type_rusage = NULL;
-/* /usr/include/sys/resource.h */
-static DaoTypeBase rlimit_Typer = 
-{ "rlimit", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao_rlimit_Typer = & rlimit_Typer;
-DaoType *dao_type_rlimit = NULL;
-/* /usr/include/stdlib.h */
-static DaoTypeBase div_t_Typer = 
-{ "div_t", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao_div_t_Typer = & div_t_Typer;
-DaoType *dao_type_div_t = NULL;
-/* /usr/include/stdlib.h */
-static DaoTypeBase ldiv_t_Typer = 
-{ "ldiv_t", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao_ldiv_t_Typer = & ldiv_t_Typer;
-DaoType *dao_type_ldiv_t = NULL;
-/* /usr/include/stdlib.h */
-static DaoTypeBase lldiv_t_Typer = 
-{ "lldiv_t", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao_lldiv_t_Typer = & lldiv_t_Typer;
-DaoType *dao_type_lldiv_t = NULL;
 /* /usr/include/stdio.h */
 static DaoTypeBase __sFILE_Typer = 
 { "__sFILE", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
@@ -6303,11 +6263,6 @@ static void dao__gsl_matrix_char_const_view__gsl_matrix_char_const_view( DaoProc
 	_gsl_matrix_char_const_view *self = Dao__gsl_matrix_char_const_view_New();
 	DaoProcess_WrapCdata( _proc, self, dao_type__gsl_matrix_char_const_view );
 }
-/* /usr/include/math.h */
-static DaoTypeBase exception_Typer = 
-{ "exception", NULL, NULL, NULL, { NULL }, { NULL }, NULL, NULL };
-DaoTypeBase DAO_DLL_GSL *dao_exception_Typer = & exception_Typer;
-DaoType *dao_type_exception = NULL;
 /* /usr/local/Cellar/gsl/1.16/include/gsl/gsl_math.h */
 
 
