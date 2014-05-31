@@ -1,5 +1,5 @@
 
-#define module_name GSL
+#define module_name gsl
 #undef module_name
 
 #define dao_gsl_matrix_view_array(base_dao_hint_array_n1_TIMES_n2,n1,n2) gsl_matrix_view_array(double*,const size_t,const size_t)
