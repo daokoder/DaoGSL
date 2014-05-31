@@ -10,7 +10,7 @@ if( daovm == none or daoaux == none or gsl2 == none ) return
 cflags = gsl2.GetFlags( "GSL", $cflags )
 
 if( DaoMake::IsFile( '../../tools/clangdao/clangdao' ) ){
-	bind = project.AddCommand( 'wrap/dao_GSL.h: gsl.c', '@$(DAOMAKE) mkdir2 ./wrap/' )
+	bind = project.AddCommand( 'wrap/dao_gsl.h: gsl.c', '@$(DAOMAKE) mkdir2 ./wrap/' )
 	bind.AddCommand( '../../tools/clangdao/clangdao ' + cflags + ' gsl.c -o wrap/' )
 }
 
@@ -22,9 +22,9 @@ project.AddIncludePath( "." )
 project.AddIncludePath( "../../kernel" )
 project.AddIncludePath( "../../" )
 
-sources = { "wrap/dao_GSL.c", "wrap/dao_GSL2.c", "wrap/dao_GSL3.c" }
+sources = { "wrap/dao_gsl.c", "wrap/dao_gsl2.c", "wrap/dao_gsl3.c" }
 
-daogsl_objs = project.AddObjects( sources, { "wrap/dao_GSL.h" } )
+daogsl_objs = project.AddObjects( sources, { "wrap/dao_gsl.h" } )
 daogsl_dll = project.AddSharedLibrary( "dao_gsl", daogsl_objs )
 daogsl_dll.UseSharedLibrary( gsl2 )
 
