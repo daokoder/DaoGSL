@@ -10,7 +10,7 @@ extern "C"{
 #endif
 #include<modules/auxlib/dao_aux.h>
 
-#include<daoArray.h>
+#include<daoList.h>
 
 #ifdef __cplusplus
 }
@@ -33,10 +33,10 @@ extern "C"{
 #include"gsl/gsl_block_complex_double.h"
 #include"gsl/gsl_block_double.h"
 #include"gsl/gsl_vector_complex_float.h"
+#include"gsl/gsl_vector_ulong.h"
 #include"gsl/gsl_vector_float.h"
 #include"gsl/gsl_block_complex_float.h"
 #include"gsl/gsl_block_float.h"
-#include"gsl/gsl_vector_ulong.h"
 #include"gsl/gsl_vector_long.h"
 #include"gsl/gsl_block_ulong.h"
 #include"gsl/gsl_vector_uint.h"
@@ -110,11 +110,11 @@ extern "C"{
 #include"gsl/gsl_integration.h"
 #include"gsl/gsl_interp.h"
 #include"gsl/gsl_linalg.h"
-#include"gsl/gsl_monte.h"
 #include"gsl/gsl_message.h"
 #include"gsl/gsl_min.h"
-#include"gsl/gsl_rng.h"
+#include"gsl/gsl_monte.h"
 #include"gsl/gsl_monte_plain.h"
+#include"gsl/gsl_rng.h"
 #include"gsl/gsl_monte_miser.h"
 #include"gsl/gsl_monte_vegas.h"
 #include"gsl/gsl_multifit.h"
@@ -159,8 +159,8 @@ extern "C"{
 #include"gsl/gsl_qrng.h"
 #include"gsl/gsl_randist.h"
 #include"gsl/gsl_roots.h"
-#include"gsl/gsl_sf.h"
 #include"gsl/gsl_sf_result.h"
+#include"gsl/gsl_sf.h"
 #include"gsl/gsl_sf_airy.h"
 #include"gsl/gsl_sf_bessel.h"
 #include"gsl/gsl_sf_clausen.h"

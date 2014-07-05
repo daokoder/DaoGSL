@@ -6,10 +6,10 @@ class VanDerPol : gsl_odeiv_system
 #routine VanDerPol(){}
 	var mu = 10.0D;
 
-	routine function( t : double, y : array<double>, dydt : array<double>, self0 : any );
-	routine jacobian( t : double, y : array<double>, dfdy : array<double>, dydt : array<double>, self0 : any );
+	routine function( t: double, y: array<double>, dydt: array<double>, self0: any );
+	routine jacobian( t: double, y: array<double>, dfdy: array<double>, dydt: array<double>, self0: any );
 }
-routine VanDerPol::function( t : double, y : array<double>, dydt : array<double>, self0 : any )
+routine VanDerPol::function( t: double, y: array<double>, dydt: array<double>, self0: any )
 {
 	y.reshape( [1,2] );
 	dydt.reshape( [1,2] );
@@ -20,7 +20,7 @@ routine VanDerPol::function( t : double, y : array<double>, dydt : array<double>
 	return GSL_SUCCESS;
 	#return GSL_FAILURE;
 }
-routine VanDerPol::jacobian( t : double, y : array<double>, dfdy: array<double>, dydt : array<double>, self0 : any )
+routine VanDerPol::jacobian( t: double, y: array<double>, dfdy: array<double>, dydt: array<double>, self0: any )
 {
 	y.reshape( [1,2] );
 	dydt.reshape( [1,2] );

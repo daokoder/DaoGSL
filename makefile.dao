@@ -9,9 +9,9 @@ if( daovm == none or daoaux == none or gsl2 == none ) return
 
 cflags = gsl2.GetFlags( "GSL", $cflags )
 
-if( DaoMake::IsFile( '../../tools/clangdao/clangdao' ) ){
-	bind = project.AddCommand( 'wrap/dao_gsl.h: gsl.c', '@$(DAOMAKE) mkdir2 ./wrap/' )
-	bind.AddCommand( '../../tools/clangdao/clangdao ' + cflags + ' gsl.c -o wrap/' )
+if( DaoMake::IsFile( "../../tools/clangdao/clangdao" ) && DaoMake::IsOutOfSourceBuild() == 0 ){
+	bind = project.AddCommand( "wrap/dao_gsl.h: gsl.c", "@$(DAOMAKE) mkdir2 ./wrap/" )
+	bind.AddCommand( "../../tools/clangdao/clangdao " + cflags + " gsl.c -o wrap/" )
 }
 
 
