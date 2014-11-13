@@ -1,7 +1,7 @@
 load gsl;
 
-data = [17.20D, 18.1, 16.5, 18.3, 12.6];
-mean, variance, largest, smallest : double = 1.0D;
+data = [17.20, 18.1, 16.5, 18.3, 12.6];
+mean, variance, largest, smallest : float = 1.0;
 
 mean     = gsl_stats_mean(data, 1, 5);
 variance = gsl_stats_variance(data, 1, 5);

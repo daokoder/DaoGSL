@@ -7,12 +7,15 @@ gsl2   = DaoMake::FindPackage( "GSL", $OPTIONAL )
 
 if( daovm == none or daoaux == none or gsl2 == none ) return
 
-cflags = gsl2.GetFlags( "GSL", $cflags )
+cflags = gsl2.MakeCompilingFlags()
 
-if( DaoMake::IsFile( "../../tools/clangdao/clangdao" ) && DaoMake::IsOutOfSourceBuild() == 0 ){
-	bind = project.AddCommand( "wrap/dao_gsl.h: gsl.c", "@$(DAOMAKE) mkdir2 ./wrap/" )
-	bind.AddCommand( "../../tools/clangdao/clangdao " + cflags + " gsl.c -o wrap/" )
+clangdao = project.MakeBuildPath( "../../bin/clangdao" )
+
+if( DaoMake::IsFile( clangdao ) && DaoMake::IsOutOfSourceBuild() == 0 ){
+	bind = project.AddCommand( "$(DAOMAKE_SOURCE_DIR)/wrap/dao_gsl.h: gsl.c", "@$(DAOMAKE) mkdir2 ./wrap/" )
+	bind.AddCommand( clangdao + " " + cflags + " gsl.c -o wrap/" )
 }
+project.SetTargetPath( "../../lib/dao/modules" )
 
 
 project.UseImportLibrary( daovm, "dao" )
@@ -28,6 +31,6 @@ daogsl_objs = project.AddObjects( sources, { "wrap/dao_gsl.h" } )
 daogsl_dll = project.AddSharedLibrary( "dao_gsl", daogsl_objs )
 daogsl_dll.UseSharedLibrary( gsl2 )
 
-project.Install( daovm.GetPath( "MOD-PATH" ), daogsl_dll );
+project.Install( DaoMake::Variables[ "INSTALL_MOD" ], daogsl_dll );
 
 project.GenerateFinder( $TRUE );

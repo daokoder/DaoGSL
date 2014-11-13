@@ -17,9 +17,9 @@ static int DaoPF10293( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, cons
   DaoCdata *_cd;
   int X = (int) 0;
   if( _ro == NULL ) goto EndCall;
-  DaoProcess_NewDouble( _proc, (double) t );
-  DaoProcess_NewVectorD( _proc, (double*) y, 0 );
-  DaoProcess_NewVectorD( _proc, (double*) dydt, 0 );
+  DaoProcess_NewFloat( _proc, (dao_float) t );
+  DaoProcess_NewVectorFloat64( _proc, (double*) y, 0 );
+  DaoProcess_NewVectorFloat64( _proc, (double*) dydt, 0 );
   DaoProcess_CacheValue( _proc, params );
   _dp = DaoProcess_GetLastValues( _proc, 4 );
   _ro = DaoRoutine_ResolveByValue( _ro, (DaoValue*) _ob, _dp, 4 );
@@ -38,10 +38,10 @@ static int DaoPF10294( int *_cs, DaoRoutine *_ro, DaoObject *_ob, double t, cons
   DaoCdata *_cd;
   int X = (int) 0;
   if( _ro == NULL ) goto EndCall;
-  DaoProcess_NewDouble( _proc, (double) t );
-  DaoProcess_NewVectorD( _proc, (double*) y, 0 );
-  DaoProcess_NewDouble( _proc, (double) *dfdy );
-  DaoProcess_NewVectorD( _proc, (double*) dydt, 0 );
+  DaoProcess_NewFloat( _proc, (dao_float) t );
+  DaoProcess_NewVectorFloat64( _proc, (double*) y, 0 );
+  DaoProcess_NewFloat( _proc, (dao_float) *dfdy );
+  DaoProcess_NewVectorFloat64( _proc, (double*) dydt, 0 );
   DaoProcess_CacheValue( _proc, params );
   _dp = DaoProcess_GetLastValues( _proc, 5 );
   _ro = DaoRoutine_ResolveByValue( _ro, (DaoValue*) _ob, _dp, 5 );
